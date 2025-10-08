@@ -1,0 +1,40 @@
+=== SYMPTOM DATASET ANALYSIS ===
+
+Total records: 23828
+Unique diseases: 2322
+Unique symptoms: 11999
+Average symptoms per disease: 9.75
+
+TOP 10 MOST COMMON DISEASES:
+  migraine: 82 records
+  psoriasis: 77 records
+  common cold: 72 records
+  varicose veins: 72 records
+  acne: 70 records
+  impetigo: 65 records
+  diabetes: 64 records
+  malaria: 63 records
+  pneumonia: 63 records
+  drug reaction: 62 records
+
+TOP 20 MOST COMMON SYMPTOMS:
+  headache: 369 occurrences
+  fever: 334 occurrences
+  vomiting: 331 occurrences
+  fatigue: 322 occurrences
+  shortness of breath: 268 occurrences
+  nausea: 248 occurrences
+  dizziness: 242 occurrences
+  diarrhea: 235 occurrences
+  cough: 218 occurrences
+  weakness: 212 occurrences
+  nausea and vomiting: 196 occurrences
+  confusion: 163 occurrences
+  seizures: 153 occurrences
+  abdominal pain: 139 occurrences
+  sharp abdominal pain: 135 occurrences
+  loss of appetite: 118 occurrences
+  drowsiness: 110 occurrences
+  sharp chest pain: 104 occurrences
+  sore throat: 99 occurrences
+  chest pain: 94 occurrences
