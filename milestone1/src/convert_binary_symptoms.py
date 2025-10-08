@@ -75,22 +75,12 @@ def convert_binary_to_symptom_names(input_file, output_file, chunk_size=1000):
         print(f"   Average symptoms per disease: {avg_symptoms:.2f}")
         print(f"   Maximum symptoms: {max_symptoms}")
         print(f"   Minimum symptoms: {min_symptoms}")
-        
-        # Show first few examples
-        print(f"\n🔍 First 5 examples:")
-        for i in range(min(5, len(output_df))):
-            disease = output_df.iloc[i]['disease']
-            symptoms = output_df.iloc[i]['symptoms']
-            count = output_df.iloc[i]['symptom_count']
-            print(f"   {i+1}. {disease} ({count} symptoms)")
-            print(f"      Symptoms: {symptoms[:100]}{'...' if len(symptoms) > 100 else ''}")
-            print()
     
     return output_df
 
 def main():
-    input_file = "Final_Augmented_dataset_Diseases_and_Symptoms.csv"
-    output_file = "converted_diseases_symptoms.csv"
+    input_file = "data/original/Final_Augmented_dataset_Diseases_and_Symptoms.csv"
+    output_file = "data/clean/converted_diseases_symptoms.csv"
     
     try:
         df = convert_binary_to_symptom_names(input_file, output_file)

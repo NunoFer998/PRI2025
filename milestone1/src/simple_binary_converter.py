@@ -1,7 +1,7 @@
 import pandas as pd
 import csv
 
-def convert_binary_to_symptoms_simple(input_file="Final_Augmented_dataset_Diseases_and_Symptoms.csv", output_file="diseases_with_symptoms.csv"):
+def convert_binary_to_symptoms_simple(input_file="data/original/Final_Augmented_dataset_Diseases_and_Symptoms.csv", output_file="data/clean/diseases_with_symptoms.csv"):
     print("Starting conversion...")
     print(f"Reading from: {input_file}")
     print(f"Saving to: {output_file}")
@@ -10,7 +10,6 @@ def convert_binary_to_symptoms_simple(input_file="Final_Augmented_dataset_Diseas
         reader = csv.reader(f)
         header = next(reader)
         
-        disease_col = header[0]
         symptom_names = header[1:] 
         
         print(f"Found {len(symptom_names)} symptoms")
@@ -42,23 +41,10 @@ def convert_binary_to_symptoms_simple(input_file="Final_Augmented_dataset_Diseas
                     writer.writerow([disease, symptoms_str, len(active_symptoms)])
                 
                 row_count += 1
-                if row_count % 1000 == 0:
-                    print(f"Processed {row_count} rows...")
     
     print(f"Conversion completed! Processed {row_count} rows.")
     print(f"Results saved to: {output_file}")
-    
-    # Show preview
-    print("\Preview of results:")
-    try:
-        preview_df = pd.read_csv(output_file, nrows=5)
-        for i, row in preview_df.iterrows():
-            print(f"   {i+1}. {row['disease']} ({row['symptom_count']} symptoms)")
-            symptoms = row['symptoms'][:80] + "..." if len(row['symptoms']) > 80 else row['symptoms']
-            print(f"      {symptoms}")
-            print()
-    except Exception as e:
-        print(f"Could not show preview: {e}")
+
 
 if __name__ == "__main__":
     convert_binary_to_symptoms_simple()

@@ -47,11 +47,15 @@ if __name__ == "__main__":
         print("Usage: python summary_analysis.py <input_csv> <output_txt>")
         sys.exit(1)
 
-    input_csv = sys.argv[1]
-    output_txt = sys.argv[2]
+    path = "data/final"
+    input_file = sys.argv[1]
+    output_file = sys.argv[2]
+    input_csv = os.path.join(path, input_file)
+    output_txt = os.path.join(path, output_file)
 
     if not os.path.isfile(input_csv):
         print(f"Error: File '{input_csv}' does not exist.")
+        print("Make sure the file is inside 'data/final'.")
         sys.exit(1)
 
     df = pd.read_csv(input_csv)
