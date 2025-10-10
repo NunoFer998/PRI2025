@@ -1,0 +1,40 @@
+=== SYMPTOM DATASET ANALYSIS ===
+
+Total records: 192995
+Unique diseases: 2321
+Unique symptoms: 12567
+Average symptoms per disease: 82.65
+
+TOP 10 MOST COMMON DISEASES:
+  pneumonia: 1261 records
+  vulvodynia: 1221 records
+  cystitis: 1220 records
+  nose_disorder: 1220 records
+  complex_regional_pain_syndrome: 1220 records
+  spondylosis: 1218 records
+  vaginal_cyst: 1217 records
+  esophagitis: 1217 records
+  hypoglycemia: 1217 records
+  gastrointestinal_hemorrhage: 1216 records
+
+TOP 20 MOST COMMON SYMPTOMS:
+  sharp abdominal pain: 25170 occurrences
+  vomiting: 22100 occurrences
+  cough: 18922 occurrences
+  headache: 18805 occurrences
+  nausea: 18783 occurrences
+  back pain: 18592 occurrences
+  sharp chest pain: 18367 occurrences
+  fever: 16760 occurrences
+  shortness of breath: 16336 occurrences
+  nasal congestion: 13134 occurrences
+  leg pain: 13118 occurrences
+  dizziness: 12725 occurrences
+  abnormal appearing skin: 12140 occurrences
+  lower abdominal pain: 12123 occurrences
+  skin swelling: 11389 occurrences
+  depressive or psychotic symptoms: 11137 occurrences
+  burning abdominal pain: 11076 occurrences
+  sore throat: 11073 occurrences
+  arm pain: 9902 occurrences
+  skin rash: 9716 occurrences

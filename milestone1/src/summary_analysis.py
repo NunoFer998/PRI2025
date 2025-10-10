@@ -4,20 +4,20 @@ import os
 
 def create_summary_analysis(df, summary_file):
 
-    disease_counts = df['disease'].value_counts()
+    disease_counts = df['name'].value_counts()
     all_symptoms = []
-    for s in df['symptom']:
+    for s in df['symptoms']:
         if pd.notna(s) and s.strip() != "":
             symptoms_list = [sym.strip() for sym in s.split(',')]
             all_symptoms.extend(symptoms_list)
 
     symptom_counts = pd.Series(all_symptoms).value_counts()
 
-    symptoms_per_disease = df.groupby('disease')['symptom'].count()
+    symptoms_per_disease = df.groupby('name')['symptoms'].count()
 
     summary_data = {
         'total_records': len(df),
-        'unique_diseases': df['disease'].nunique(),
+        'unique_diseases': df['name'].nunique(),
         'unique_symptoms': len(symptom_counts),
         'avg_symptoms_per_disease': symptoms_per_disease.mean(),
         'most_common_diseases': disease_counts.head(10).to_dict(),
