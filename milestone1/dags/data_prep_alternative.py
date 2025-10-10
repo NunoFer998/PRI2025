@@ -6,6 +6,7 @@ Transforms and merges multiple disease and symptom datasets
 import os
 import shutil
 import polars as pl
+import duckdb
 from pathlib import Path
 
 
@@ -233,8 +234,8 @@ def prepare_patient_reports_task(**kwargs):
     csv_file = pl.read_csv(paths['clean'] / 'patient_reports.csv')
     csv_file = csv_file.rename({'label': 'name', 'text': 'description'})
     # Drop unnamed:_0 column if it exists
-    if 'unnamed:_0' in csv_file.columns:
-        csv_file = csv_file.drop('unnamed:_0')
+    if "" in csv_file.columns:
+        csv_file = csv_file.drop("")
     
     csv_file = add_col_to_df(csv_file)
 
@@ -288,88 +289,91 @@ def prepare_train_0000_of_0001_task(**kwargs):
     
 def merge_datasets_task(**kwargs):
     """
-    Task 3: Merge all prepared datasets into a single final dataset
-    Save final dataset to final folder
+    Task 3: Merge all prepared datasets into a single final dataset using DuckDB
     """
     print("=" * 60)
-    print("TASK 3: Merging Datasets")
+    print("TASK 3: Merging Datasets (DuckDB)")
     print("=" * 60)
-    
-    paths = setup_paths()
-    
-    # Remove and recreate final folder
-    if paths['final'].exists():
-        print(f"Removing existing final folder: {paths['final']}")
-        shutil.rmtree(paths['final'])
-        print(f"✓ Removed existing final folder")
-    
-    paths['final'].mkdir(parents=True, exist_ok=True)
-    print(f"✓ Created fresh final folder: {paths['final']}")
-    
-    # Read all prepared datasets
-    prepared_files = list(paths['prepared'].glob('*.csv'))
-    dataframes = []
-    
-    for file in prepared_files:
-        df = pl.read_csv(file)
-        
-        # Ensure consistent data types for boolean columns
-        if 'contagious' in df.columns:
-            df = df.with_columns(pl.col('contagious').cast(pl.Utf8))
-        if 'chronic' in df.columns:
-            df = df.with_columns(pl.col('chronic').cast(pl.Utf8))
-        
-        dataframes.append(df)
-        print(f"Loaded {file.name} with {df.shape[0]} rows and {df.shape[1]} columns")
-    
-    # Concatenate all dataframes
-    final_df = pl.concat(dataframes, how='diagonal')
 
-    # Normalize names to lowercase with underscores
+    paths = setup_paths()
+
+    # Clean final folder
+    if paths['final'].exists():
+        shutil.rmtree(paths['final'])
+    paths['final'].mkdir(parents=True, exist_ok=True)
+
+    prepared_files = list(paths['prepared'].glob('*.csv'))
+
+    # Define the correct column order
+    column_order = ['name', 'symptoms', 'description', 'treatments', 'contagious', 'chronic', 'url']
+
+    # Register each CSV as a table in DuckDB
+    con = duckdb.connect()
+
+    # Put all files columns in order
+    table_names = []
+    for file in prepared_files:
+        table_name = file.stem.lower().replace('-', '_')
+        table_names.append(table_name)
+        
+        # Create view with columns in specific order
+        # First, load all columns, then select in order
+        con.execute(f"""
+            CREATE OR REPLACE TEMP TABLE temp_{table_name} AS
+            SELECT * FROM read_csv_auto('{file}', header=True)
+        """)
+        
+        # Get actual columns from the table
+        columns_query = con.execute(f"DESCRIBE temp_{table_name}").fetchall()
+        available_columns = [col[0] for col in columns_query]
+        
+        # Build SELECT statement with columns in order, adding NULLs for missing ones
+        select_cols = []
+        for col in column_order:
+            if col in available_columns:
+                select_cols.append(f"{col}")
+            else:
+                select_cols.append(f"NULL as {col}")
+        
+        con.execute(f"""
+            CREATE OR REPLACE VIEW {table_name} AS
+            SELECT {', '.join(select_cols)} FROM temp_{table_name}
+        """)
+        print(f"✓ Registered {file.name} as table {table_name} with columns in order")
+
+    # Combine them with UNION ALL
+    union_query = " UNION ALL ".join([f"SELECT * FROM {t}" for t in table_names])
+    final_df = con.execute(union_query).pl()
+
+    # Normalize disease names
     if 'name' in final_df.columns:
         final_df = final_df.with_columns(
-            pl.col('name').str.strip_chars().str.to_lowercase().str.replace_all(' ', '_').alias('name')
+            pl.col('name')
+              .str.strip_chars()
+              .str.to_lowercase()
+              .str.replace_all(' ', '_')
+              .alias('name')
         )
-    
-    # Drop duplicate rows in the final dataframe
+
+    # Remove complete duplicates
     final_df = final_df.unique()
 
-    # Order by name
+    # Sort by name
     if 'name' in final_df.columns:
         final_df = final_df.sort('name')
-    
-    # Map known chronic and contagious to other values
-    disease_map = create_disease_contagious_chronic_map()
-    if 'name' in final_df.columns:
-        # Create mapping columns as strings first
-        final_df = final_df.with_columns([
-            pl.col('name').map_elements(lambda x: str(disease_map.get(x, {}).get('contagious', '')), return_dtype=pl.Utf8).alias('contagious_mapped'),
-            pl.col('name').map_elements(lambda x: str(disease_map.get(x, {}).get('chronic', '')), return_dtype=pl.Utf8).alias('chronic_mapped'),
-            pl.col('name').map_elements(lambda x: str(disease_map.get(x, {}).get('treatments', '')), return_dtype=pl.Utf8).alias('treatments_mapped')
-        ])
-        
-        # Fill contagious, chronic, and treatments with mapped values if they are null or empty
-        final_df = final_df.with_columns([
-            pl.when(pl.col('contagious').is_null() | (pl.col('contagious') == ''))
-              .then(pl.col('contagious_mapped'))
-              .otherwise(pl.col('contagious'))
-              .alias('contagious'),
-            pl.when(pl.col('chronic').is_null() | (pl.col('chronic') == ''))
-              .then(pl.col('chronic_mapped'))
-              .otherwise(pl.col('chronic'))
-              .alias('chronic'),
-            pl.when(pl.col('treatments').is_null() | (pl.col('treatments') == ''))
-              .then(pl.col('treatments_mapped'))
-              .otherwise(pl.col('treatments'))
-              .alias('treatments')
-        ]).drop(['contagious_mapped', 'chronic_mapped', 'treatments_mapped'])
 
-    # Save the merged final dataset
+    # Ensure columns are in the correct order
+    final_df = final_df.select(column_order)
+
+    # Save
     final_file_path = paths['final'] / 'merged_disease_symptom_list.csv'
     final_df.write_csv(final_file_path)
-    
-    print(f"✓ Merged dataset saved: {final_file_path} with {final_df.shape[0]} rows and {final_df.shape[1]} columns")
-    
+    print(f"✓ Merged dataset saved: {final_file_path}")
+    print(f"  Total rows: {final_df.shape[0]:,}")
+    print(f"  Columns: {', '.join(final_df.columns)}")
+
+    con.close()
+
     return {
         'final_file': str(final_file_path),
         'status': 'datasets_merged'
