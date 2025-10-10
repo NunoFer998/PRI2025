@@ -2,3 +2,31 @@ milestone1/data/original/Final_Augmented_dataset_Diseases_and_Symptoms.csv
 venv
 milestone1/airflow-venv
 __pycache__/
+
+# Log folders
+milestone1/logs/
+logs/
+
+# Data folders (intermediate results)
+milestone1/data/clean/
+milestone1/data/prepared/
+milestone1/data/alternative/
+milestone1/data/characterization_results/
+
+# Python cache
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Airflow
+airflow.db
+airflow.cfg
+unittests.cfg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
