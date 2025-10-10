@@ -1,53 +1,57 @@
 """
-Alternative Data Preparation Script for Apache Airflow
-Creates patient-centric records with disease, symptom lists, text, and attributes
-Output format: patient_id, disease, symptoms_list, text, chronic, contagious
+Data Preparation and Cleaning Script for Apache Airflow
+Transforms and merges multiple disease and symptom datasets
 """
 
-import pandas as pd
 import os
 import shutil
+import polars as pl
 from pathlib import Path
-import numpy as np
 
 
 def setup_paths():
+    """
+    Setup and validate data paths
+    Returns: dict with data paths
+    """
     base_path = Path(__file__).parent.parent / 'data'
     
     paths = {
         'original': base_path / 'original',
         'clean': base_path / 'clean',
         'final': base_path / 'final',
-        'alternative': base_path / 'alternative'
+        'prepared': base_path / 'prepared'
+
     }
     
-    for path in paths.values():
-        path.mkdir(parents=True, exist_ok=True)
+    # Create directories if they don't exist
+    paths['clean'].mkdir(parents=True, exist_ok=True)
+    paths['final'].mkdir(parents=True, exist_ok=True)
     
     return paths
 
 
-def clean_alternative_folder_task(**kwargs):
+def clean_folders_task(**kwargs):
     """
-    Task 0: Clean the alternative folder to start fresh
+    Task 0: Clean the clean folder to start fresh
     """
     print("=" * 60)
-    print("TASK 0: Cleaning Alternative Folder")
+    print("TASK 0: Cleaning Folders")
     print("=" * 60)
     
     paths = setup_paths()
-    for _, path in paths.items():
-        if path.exists():
-            print(f"Removing existing alternative folder: {path}")
-            shutil.rmtree(path)
-            print(f"✓ Removed existing alternative folder")
-
     
-    paths['alternative'].mkdir(parents=True, exist_ok=True)
-    print(f"✓ Created fresh alternative folder: {paths['alternative']}")
+    # Remove and recreate clean folder
+    if paths['clean'].exists():
+        print(f"Removing existing clean folder: {paths['clean']}")
+        shutil.rmtree(paths['clean'])
+        print(f"✓ Removed existing clean folder")
+    
+    paths['clean'].mkdir(parents=True, exist_ok=True)
+    print(f"✓ Created fresh clean folder: {paths['clean']}")
     
     return {
-        'alternative_folder': str(paths['alternative']),
+        'clean_folder': str(paths['clean']),
         'status': 'cleaned'
     }
 
@@ -58,15 +62,16 @@ def clean_datasets_task(**kwargs):
     Save cleaned datasets to clean folder
     """
     print("=" * 60)
-    print("TASK 1: Cleaning Original Datasets")
+    print("TASK 1: Cleaning Datasets")
     print("=" * 60)
     
     paths = setup_paths()
     
-    # Clean the clean folder first
+    # Remove and recreate clean folder
     if paths['clean'].exists():
         print(f"Removing existing clean folder: {paths['clean']}")
         shutil.rmtree(paths['clean'])
+        print(f"✓ Removed existing clean folder")
     
     paths['clean'].mkdir(parents=True, exist_ok=True)
     print(f"✓ Created fresh clean folder: {paths['clean']}")
@@ -77,172 +82,346 @@ def clean_datasets_task(**kwargs):
     cleaning_stats = {}
     
     for csv_file in csv_files:
-        print(f"\nCleaning {csv_file.name}...")
+        print(f"Processing file: {csv_file.name}")
+        df = pl.read_csv(csv_file)
+        initial_rows = df.shape[0]
+        # Drop columns with all NA values
+        df = df.select([c for c in df.columns if df[c].null_count() < df.height])
+
+        # Drop rows with any NA values
+        df_cleaned = df.drop_nulls()
+        after_na_rows = df_cleaned.shape[0]
+
+        # Map boolean columns to binary (True/False)
+        for col in df_cleaned.columns:
+            if df_cleaned[col].dtype == pl.Boolean:
+                df_cleaned = df_cleaned.with_columns(
+                    pl.col(col).cast(pl.Int8).alias(col)
+                )
         
-        try:
-            # Read the CSV file
-            df = pd.read_csv(csv_file)
-            original_rows = len(df)
-            original_cols = len(df.columns)
-
-            # Normalize column names
-            df.columns = [col.strip().lower().replace(' ', '_') for col in df.columns]
-
-            # Remove rows with all NA values
-            df = df.dropna(how='all')
-            after_all_na = len(df)
-            
-            # Remove duplicate rows
-            df = df.drop_duplicates()
-            after_duplicates = len(df)
-            
-            # Save cleaned dataset to clean folder
-            output_file = paths['clean'] / csv_file.name
-            df.to_csv(output_file, index=False)
-            
-            # Store statistics
-            cleaning_stats[csv_file.name] = {
-                'original_rows': original_rows,
-                'original_cols': original_cols,
-                'after_removing_all_na': after_all_na,
-                'after_removing_duplicates': after_duplicates,
-                'rows_removed_na': original_rows - after_all_na,
-                'rows_removed_duplicates': after_all_na - after_duplicates,
-                'final_rows': after_duplicates,
-                'total_rows_removed': original_rows - after_duplicates,
-                'percentage_removed': ((original_rows - after_duplicates) / original_rows * 100) if original_rows > 0 else 0
-            }
-            
-            print(f"  ✓ Original rows: {original_rows:,}")
-            print(f"  ✓ Rows with all NA removed: {original_rows - after_all_na:,}")
-            print(f"  ✓ Duplicate rows removed: {after_all_na - after_duplicates:,}")
-            print(f"  ✓ Final rows: {after_duplicates:,} ({cleaning_stats[csv_file.name]['percentage_removed']:.2f}% removed)")
-            print(f"  ✓ Saved to: {output_file.name}")
-            
-        except Exception as e:
-            print(f"  ✗ Error cleaning {csv_file.name}: {str(e)}")
-            cleaning_stats[csv_file.name] = {'error': str(e)}
-    
-    print(f"\n✓ Cleaned {len(csv_files)} datasets")
+        # Drop duplicate rows
+        df_cleaned = df_cleaned.unique()
+        final_rows = df_cleaned.shape[0]
+        
+        # Normalize column names to lowercase with underscores
+        df_cleaned = df_cleaned.rename({col: col.strip().lower().replace(' ', '_') for col in df_cleaned.columns})
+        
+        # Save cleaned dataset
+        cleaned_file_path = paths['clean'] / csv_file.name
+        df_cleaned.write_csv(cleaned_file_path)
+        
+        # Record cleaning stats
+        cleaning_stats[csv_file.name] = {
+            'initial_rows': initial_rows,
+            'after_na_removal': after_na_rows,
+            'final_rows': final_rows,
+            'rows_removed': initial_rows - final_rows
+        }
+        
+        print(f"✓ Cleaned file saved: {cleaned_file_path}")
+        print(f"   Initial rows: {initial_rows}, After NA removal: {after_na_rows}, Final rows: {final_rows}, Rows removed: {initial_rows - final_rows}")
     
     return {
-        'total_files_cleaned': len(csv_files),
-        'cleaning_stats': cleaning_stats
+        'cleaning_stats': cleaning_stats,
+        'status': 'datasets_cleaned'
     }
 
-
-def process_disease_attributes_task(**kwargs):
+def prepare_disease_symptom_list_task(**kwargs):
     """
-    Task 2: Process disease attributes (chronic, contagious) from Diseases_Symptoms.csv
-    """
-    print("=" * 60)
-    print("TASK 2: Processing Disease Attributes")
-    print("=" * 60)
-    
-    paths = setup_paths()
-    
-    # Load disease attributes
-    diseases_df = pd.read_csv(paths['clean'] / "Diseases_Symptoms.csv")
-    
-    # Check for column names (normalized)
-    disease_col = [col for col in diseases_df.columns if col.lower() in ['name', 'disease', 'disease_name']][0] if any(col.lower() in ['name', 'disease', 'disease_name'] for col in diseases_df.columns) else diseases_df.columns[0]
-    contagious_col = [col for col in diseases_df.columns if 'contagious' in col.lower()][0] if any('contagious' in col.lower() for col in diseases_df.columns) else 'contagious'
-    chronic_col = [col for col in diseases_df.columns if 'chronic' in col.lower()][0] if any('chronic' in col.lower() for col in diseases_df.columns) else 'chronic'
-    
-    # Select and rename relevant columns
-    disease_attributes = diseases_df[[disease_col, contagious_col, chronic_col]].copy()
-    disease_attributes.columns = ['disease', 'contagious', 'chronic']
-    
-    # Normalize disease names
-    disease_attributes['disease'] = disease_attributes['disease'].str.lower().str.strip()
-    
-    # Remove duplicates based on disease
-    disease_attributes = disease_attributes.drop_duplicates(subset=['disease'])
-    
-    # Convert boolean to int (0/1)
-    disease_attributes['contagious'] = disease_attributes['contagious'].astype(int)
-    disease_attributes['chronic'] = disease_attributes['chronic'].astype(int)
-    
-    # Save to alternative folder
-    disease_attributes.to_csv(paths['alternative'] / "disease_attributes.csv", index=False)
-    
-    print(f"✓ Processed {len(disease_attributes)} unique diseases")
-    print(f"✓ Contagious diseases: {disease_attributes['contagious'].sum()}")
-    print(f"✓ Chronic diseases: {disease_attributes['chronic'].sum()}")
-    
-    return {
-        'total_diseases': len(disease_attributes),
-        'contagious_count': int(disease_attributes['contagious'].sum()),
-        'chronic_count': int(disease_attributes['chronic'].sum())
-    }
-
-def add_missing_columns_task(**kwargs):
-    """
-    Task 3: Ensure all required columns are present in the final dataset
-    Required columns: patient_id, disease, symptoms_list, text, chronic, contagious
+    Task 2: Prepare disease-symptom list from cleaned datasets
+    Save final dataset to final folder
     """
     print("=" * 60)
-    print("TASK 3: Adding Missing Columns to Final Dataset")
+    print("TASK 2: Preparing Disease-Symptom List")
     print("=" * 60)
     
     paths = setup_paths()
 
-    files = list(paths['clean'].glob('*.csv'))
-    
-    final_file = paths['clean'] / "Patient_Disease_Symptoms.csv"
-    
-    if not final_file.exists():
-        print(f"✗ Final dataset not found: {final_file}")
-        return {'status': 'final_dataset_not_found'}
-    
-    df = pd.read_csv(final_file)
-    
-    # Normalize column names
-    df.columns = [col.strip().lower().replace(' ', '_') for col in df.columns]
-    
-    # Add missing columns with default values
-    df = add_columns_to_df(df)
-    
-    # Save updated dataset to alternative folder
-    output_file = paths['alternative'] / "patient_disease_symptoms_final.csv"
-    df.to_csv(output_file, index=False)
-    
-    print(f"✓ Added missing columns where necessary")
-    print(f"✓ Saved updated dataset to: {output_file}")
-    
+    paths['prepared'].mkdir(parents=True, exist_ok=True)
+    print(f"✓ Created fresh prepared folder: {paths['prepared']}")
+
+    csv_file = pl.read_csv(paths['clean'] / 'disease_symptom_list.csv')
+    csv_file = csv_file.rename({'disease': 'name'})
+
+    csv_file = add_col_to_df(csv_file)
+
+    final_file_path = paths['prepared'] / 'disease_symptom_list.csv'
+    csv_file.write_csv(final_file_path)
+    print(f"✓ Final dataset saved: {final_file_path}")
+
     return {
-        'total_rows': len(df),
-        'output_file': str(output_file)
+        'final_file': str(final_file_path),
+        'status': 'disease_symptom_list_prepared'
     }
 
-def add_columns_to_df(df):
-    columns = {
-        'patient_id': '',
-        'disease': '',
-        'symptoms_list': '',
-        'text': '',
+def prepare_disease_symptom_task(**kwargs):
+    """
+    Task 2: Prepare disease-symptom list from cleaned datasets
+    Save final dataset to final folder
+    """
+    print("=" * 60)
+    print("TASK 2: Preparing Disease-Symptom List")
+    print("=" * 60)
+    
+    paths = setup_paths()
+
+    paths['prepared'].mkdir(parents=True, exist_ok=True)
+    print(f"✓ Created fresh prepared folder: {paths['prepared']}")
+
+    csv_file = pl.read_csv(paths['clean'] / 'Diseases_Symptoms.csv')
+    # Drop disease_code column if it exists
+    if 'disease_code' in csv_file.columns:
+        csv_file = csv_file.drop('disease_code')
+
+    csv_file = add_col_to_df(csv_file)
+
+    final_file_path = paths['prepared'] / 'Diseases_Symptoms.csv'
+    csv_file.write_csv(final_file_path)
+    print(f"✓ Final dataset saved: {final_file_path}")
+
+    return {
+        'final_file': str(final_file_path),
+        'status': 'disease_symptom_list_prepared'
+    }
+
+def prepare_diseases_with_symptoms_task(**kwargs):
+    """
+    Task 2: Prepare disease-symptom list from cleaned datasets
+    Save final dataset to final folder
+    """
+    print("=" * 60)
+    print("TASK 2: Preparing Disease-Symptom List")
+    print("=" * 60)
+    
+    paths = setup_paths()
+
+    paths['prepared'].mkdir(parents=True, exist_ok=True)
+    print(f"✓ Created fresh prepared folder: {paths['prepared']}")
+
+    csv_file = pl.read_csv(paths['clean'] / 'diseases_with_symptoms.csv')
+
+    csv_file = csv_file.rename({'disease': 'name'})
+    # Drop symptom_count column if it exists
+    if 'symptom_count' in csv_file.columns:
+        csv_file = csv_file.drop('symptom_count')
+
+    csv_file = add_col_to_df(csv_file)
+
+    final_file_path = paths['prepared'] / 'diseases_with_symptoms.csv'
+    csv_file.write_csv(final_file_path)
+    print(f"✓ Final dataset saved: {final_file_path}")
+
+    return {
+        'final_file': str(final_file_path),
+        'status': 'disease_symptom_list_prepared'
+    }
+
+def prepare_patient_reports_task(**kwargs):
+    """
+    Task 2: Prepare disease-symptom list from cleaned datasets
+    Save final dataset to final folder
+    """
+    print("=" * 60)
+    print("TASK 2: Preparing Patient Reports")
+    print("=" * 60)
+    
+    paths = setup_paths()
+
+    paths['prepared'].mkdir(parents=True, exist_ok=True)
+    print(f"✓ Created fresh prepared folder: {paths['prepared']}")
+
+    csv_file = pl.read_csv(paths['clean'] / 'patient_reports.csv')
+    csv_file = csv_file.rename({'label': 'name', 'text': 'description'})
+    # Drop unnamed:_0 column if it exists
+    if 'unnamed:_0' in csv_file.columns:
+        csv_file = csv_file.drop('unnamed:_0')
+    
+    csv_file = add_col_to_df(csv_file)
+
+    final_file_path = paths['prepared'] / 'patient_reports.csv'
+    csv_file.write_csv(final_file_path)
+    print(f"✓ Final dataset saved: {final_file_path}")
+
+    return {
+        'final_file': str(final_file_path),
+        'status': 'disease_symptom_list_prepared'
+    }
+
+def prepare_train_0000_of_0001_task(**kwargs):
+    """
+    Task 2: Prepare disease-symptom list from cleaned datasets
+    Save final dataset to final folder
+    """
+    print("=" * 60)
+    print("TASK 2: Preparing train-0000_of_0001")
+    print("=" * 60)
+    
+    paths = setup_paths()
+
+    paths['prepared'].mkdir(parents=True, exist_ok=True)
+    print(f"✓ Created fresh prepared folder: {paths['prepared']}")
+
+    csv_file = pl.read_csv(paths['clean'] / 'train-00000-of-00001.csv')
+    csv_file = csv_file.rename({
+        'source_url': 'url',
+        'disease_name': 'name',
+        'symptom_list': 'symptoms',
+        'generated_sentence_from_symptoms': 'description'
+    })
+
+    # Change symptom list from | to ,
+    if 'symptoms' in csv_file.columns:
+        csv_file = csv_file.with_columns(
+            pl.col('symptoms').str.replace_all(r'\|', ', ').alias('symptoms')
+        )
+
+    csv_file = add_col_to_df(csv_file)
+
+    final_file_path = paths['prepared'] / 'train-00000-of-00001.csv'
+    csv_file.write_csv(final_file_path)
+    print(f"✓ Final dataset saved: {final_file_path}")
+
+    return {
+        'final_file': str(final_file_path),
+        'status': 'disease_symptom_list_prepared'
+    }
+    
+def merge_datasets_task(**kwargs):
+    """
+    Task 3: Merge all prepared datasets into a single final dataset
+    Save final dataset to final folder
+    """
+    print("=" * 60)
+    print("TASK 3: Merging Datasets")
+    print("=" * 60)
+    
+    paths = setup_paths()
+    
+    # Remove and recreate final folder
+    if paths['final'].exists():
+        print(f"Removing existing final folder: {paths['final']}")
+        shutil.rmtree(paths['final'])
+        print(f"✓ Removed existing final folder")
+    
+    paths['final'].mkdir(parents=True, exist_ok=True)
+    print(f"✓ Created fresh final folder: {paths['final']}")
+    
+    # Read all prepared datasets
+    prepared_files = list(paths['prepared'].glob('*.csv'))
+    dataframes = []
+    
+    for file in prepared_files:
+        df = pl.read_csv(file)
+        
+        # Ensure consistent data types for boolean columns
+        if 'contagious' in df.columns:
+            df = df.with_columns(pl.col('contagious').cast(pl.Utf8))
+        if 'chronic' in df.columns:
+            df = df.with_columns(pl.col('chronic').cast(pl.Utf8))
+        
+        dataframes.append(df)
+        print(f"Loaded {file.name} with {df.shape[0]} rows and {df.shape[1]} columns")
+    
+    # Concatenate all dataframes
+    final_df = pl.concat(dataframes, how='diagonal')
+
+    # Normalize names to lowercase with underscores
+    if 'name' in final_df.columns:
+        final_df = final_df.with_columns(
+            pl.col('name').str.strip_chars().str.to_lowercase().str.replace_all(' ', '_').alias('name')
+        )
+    
+    # Drop duplicate rows in the final dataframe
+    final_df = final_df.unique()
+
+    # Order by name
+    if 'name' in final_df.columns:
+        final_df = final_df.sort('name')
+    
+    # Map known chronic and contagious to other values
+    disease_map = create_disease_contagious_chronic_map()
+    if 'name' in final_df.columns:
+        # Create mapping columns as strings first
+        final_df = final_df.with_columns([
+            pl.col('name').map_elements(lambda x: str(disease_map.get(x, {}).get('contagious', '')), return_dtype=pl.Utf8).alias('contagious_mapped'),
+            pl.col('name').map_elements(lambda x: str(disease_map.get(x, {}).get('chronic', '')), return_dtype=pl.Utf8).alias('chronic_mapped'),
+            pl.col('name').map_elements(lambda x: str(disease_map.get(x, {}).get('treatments', '')), return_dtype=pl.Utf8).alias('treatments_mapped')
+        ])
+        
+        # Fill contagious, chronic, and treatments with mapped values if they are null or empty
+        final_df = final_df.with_columns([
+            pl.when(pl.col('contagious').is_null() | (pl.col('contagious') == ''))
+              .then(pl.col('contagious_mapped'))
+              .otherwise(pl.col('contagious'))
+              .alias('contagious'),
+            pl.when(pl.col('chronic').is_null() | (pl.col('chronic') == ''))
+              .then(pl.col('chronic_mapped'))
+              .otherwise(pl.col('chronic'))
+              .alias('chronic'),
+            pl.when(pl.col('treatments').is_null() | (pl.col('treatments') == ''))
+              .then(pl.col('treatments_mapped'))
+              .otherwise(pl.col('treatments'))
+              .alias('treatments')
+        ]).drop(['contagious_mapped', 'chronic_mapped', 'treatments_mapped'])
+
+    # Save the merged final dataset
+    final_file_path = paths['final'] / 'merged_disease_symptom_list.csv'
+    final_df.write_csv(final_file_path)
+    
+    print(f"✓ Merged dataset saved: {final_file_path} with {final_df.shape[0]} rows and {final_df.shape[1]} columns")
+    
+    return {
+        'final_file': str(final_file_path),
+        'status': 'datasets_merged'
+    }
+
+def create_disease_contagious_chronic_map():
+    """
+    Create a mapping for diseases to their contagious and chronic status
+    """
+    # Make a map based on the Disease_Symptoms dataset
+    csv_file = pl.read_csv(setup_paths()['clean'] / 'Diseases_Symptoms.csv')
+    disease_map = {}
+    
+    # Convert to dictionary format
+    for row in csv_file.iter_rows(named=True):
+        disease = row['name'].strip().lower().replace(' ', '_')
+        contagious = row.get('contagious', None)
+        chronic = row.get('chronic', None)
+        treatment = row.get('treatments', None)
+        disease_map[disease] = {
+            'contagious': contagious,
+            'chronic': chronic,
+            'treatments': treatment
+        }
+    return disease_map
+
+
+def add_col_to_df(df):
+    """
+    Utility function to add a column to a DataFrame if it doesn't exist
+    """
+    columns_to_add = {
+        'name' : '',
+        'symptoms': "",
+        'description': "",
+        'treatments': "",
+        'contagious': None,
         'chronic': None,
-        'contagious': None
+        'url': '',
     }
-    for col_name, default_value in columns.items():
+    for col_name, default_value in columns_to_add.items():
         if col_name not in df.columns:
-            df[col_name] = default_value
+            df = df.with_columns(pl.lit(default_value).alias(col_name))
     return df
 
+# start the script with a test run if executed directly
 if __name__ == "__main__":
-    print("=" * 60)
-    print("Running Alternative Data Preparation Script")
-    print("This is for standalone testing outside of Airflow")
-    print("Each task will run sequentially")
-    print("=" * 60)
-    
-    # Run each task sequentially
-    clean_alternative_folder_task()
+    clean_folders_task()
     clean_datasets_task()
-    process_disease_attributes_task()
-    add_missing_columns_task()
-    
-    print("=" * 60)
-    print("All tasks completed.")
-    print(f"Check the 'alternative' folder for outputs.")
-    print("=" * 60)
+    prepare_disease_symptom_list_task()
+    prepare_disease_symptom_task()
+    prepare_diseases_with_symptoms_task()
+    prepare_patient_reports_task()
+    prepare_train_0000_of_0001_task()
+    merge_datasets_task()
