@@ -1,17 +1,9 @@
 #!/usr/bin/env python3
-"""
-Data Characterization Script for Original Dataset
-Analyzes all CSV files in the original folder and generates comprehensive statistics
-"""
 
 import pandas as pd
 import numpy as np
-import os
-import json
 from pathlib import Path
 from collections import Counter
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 
 class DataCharacterizer:
@@ -21,10 +13,11 @@ class DataCharacterizer:
         self.results = {}
         self.output_dir = self.data_path.parent / "characterization_results"
         self.output_dir.mkdir(exist_ok=True)
+        self.log_file = self.output_dir / "analysis_report.txt"
+        self.log_file.write_text("")
         
     def analyze_csv_file(self, file_path):
         print(f"\nAnalyzing: {file_path.name}")
-        print("=" * 60)
         
         try:
             df = pd.read_csv(file_path)
@@ -184,80 +177,86 @@ class DataCharacterizer:
             'max_word_count': int(word_counts.max()),
         }
     
+    def log(self, message):
+        """Write message to file and optionally also print"""
+        with open(self.log_file, 'a', encoding='utf-8') as f:
+            f.write(message + '\n')
+
+    
     def print_analysis(self, analysis):
         """Print analysis results in a readable format"""
         if 'error' in analysis:
             print(f"Error: {analysis['error']}")
             return
-        
-        print(f"\n{'='*60}")
-        print(f"FILE: {analysis['filename']}")
-        print(f"{'='*60}")
-        
-        print("\n📊 BASIC INFORMATION:")
-        print(f"  Rows: {analysis['basic_info']['num_rows']:,}")
-        print(f"  Columns: {analysis['basic_info']['num_columns']}")
-        print(f"  Total Cells: {analysis['basic_info']['total_cells']:,}")
-        print(f"  Memory Usage: {analysis['basic_info']['memory_usage_mb']:.2f} MB")
-        print(f"  Column Names: {', '.join(analysis['basic_info']['column_names'])}")
 
-        print("\n🔍 COLUMNS INFO:")
+        self.log(f"\n{'='*60}")
+        self.log(f"FILE: {analysis['filename']}")
+        self.log(f"{'='*60}")
+
+        self.log("\nBASIC INFORMATION:")
+        self.log(f"  Rows: {analysis['basic_info']['num_rows']:,}")
+        self.log(f"  Columns: {analysis['basic_info']['num_columns']}")
+        self.log(f"  Total Cells: {analysis['basic_info']['total_cells']:,}")
+        self.log(f"  Memory Usage: {analysis['basic_info']['memory_usage_mb']:.2f} MB")
+        self.log(f"  Column Names: {', '.join(analysis['basic_info']['column_names'])}")
+
+        self.log("\n COLUMNS INFO:")
         for col, info in analysis['columns_info'].items():
-            print(f"  {col}:")
-            print(f"    Type: {info['dtype']}")
-            print(f"    Non-Null Count: {info['non_null_count']:,}")
-            print(f"    Null Count: {info['null_count']:,}")
-            print(f"    Unique Count: {info['unique_count']}")
-            print(f"    Sample Values: {info['sample_values']}")
+            self.log(f"  {col}:")
+            self.log(f"    Type: {info['dtype']}")
+            self.log(f"    Non-Null Count: {info['non_null_count']:,}")
+            self.log(f"    Null Count: {info['null_count']:,}")
+            self.log(f"    Unique Count: {info['unique_count']}")
+            self.log(f"    Sample Values: {info['sample_values']}")
         
-        print("\n❌ MISSING DATA:")
+        self.log("\nMISSING DATA:")
         if analysis['missing_data']['total_missing_cells'] > 0:
-            print(f"  Total Missing: {analysis['missing_data']['total_missing_cells']:,} "
+            self.log(f"  Total Missing: {analysis['missing_data']['total_missing_cells']:,} "
                   f"({analysis['missing_data']['missing_percentage']:.2f}%)")
             for col, info in analysis['missing_data']['columns_with_missing'].items():
-                print(f"    {col}: {info['count']:,} ({info['percentage']:.2f}%)")
+                self.log(f"    {col}: {info['count']:,} ({info['percentage']:.2f}%)")
         else:
-            print("  No missing data ✓")
+            self.log("  No missing data ✓")
         
         if 'disease_analysis' in analysis and analysis['disease_analysis']:
-            print("\n🏥 DISEASE ANALYSIS:")
+            self.log("\n DISEASE ANALYSIS:")
             da = analysis['disease_analysis']
-            print(f"  Total Unique Diseases: {da['total_diseases']}")
-            print(f"  Total Records: {da['total_records']}")
-            print(f"  Avg Records per Disease: {da['average_records_per_disease']:.2f}")
-            print(f"\n  Top 5 Most Common Diseases:")
+            self.log(f"  Total Unique Diseases: {da['total_diseases']}")
+            self.log(f"  Total Records: {da['total_records']}")
+            self.log(f"  Avg Records per Disease: {da['average_records_per_disease']:.2f}")
+            self.log(f"\n  Top 5 Most Common Diseases:")
             for disease, count in list(da['most_common_diseases'].items())[:5]:
-                print(f"    {disease}: {count}")
+                self.log(f"    {disease}: {count}")
         
         if 'symptom_analysis' in analysis and analysis['symptom_analysis']:
-            print("\n💊 SYMPTOM ANALYSIS:")
+            self.log("\n SYMPTOM ANALYSIS:")
             sa = analysis['symptom_analysis']
-            print(f"  Total Unique Symptoms: {sa['total_unique_symptoms']}")
-            print(f"  Total Symptom Mentions: {sa['total_symptom_mentions']}")
-            print(f"  Avg Symptoms per Record: {sa['avg_symptoms_per_record']:.2f}")
-            print(f"  Min/Max Symptoms per Record: {sa['min_symptoms_per_record']}/{sa['max_symptoms_per_record']}")
-            print(f"\n  Top 10 Most Common Symptoms:")
+            self.log(f"  Total Unique Symptoms: {sa['total_unique_symptoms']}")
+            self.log(f"  Total Symptom Mentions: {sa['total_symptom_mentions']}")
+            self.log(f"  Avg Symptoms per Record: {sa['avg_symptoms_per_record']:.2f}")
+            self.log(f"  Min/Max Symptoms per Record: {sa['min_symptoms_per_record']}/{sa['max_symptoms_per_record']}")
+            self.log(f"\n  Top 10 Most Common Symptoms:")
             for symptom, count in list(sa['most_common_symptoms'].items())[:10]:
-                print(f"    {symptom}: {count}")
+                self.log(f"    {symptom}: {count}")
         
         if 'text_analysis' in analysis and analysis['text_analysis']:
-            print("\n📝 TEXT ANALYSIS:")
+            self.log("\n TEXT ANALYSIS:")
             ta = analysis['text_analysis']
-            print(f"  Total Text Records: {ta['total_text_records']}")
-            print(f"  Avg Text Length: {ta['avg_text_length']:.2f} characters")
-            print(f"  Text Length Range: {ta['min_text_length']} - {ta['max_text_length']} characters")
-            print(f"  Avg Word Count: {ta['avg_word_count']:.2f} words")
-            print(f"  Word Count Range: {ta['min_word_count']} - {ta['max_word_count']} words")
+            self.log(f"  Total Text Records: {ta['total_text_records']}")
+            self.log(f"  Avg Text Length: {ta['avg_text_length']:.2f} characters")
+            self.log(f"  Text Length Range: {ta['min_text_length']} - {ta['max_text_length']} characters")
+            self.log(f"  Avg Word Count: {ta['avg_word_count']:.2f} words")
+            self.log(f"  Word Count Range: {ta['min_word_count']} - {ta['max_word_count']} words")
     
     def analyze_all_files(self):
         csv_files = list(self.data_path.glob('*.csv'))
         
         if not csv_files:
-            print(f"No CSV files found in {self.data_path}")
+            self.log(f"No CSV files found in {self.data_path}")
             return
         
-        print(f"\nFound {len(csv_files)} CSV files to analyze")
-        print("=" * 60)
+        self.log(f"\nFound {len(csv_files)} CSV files to analyze")
+        self.log("=" * 60)
         
         for csv_file in csv_files:
             analysis = self.analyze_csv_file(csv_file)
@@ -266,8 +265,8 @@ class DataCharacterizer:
 
         final_csv = self.data_path.parent / 'clean' / 'final.csv'
         if final_csv.exists():
-            print(f"\nAnalyzing cleaned dataset: {final_csv.name}")
-            print("=" * 60)
+            self.log(f"\nAnalyzing cleaned dataset: {final_csv.name}")
+            self.log("=" * 60)
             analysis = self.analyze_csv_file(final_csv)
             self.results[final_csv.name] = analysis
             self.print_analysis(analysis)
@@ -279,20 +278,12 @@ def main():
     
     if not data_path.exists():
         print(f"Error: Data path does not exist: {data_path}")
-        return
-    
-    print("\n" + "=" * 80)
-    print("DATA CHARACTERIZATION TOOL")
-    print("=" * 80)
-    print(f"\nAnalyzing data in: {data_path}")
+        return    
     
     characterizer = DataCharacterizer(data_path)
     characterizer.analyze_all_files()
-    
-    print("\n" + "=" * 80)
-    print("ANALYSIS COMPLETE!")
-    print("=" * 80)
 
+    print(f"\nAnalysis complete.")
 
 if __name__ == "__main__":
     main()
