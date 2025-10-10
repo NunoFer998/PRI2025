@@ -1,40 +1,41 @@
 === SYMPTOM DATASET ANALYSIS ===
 
-Total records: 192995
-Unique diseases: 2321
-Unique symptoms: 12567
-Average symptoms per disease: 82.65
+Total records: 189647
+Unique diseases: 773
+Unique symptoms (global): 333
+Average UNIQUE symptoms per disease: 7.07
+Average TOTAL symptom mentions per disease: 1353.16
 
-TOP 10 MOST COMMON DISEASES:
-  pneumonia: 1261 records
-  vulvodynia: 1221 records
-  cystitis: 1220 records
-  nose_disorder: 1220 records
-  complex_regional_pain_syndrome: 1220 records
-  spondylosis: 1218 records
-  vaginal_cyst: 1217 records
-  esophagitis: 1217 records
-  hypoglycemia: 1217 records
-  gastrointestinal_hemorrhage: 1216 records
+TOP 10 MOST COMMON DISEASES (by record count):
+  cystitis: 1219 records
+  nose disorder: 1218 records
+  vulvodynia: 1218 records
+  complex regional pain syndrome: 1217 records
+  spondylosis: 1216 records
+  esophagitis: 1215 records
+  peripheral nerve disorder: 1215 records
+  conjunctivitis due to allergy: 1215 records
+  vaginal cyst: 1215 records
+  hypoglycemia: 1215 records
 
-TOP 20 MOST COMMON SYMPTOMS:
-  sharp abdominal pain: 25170 occurrences
-  vomiting: 22100 occurrences
-  cough: 18922 occurrences
-  headache: 18805 occurrences
-  nausea: 18783 occurrences
-  back pain: 18592 occurrences
-  sharp chest pain: 18367 occurrences
-  fever: 16760 occurrences
-  shortness of breath: 16336 occurrences
-  nasal congestion: 13134 occurrences
-  leg pain: 13118 occurrences
-  dizziness: 12725 occurrences
-  abnormal appearing skin: 12140 occurrences
-  lower abdominal pain: 12123 occurrences
-  skin swelling: 11389 occurrences
-  depressive or psychotic symptoms: 11137 occurrences
-  burning abdominal pain: 11076 occurrences
-  sore throat: 11073 occurrences
-  arm pain: 9902 occurrences
-  skin rash: 9716 occurrences
+TOP 20 MOST COMMON SYMPTOMS (global counts of mentions):
+  sharp abdominal pain: 25152 mentions
+  vomiting: 22018 mentions
+  cough: 18899 mentions
+  headache: 18775 mentions
+  nausea: 18729 mentions
+  back pain: 18578 mentions
+  sharp chest pain: 18354 mentions
+  fever: 16709 mentions
+  shortness of breath: 16295 mentions
+  nasal congestion: 13125 mentions
+  leg pain: 13105 mentions
+  dizziness: 12696 mentions
+  abnormal appearing skin: 12138 mentions
+  lower abdominal pain: 12115 mentions
+  skin swelling: 11384 mentions
+  depressive or psychotic symptoms: 11127 mentions
+  burning abdominal pain: 11068 mentions
+  sore throat: 11061 mentions
+  arm pain: 9893 mentions
+  skin rash: 9713 mentions
