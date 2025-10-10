@@ -2,3 +2,6 @@ csvkit
 pandas
 matplotlib
 seaborn
+polars
+pyarrow
+duckdB
