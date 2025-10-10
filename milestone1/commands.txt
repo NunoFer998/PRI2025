@@ -5,3 +5,5 @@ docker-compose run airflow-worker airflow users create --role Admin --username a
 docker-compose run airflow-worker 
 
 http://localhost:8080/
+
+source airflow-venv/bin/activate
