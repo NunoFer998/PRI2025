@@ -16,9 +16,9 @@ source venv/bin/activate      # or .\venv\Scripts\activate on Windows
 
 ## Makefile Targets
 
-Make sure you are in the `milestone1`directory.
+Make sure you are in the `milestone1` directory.
 
-1. Run all scripts inside the `dags` folder:
+1. Run all scripts inside the `src` folder:
 ```bash
 make all   
 ```
