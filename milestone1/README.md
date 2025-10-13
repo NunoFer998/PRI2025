@@ -42,3 +42,8 @@ make analysis
 ```bash
 make characterization
 ```
+
+6. Create plots and graphics for analysis:
+```bash
+make plots
+```

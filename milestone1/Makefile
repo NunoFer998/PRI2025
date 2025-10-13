@@ -2,8 +2,7 @@ PYTHON := python
 
 .DEFAULT_GOAL := all
 
-all: 
-	@echo Running all scripts...
+all: prepare_and_clean json analysis characterization plots
 	@echo All scripts finished successfully.
 
 prepare_and_clean:
@@ -25,3 +24,8 @@ characterization:
 	@echo Analysing all the datasets...
 	$(PYTHON) src/data_characterization.py
 	@echo Characterization done.
+
+plots: 
+	@echo Creating plots and graphics...
+	$(PYTHON) src/visualize.py
+	@echo Plots created

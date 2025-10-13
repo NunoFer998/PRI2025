@@ -2639,7 +2639,7 @@
             "Treatment depends on the type and extent of organ damage"
         ],
         "sources": [],
-        "contagious": false,
+        "contagious": true,
         "chronic": false
     },
     "amyotrophic_lateral_sclerosis_(als)": {
@@ -10953,8 +10953,8 @@
             "swelling"
         ],
         "treatments": [
-            "Physical therapy, medications, nerve blocks",
-            "Medications (such as pain relievers, corticosteroids, anticonvulsants), physical therapy, sympathetic nerve blocks, spinal cord stimulation, occupational therapy, mirror therapy, psychotherapy, graded motor imagery, stress management techniques"
+            "Medications (such as pain relievers, corticosteroids, anticonvulsants), physical therapy, sympathetic nerve blocks, spinal cord stimulation, occupational therapy, mirror therapy, psychotherapy, graded motor imagery, stress management techniques",
+            "Physical therapy, medications, nerve blocks"
         ],
         "sources": [],
         "contagious": false,
@@ -13363,8 +13363,8 @@
         "sources": [
             "https://medlineplus.gov/ency/article/001374.htm"
         ],
-        "contagious": true,
-        "chronic": true
+        "contagious": false,
+        "chronic": false
     },
     "dental_caries": {
         "symptoms": [
@@ -14824,7 +14824,7 @@
             "https://medlineplus.gov/ency/article/007668.htm"
         ],
         "contagious": false,
-        "chronic": true
+        "chronic": false
     },
     "donovanosis_(granuloma_inguinale)": {
         "symptoms": [
@@ -16325,7 +16325,7 @@
         "sources": [
             "https://medlineplus.gov/ency/article/000123.htm"
         ],
-        "contagious": true,
+        "contagious": false,
         "chronic": false
     },
     "encephalitis": {
@@ -18827,8 +18827,8 @@
             "Observation and monitoring (for small, smooth, and non-sharp objects that are likely to pass through the digestive tract without complications), endoscopic removal (using a flexible tube with a camera to locate and remove the foreign body), surgical intervention (in cases of severe complications, large or sharp objects, or failed endoscopic removal attempts), supportive care (such as intravenous fluids, pain management, and antibiotics if infection is present), imaging studies (such as X-rays or CT scans) to evaluate the location and extent of the foreign body, consultation with a gastroenterologist or surgeon for appropriate management"
         ],
         "sources": [],
-        "contagious": true,
-        "chronic": true
+        "contagious": false,
+        "chronic": false
     },
     "foreign_body_in_the_nose": {
         "symptoms": [
@@ -20726,8 +20726,8 @@
             "Hormone replacement therapy with glucocorticoid medications"
         ],
         "sources": [],
-        "contagious": false,
-        "chronic": false
+        "contagious": true,
+        "chronic": true
     },
     "glucose-6-phosphate_dehydrogenase_deficiency": {
         "symptoms": [
@@ -22229,7 +22229,7 @@
         ],
         "sources": [],
         "contagious": false,
-        "chronic": true
+        "chronic": false
     },
     "hepatic_ischemia": {
         "symptoms": [
@@ -22936,7 +22936,7 @@
             "https://medlineplus.gov/ency/article/001140.htm"
         ],
         "contagious": false,
-        "chronic": true
+        "chronic": false
     },
     "hirsutism": {
         "symptoms": [
@@ -23860,8 +23860,8 @@
         "sources": [
             "https://medlineplus.gov/ency/article/000365.htm"
         ],
-        "contagious": false,
-        "chronic": false
+        "contagious": true,
+        "chronic": true
     },
     "hypercholesterolemia": {
         "symptoms": [
@@ -23929,7 +23929,7 @@
         ],
         "sources": [],
         "contagious": false,
-        "chronic": true
+        "chronic": false
     },
     "hyperhidrosis": {
         "symptoms": [
@@ -24278,8 +24278,8 @@
             "Medications to relieve symptoms and improve heart function (such as beta-blockers, calcium channel blockers, and disopyramide), medications to prevent abnormal heart rhythms (such as anti-arrhythmic drugs), medications to reduce blood clotting (such as aspirin or anticoagulants), implantable cardioverter-defibrillator (ICD) placement (to monitor and correct abnormal heart rhythms), septal myectomy (surgical removal of a portion of the thickened heart muscle), alcohol septal ablation (destruction of excess heart muscle with alcohol injection), lifestyle modifications (such as avoiding strenuous activities, managing stress, and maintaining a healthy weight), regular follow-up visits with a cardiologist"
         ],
         "sources": [],
-        "contagious": true,
-        "chronic": true
+        "contagious": false,
+        "chronic": false
     },
     "hypervitaminosis_a": {
         "symptoms": [
@@ -26191,8 +26191,8 @@
             "Dietary modifications (specific to the underlying cause), supplementation of deficient nutrients, medications (to manage symptoms or underlying condition), treatment of underlying cause"
         ],
         "sources": [],
-        "contagious": false,
-        "chronic": false
+        "contagious": true,
+        "chronic": true
     },
     "intestinal_obstruction": {
         "symptoms": [
@@ -26933,8 +26933,8 @@
             "Medications (NSAIDs, DMARDs), physical therapy, occupational therapy, exercise, assistive devices"
         ],
         "sources": [],
-        "contagious": true,
-        "chronic": true
+        "contagious": false,
+        "chronic": false
     },
     "kaposi_sarcoma": {
         "symptoms": [
@@ -27749,8 +27749,8 @@
         "sources": [
             "https://medlineplus.gov/ency/article/002473.htm"
         ],
-        "contagious": false,
-        "chronic": false
+        "contagious": true,
+        "chronic": true
     },
     "legg-calve-perthes_disease": {
         "symptoms": [
@@ -27896,8 +27896,8 @@
             "Chemotherapy, radiation therapy, stem cell transplant, targeted therapy, supportive care"
         ],
         "sources": [],
-        "contagious": false,
-        "chronic": false
+        "contagious": true,
+        "chronic": true
     },
     "leukoplakia": {
         "symptoms": [
@@ -31842,8 +31842,8 @@
         "sources": [
             "https://medlineplus.gov/ency/article/007716.htm"
         ],
-        "contagious": false,
-        "chronic": false
+        "contagious": true,
+        "chronic": true
     },
     "myelofibrosis": {
         "symptoms": [
@@ -33357,8 +33357,8 @@
             "Lifestyle changes (weight loss, healthy diet, regular exercise), management of underlying conditions, medication as needed"
         ],
         "sources": [],
-        "contagious": true,
-        "chronic": true
+        "contagious": false,
+        "chronic": false
     },
     "nonallergic_rhinopathy": {
         "symptoms": [
@@ -34851,7 +34851,7 @@
             "https://medlineplus.gov/ency/article/001036.htm"
         ],
         "contagious": false,
-        "chronic": false
+        "chronic": true
     },
     "ovarian_cancer": {
         "symptoms": [
@@ -41804,7 +41804,7 @@
             "https://medlineplus.gov/ency/article/001539.htm"
         ],
         "contagious": false,
-        "chronic": true
+        "chronic": false
     },
     "ruptured_eardrum": {
         "symptoms": [
@@ -42279,9 +42279,9 @@
             "â especially if caused by a herniated disk"
         ],
         "treatments": [
-            "Pain medications, physical therapy, stretching exercises",
             "Rest, gentle stretching exercises, warm or cold compresses, prenatal massages, maintaining good posture, avoiding activities that worsen the pain",
-            "Pain relievers, physical therapy, exercise"
+            "Pain relievers, physical therapy, exercise",
+            "Pain medications, physical therapy, stretching exercises"
         ],
         "sources": [
             "https://medlineplus.gov/ency/article/000686.htm"
@@ -42542,7 +42542,7 @@
             "Vitamin C supplementation, dietary changes, oral hygiene maintenance"
         ],
         "sources": [],
-        "contagious": true,
+        "contagious": false,
         "chronic": false
     },
     "seasonal_affective_disorder": {
@@ -45889,7 +45889,7 @@
         ],
         "sources": [],
         "contagious": false,
-        "chronic": false
+        "chronic": true
     },
     "syphilis": {
         "symptoms": [
@@ -45935,7 +45935,7 @@
         "sources": [
             "https://medlineplus.gov/ency/article/000861.htm"
         ],
-        "contagious": false,
+        "contagious": true,
         "chronic": false
     },
     "syphilitic_aseptic_meningitis": {
@@ -48316,8 +48316,8 @@
             "antibiotics, long-term medication"
         ],
         "sources": [],
-        "contagious": true,
-        "chronic": true
+        "contagious": false,
+        "chronic": false
     },
     "tuberous_sclerosis": {
         "symptoms": [
@@ -48349,7 +48349,7 @@
             "https://medlineplus.gov/ency/article/000787.htm"
         ],
         "contagious": false,
-        "chronic": true
+        "chronic": false
     },
     "tularemia": {
         "symptoms": [
@@ -48524,8 +48524,8 @@
         "sources": [
             "https://medlineplus.gov/ency/article/000313.htm"
         ],
-        "contagious": true,
-        "chronic": true
+        "contagious": false,
+        "chronic": false
     },
     "type_2_diabetes_-_self-care": {
         "symptoms": [
@@ -48954,8 +48954,8 @@
             "pelvic pain"
         ],
         "treatments": [
-            "Antibiotics, increased fluid intake, pain relievers",
-            "Antibiotics safe for pregnancy, increased fluid intake, maintaining good hygiene, urine culture and sensitivity testing to guide antibiotic selection"
+            "Antibiotics safe for pregnancy, increased fluid intake, maintaining good hygiene, urine culture and sensitivity testing to guide antibiotic selection",
+            "Antibiotics, increased fluid intake, pain relievers"
         ],
         "sources": [],
         "contagious": false,
@@ -49998,8 +49998,8 @@
             "Voice Rest, Speech Therapy, Surgical Removal"
         ],
         "sources": [],
-        "contagious": true,
-        "chronic": true
+        "contagious": false,
+        "chronic": false
     },
     "volkmann_contracture": {
         "symptoms": [
