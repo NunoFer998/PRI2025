@@ -8,7 +8,6 @@ milestone1/logs/
 logs/
 
 # Data folders (intermediate results)
-milestone1/data/clean/
 milestone1/data/prepared/
 milestone1/data/alternative/
 milestone1/data/characterization_results/
