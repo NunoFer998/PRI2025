@@ -5,35 +5,27 @@ import os
 
 
 def parse_symptoms(cell):
-    """
-    Turn a cell like "fever, cough, sore throat" into a list of normalized symptoms.
-    Normalization: strip whitespace, lowercase; ignores empty / NaN cells.
-    """
     if pd.isna(cell):
         return []
     cell = str(cell).strip()
     if cell == "":
         return []
     parts = [p.strip().lower() for p in cell.split(',')]
-    # filter empties
     return [p for p in parts if p]
 
 def create_summary_analysis(df, summary_file, plots_dir):
-    # --- Global symptom counts (total mentions across dataset) ---
     all_symptoms = []
     for s in df['symptoms']:
         all_symptoms.extend(parse_symptoms(s))
     symptom_counts_total = pd.Series(all_symptoms).value_counts()
 
-    # --- Disease-level aggregations ---
-    # Unique symptoms per disease (deduplicated across rows)
     def unique_symptoms_for_series(series):
         union_set = set()
         for cell in series:
             union_set.update(parse_symptoms(cell))
         return union_set
 
-    disease_symptom_sets = df.groupby('disease')['symptoms'].apply(unique_symptoms_for_series)
+    disease_symptom_sets = df.groupby('name')['symptoms'].apply(unique_symptoms_for_series)
     unique_symptom_counts = disease_symptom_sets.apply(len)  # number of unique symptoms per disease
 
     # Total symptom mentions per disease (count repeats)
@@ -43,20 +35,18 @@ def create_summary_analysis(df, summary_file, plots_dir):
             total += len(parse_symptoms(cell))
         return total
 
-    total_mention_counts = df.groupby('disease')['symptoms'].apply(total_mentions_for_series)
+    total_mention_counts = df.groupby('name')['symptoms'].apply(total_mentions_for_series)
 
-    # --- Basic summary stats ---
     summary_data = {
         'total_records': len(df),
-        'unique_diseases': df['disease'].nunique(),
+        'unique_diseases': df['name'].nunique(),
         'unique_symptoms_global': len(symptom_counts_total),
         'avg_unique_symptoms_per_disease': unique_symptom_counts.mean() if len(unique_symptom_counts) > 0 else 0.0,
         'avg_total_symptom_mentions_per_disease': total_mention_counts.mean() if len(total_mention_counts) > 0 else 0.0,
-        'most_common_diseases': df['disease'].value_counts().head(10).to_dict(),
+        'most_common_diseases': df['name'].value_counts().head(10).to_dict(),
         'most_common_symptoms_global': symptom_counts_total.head(20).to_dict()
     }
 
-    # --- Write summary file ---
     with open(summary_file, 'w', encoding='utf-8') as f:
         f.write("=== SYMPTOM DATASET ANALYSIS ===\n\n")
         f.write(f"Total records: {summary_data['total_records']}\n")
@@ -75,10 +65,10 @@ def create_summary_analysis(df, summary_file, plots_dir):
 
     print(f"Summary analysis saved to: {summary_file}")
 
-    # --- Ensure plots directory exists ---
+    # Plots
     os.makedirs(plots_dir, exist_ok=True)
 
-    # --- Plot 1: Top 10 Diseases (by record count) ---
+    # Top 10 Diseases (by record count)
     plt.figure(figsize=(10, 6))
     pd.Series(summary_data['most_common_diseases']).sort_values(ascending=False).plot(kind='bar', edgecolor='black')
     plt.title("Top 10 Most Common Diseases (by records)")
@@ -91,7 +81,7 @@ def create_summary_analysis(df, summary_file, plots_dir):
     plt.close()
     print(f"Saved: {disease_plot_path}")
 
-    # --- Plot 2: Top 20 Symptoms (global mentions) ---
+    # Top 20 Symptoms 
     plt.figure(figsize=(10, 8))
     symptom_counts_total.head(20).sort_values().plot(kind='barh', edgecolor='black')  # sort for nicer H-bar order
     plt.title("Top 20 Most Common Symptoms (global mentions)")
@@ -103,9 +93,9 @@ def create_summary_analysis(df, summary_file, plots_dir):
     plt.close()
     print(f"Saved: {symptom_plot_path}")
 
-    # --- Plot 3: Line graph of UNIQUE symptoms per disease ---
+    # Line graph of UNIQUE symptoms per disease 
     plt.figure(figsize=(12, 6))
-    # Sort by unique symptom counts for a nicer line
+    # Sort by unique symptom counts 
     sorted_counts = unique_symptom_counts.sort_values().reset_index(drop=True)
     plt.plot(sorted_counts, marker='o', linestyle='-', color='blue', markersize=4)
     plt.title("Unique Symptom Counts per Disease (Line Graph)")
@@ -118,7 +108,6 @@ def create_summary_analysis(df, summary_file, plots_dir):
     plt.close()
     print(f"Saved: {line_plot_path}")
 
-    # (optional) also save total-mentions-per-disease histogram for comparison
     plt.figure(figsize=(10, 6))
     total_mention_counts.plot(kind='hist', bins=20, edgecolor='black')
     plt.title("Distribution of TOTAL Symptom Mentions per Disease")
@@ -131,21 +120,8 @@ def create_summary_analysis(df, summary_file, plots_dir):
     print(f"Saved: {total_hist_path}")
 
 if __name__ == "__main__":
-    if len(sys.argv) < 3:
-        print("Usage: python summary_analysis.py <input_csv> <output_txt>")
-        sys.exit(1)
-
     path = "data/final"
-    input_file = sys.argv[1]
-    output_file = sys.argv[2]
-    input_csv = os.path.join("", input_file)
-    output_txt = os.path.join(path, output_file)
     plots_dir = os.path.join(path, "plots")
 
-    ##if not os.path.isfile(input_csv):
-      ##  print(f"Error: File '{input_csv}' does not exist.")
-        ##print("Make sure the file is inside 'data/final'.")
-        ##sys.exit(1)
-
-    df = pd.read_csv(input_csv)
-    create_summary_analysis(df, output_txt, plots_dir)
+    df = pd.read_csv("data/final/merged_disease_symptom_list.csv")
+    create_summary_analysis(df, "data/final/analysis.txt", plots_dir)
