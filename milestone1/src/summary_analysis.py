@@ -75,6 +75,7 @@ def create_summary_analysis(df, summary_file, plots_dir):
     plt.xlabel("Disease")
     plt.ylabel("Record count")
     plt.xticks(rotation=45, ha='right')
+    plt.yscale('log')
     plt.tight_layout()
     disease_plot_path = os.path.join(plots_dir, "disease_counts.png")
     plt.savefig(disease_plot_path)
