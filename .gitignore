@@ -1,4 +1,6 @@
 milestone1/data/original/Final_Augmented_dataset_Diseases_and_Symptoms.csv
+milestone1/data/clean/Final_Augmented_dataset_Diseases_and_Symptoms.csv
+
 venv
 milestone1/airflow-venv
 __pycache__/
@@ -8,7 +10,6 @@ milestone1/logs/
 logs/
 
 # Data folders (intermediate results)
-milestone1/data/clean/
 milestone1/data/prepared/
 milestone1/data/alternative/
 milestone1/data/characterization_results/
