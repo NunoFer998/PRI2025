@@ -21,6 +21,25 @@ def create_treatments_wordcloud(df, plots_path):
     plots_path = os.path.join(plots_dir, "treatments_wordcloud.png")
     wordcloud.to_file(plots_path)
     print(f"Word cloud saved as 'treatments_wordcloud.png' in {plots_path} directory.")
+
+# creates a wordcloud for the symptoms
+def create_symptoms_wordcloud(df, plots_path):
+    text = " ".join(df["symptoms"].dropna().astype(str))
+    wordcloud = WordCloud(
+        width=600,
+        height=600,
+        background_color="white",
+        colormap="prism",
+        max_words=150
+    ).generate(text)
+    plt.figure(figsize=(12, 8))
+    plt.imshow(wordcloud, interpolation="bilinear")
+    plt.axis("off")
+    plt.title("Word Cloud of Symptoms", fontsize=15, pad=30)
+    plots_path = os.path.join(plots_dir, "symptoms_wordcloud.png")
+    wordcloud.to_file(plots_path)
+    print(f"Word cloud saved as 'symptoms_wordcloud.png' in {plots_path} directory.")
+
  
 
 # creates a plot showing the top 10 most common diseases
@@ -93,6 +112,7 @@ if __name__ == "__main__":
     
     symptom_counts_total, summary_data, unique_symptom_counts, total_mention_counts = create_summary_analysis(df, "data/final/analysis.txt", plots_dir)
     create_treatments_wordcloud(df, plots_dir)
+    create_symptoms_wordcloud(df, plots_dir)
     top_10_diseases_plot(summary_data, plots_dir)
     top_20_symptoms_plot(symptom_counts_total, plots_dir)
     unique_symptoms_per_disease(unique_symptom_counts, plots_dir)
