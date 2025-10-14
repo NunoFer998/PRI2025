@@ -86,7 +86,7 @@ def symptom_mentions_per_disease(var, path):
 
 if __name__ == "__main__":
 
-    path = "data/final"
+    path = "imgs"
     plots_dir = os.path.join(path, "plots")
     os.makedirs(plots_dir, exist_ok=True)
     df = pd.read_csv("data/final/merged_disease_symptom_list.csv")
