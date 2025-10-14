@@ -7,6 +7,7 @@ import os
 import shutil
 import polars as pl
 import duckdb
+from nlp_processor import extract_symptoms
 from pathlib import Path
 
 
@@ -220,6 +221,7 @@ def prepare_diseases_with_symptoms_task(**kwargs):
 def prepare_patient_reports_task(**kwargs):
     """
     Task 2: Prepare disease-symptom list from cleaned datasets
+    Apply NLP processing to extract symptoms from patient report text
     Save final dataset to final folder
     """
     print("=" * 60)
@@ -239,13 +241,38 @@ def prepare_patient_reports_task(**kwargs):
     
     csv_file = add_col_to_df(csv_file)
 
+    count = 0
+    updated_rows = []
+
+    for row in csv_file.iter_rows(named=True):
+        print(f"{count} out of 1200", end='\r')
+        description = row['description']
+
+        if description and isinstance(description, str) and description.strip():
+            symptoms = extract_symptoms(description)
+            symptoms_str = ', '.join(symptoms)
+            print(f"Extracted symptoms: {symptoms_str}")
+        else:
+            symptoms_str = ""
+
+        # Save the updated row (don't modify csv_file here)
+        updated_rows.append({
+            **row,
+            'symptoms': symptoms_str
+        })
+
+        count += 1
+
+    # After the loop, create a new DataFrame once
+    csv_file = pl.DataFrame(updated_rows)
     final_file_path = paths['prepared'] / 'patient_reports.csv'
     csv_file.write_csv(final_file_path)
-    print(f"✓ Final dataset saved: {final_file_path}")
+    print(f"\n✓ Final dataset saved: {final_file_path}")
+    print(f"  Total reports processed: {csv_file.height}")
 
     return {
         'final_file': str(final_file_path),
-        'status': 'disease_symptom_list_prepared'
+        'status': 'patient_reports_prepared'
     }
 
 def prepare_train_0000_of_0001_task(**kwargs):
