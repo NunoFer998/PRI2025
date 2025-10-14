@@ -1,8 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import sys
 import os
-
 
 def parse_symptoms(cell):
     if pd.isna(cell):
@@ -64,61 +62,7 @@ def create_summary_analysis(df, summary_file, plots_dir):
             f.write(f"  {symptom}: {count} mentions\n")
 
     print(f"Summary analysis saved to: {summary_file}")
-
-    # Plots
-    os.makedirs(plots_dir, exist_ok=True)
-
-    # Top 10 Diseases (by record count)
-    plt.figure(figsize=(10, 6))
-    pd.Series(summary_data['most_common_diseases']).sort_values(ascending=False).plot(kind='bar', edgecolor='black')
-    plt.title("Top 10 Most Common Diseases (by records)")
-    plt.xlabel("Disease")
-    plt.ylabel("Record count")
-    plt.xticks(rotation=45, ha='right')
-    plt.yscale('log')
-    plt.tight_layout()
-    disease_plot_path = os.path.join(plots_dir, "disease_counts.png")
-    plt.savefig(disease_plot_path)
-    plt.close()
-    print(f"Saved: {disease_plot_path}")
-
-    # Top 20 Symptoms 
-    plt.figure(figsize=(10, 8))
-    symptom_counts_total.head(20).sort_values().plot(kind='barh', edgecolor='black')  # sort for nicer H-bar order
-    plt.title("Top 20 Most Common Symptoms (global mentions)")
-    plt.xlabel("Mentions")
-    plt.ylabel("Symptom")
-    plt.tight_layout()
-    symptom_plot_path = os.path.join(plots_dir, "symptom_counts.png")
-    plt.savefig(symptom_plot_path)
-    plt.close()
-    print(f"Saved: {symptom_plot_path}")
-
-    # Line graph of UNIQUE symptoms per disease 
-    plt.figure(figsize=(12, 6))
-    # Sort by unique symptom counts 
-    sorted_counts = unique_symptom_counts.sort_values().reset_index(drop=True)
-    plt.plot(sorted_counts, marker='o', linestyle='-', color='blue', markersize=4)
-    plt.title("Unique Symptom Counts per Disease (Line Graph)")
-    plt.xlabel("Disease Index (sorted by unique symptom count)")
-    plt.ylabel("Number of UNIQUE symptoms")
-    plt.grid(True, linestyle='--', alpha=0.5)
-    plt.tight_layout()
-    line_plot_path = os.path.join(plots_dir, "unique_symptoms_per_disease_line.png")
-    plt.savefig(line_plot_path)
-    plt.close()
-    print(f"Saved: {line_plot_path}")
-
-    plt.figure(figsize=(10, 6))
-    total_mention_counts.plot(kind='hist', bins=20, edgecolor='black')
-    plt.title("Distribution of TOTAL Symptom Mentions per Disease")
-    plt.xlabel("Total symptom mentions")
-    plt.ylabel("Number of diseases")
-    plt.tight_layout()
-    total_hist_path = os.path.join(plots_dir, "total_mentions_per_disease_distribution.png")
-    plt.savefig(total_hist_path)
-    plt.close()
-    print(f"Saved: {total_hist_path}")
+    return symptom_counts_total, summary_data, unique_symptom_counts, total_mention_counts
 
 if __name__ == "__main__":
     path = "data/final"

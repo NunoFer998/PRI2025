@@ -9,14 +9,14 @@ Average TOTAL symptom mentions per disease: 460.96
 TOP 10 MOST COMMON DISEASES (by record count):
   pneumonia: 1261 records
   vulvodynia: 1221 records
-  complex_regional_pain_syndrome: 1220 records
-  nose_disorder: 1220 records
   cystitis: 1220 records
+  nose_disorder: 1220 records
+  complex_regional_pain_syndrome: 1220 records
   spondylosis: 1218 records
-  hypoglycemia: 1217 records
-  esophagitis: 1217 records
   vaginal_cyst: 1217 records
-  conjunctivitis_due_to_allergy: 1216 records
+  esophagitis: 1217 records
+  hypoglycemia: 1217 records
+  gastrointestinal_hemorrhage: 1216 records
 
 TOP 20 MOST COMMON SYMPTOMS (global counts of mentions):
   sharp abdominal pain: 25170 mentions

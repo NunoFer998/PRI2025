@@ -27,5 +27,5 @@ characterization:
 
 plots: 
 	@echo Creating plots and graphics...
-	$(PYTHON) src/visualize.py
+	$(PYTHON) src/plots.py
 	@echo Plots created
