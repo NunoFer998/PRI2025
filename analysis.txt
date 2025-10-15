@@ -1,0 +1,135 @@
+=== Dataset Info ===
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 192995 entries, 0 to 192994
+Data columns (total 7 columns):
+ #   Column       Non-Null Count   Dtype  
+---  ------       --------------   -----  
+ 0   name         192995 non-null  object 
+ 1   symptoms     192942 non-null  object 
+ 2   description  2866 non-null    object 
+ 3   treatments   404 non-null     object 
+ 4   contagious   404 non-null     float64
+ 5   chronic      404 non-null     float64
+ 6   url          1713 non-null    object 
+dtypes: float64(2), object(5)
+memory usage: 10.3+ MB
+
+=== First 5 Rows ===
+                        name                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   symptoms                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  description treatments  contagious  chronic                                              url
+0           aarskog_syndrome  Mildly sunken chest (pectus excavatum) ,  Testicles that have not come down (undescended) ,  Mild to moderate cognitive problems ,  Belly button that sticks out ,  Top portion of the ear folded over slightly ,  Bulge in the groin or scrotum ,  Small nose with nostrils tipped forward ,  Single crease in the palm of the hand ,  Wide-set eyes with droopy eyelids ,  Poorly developed middle section of the face ,  Wide groove above the upper lip, crease below the lower lip ,  Mild to moderate short height which may not be obvious until the child is 1 to 3 years old ,  Small, broad hands and feet with short fingers and curved-in fifth finger ,  Short fingers and toes with mild webbing ,  Delayed teeth ,  Scrotum surrounds the penis (shawl scrotum) ,  Hairline with a "widow's peak" ,  Delayed sexual maturity ,  Rounded face ,  Downward palpebral slant to eyes (palpebral slant is the direction of the slant from the inner to outer corner of the eye)  I've been noticing some unusual physical characteristics in myself, including a mildly sunken chest and undescended testicles. Additionally, I've been experiencing mild to moderate cognitive problems. I've also observed some distinct facial features, such as a belly button that sticks out, a top portion of the ear that's folded over slightly, and a small nose with nostrils tipped forward. My eyes are wide-set with droopy eyelids, and I have a poorly developed middle section of the face. I've also noticed a wide groove above my upper lip and a crease below my lower lip. Furthermore, my hands and feet are small and broad with short fingers and curved-in fifth fingers, and my toes are short with mild webbing. I've also had delayed teeth and a scrotum that surrounds my penis, giving it a "shawl scrotum" appearance. My hairline has a "widow's peak" shape, and I've experienced delayed sexual maturity. Overall, I have a rounded face with a downward palpebral slant to my eyes, and I'm slightly shorter than average, which wasn't noticeable until I was around 1 to 3 years old.        NaN         NaN      NaN  https://medlineplus.gov/ency/article/001654.htm
+1              aase_syndrome                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Narrow shoulders ,  Droopy eyelids ,  Absent or small knuckles ,  Deformed ears ,  Pale skin ,  Triple-jointed thumbs ,  Cleft palate ,  Inability to fully extend the joints from birth                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     I've been aware of some unusual physical characteristics that have been concerning me, including my narrow shoulders, droopy eyelids, and absent or small knuckles. Additionally, my ears are deformed, and my skin is quite pale. I've also noticed that I have triple-jointed thumbs, which is quite unusual. Furthermore, I was born with a cleft palate, and I've struggled with an inability to fully extend my joints since birth.        NaN         NaN      NaN  https://medlineplus.gov/ency/article/001662.htm
+2  abdominal_aortic_aneurysm                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      sharp abdominal pain, arm swelling, back pain, burning abdominal pain                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          NaN        NaN         NaN      NaN                                              NaN
+3  abdominal_aortic_aneurysm                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          shortness of breath, sharp abdominal pain, burning abdominal pain                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          NaN        NaN         NaN      NaN                                              NaN
+4  abdominal_aortic_aneurysm                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         shortness of breath, sharp abdominal pain, arm swelling, back pain                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          NaN        NaN         NaN      NaN                                              NaN
+
+=== Column-wise Summary ===
+
+Column: name
+--------------------------------------------------
+Data type: object
+Missing values: 0
+Unique values: 2321
+Top 5 frequent values:
+name
+pneumonia                         1261
+vulvodynia                        1221
+cystitis                          1220
+nose_disorder                     1220
+complex_regional_pain_syndrome    1220
+
+Column: symptoms
+--------------------------------------------------
+Data type: object
+Missing values: 53
+Unique values: 173032
+Top 5 frequent values:
+symptoms
+sharp abdominal pain                     26
+shortness of breath, sharp chest pain    24
+sharp abdominal pain, nausea             22
+vomiting, nausea                         21
+cough, nasal congestion                  20
+
+Column: description
+--------------------------------------------------
+Data type: object
+Missing values: 190129
+Unique values: 2866
+Top 5 frequent values:
+description
+I've been experiencing some disturbing gastrointestinal symptoms lately, including diarrhea and occasional vomiting blood, which is really alarming me. Along with this, I've been struggling with severe esophageal reflux symptoms, which are making my life miserable. To make matters worse, I've been dealing with persistent abdominal pain that's been really uncomfortable.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            1
+I've been noticing some unusual physical characteristics in myself, including a mildly sunken chest and undescended testicles. Additionally, I've been experiencing mild to moderate cognitive problems. I've also observed some distinct facial features, such as a belly button that sticks out, a top portion of the ear that's folded over slightly, and a small nose with nostrils tipped forward. My eyes are wide-set with droopy eyelids, and I have a poorly developed middle section of the face. I've also noticed a wide groove above my upper lip and a crease below my lower lip. Furthermore, my hands and feet are small and broad with short fingers and curved-in fifth fingers, and my toes are short with mild webbing. I've also had delayed teeth and a scrotum that surrounds my penis, giving it a "shawl scrotum" appearance. My hairline has a "widow's peak" shape, and I've experienced delayed sexual maturity. Overall, I have a rounded face with a downward palpebral slant to my eyes, and I'm slightly shorter than average, which wasn't noticeable until I was around 1 to 3 years old.    1
+I've been aware of some unusual physical characteristics that have been concerning me, including my narrow shoulders, droopy eyelids, and absent or small knuckles. Additionally, my ears are deformed, and my skin is quite pale. I've also noticed that I have triple-jointed thumbs, which is quite unusual. Furthermore, I was born with a cleft palate, and I've struggled with an inability to fully extend my joints since birth.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       1
+I've been experiencing some alarming symptoms lately, including passing out and frequent dizziness. I have severe, sudden, and persistent pain in my abdomen or back that sometimes spreads to my groin, buttocks, or legs. I've also been dealing with nausea and vomiting. Additionally, I've noticed signs of shock, such as clammy skin and a rapid heart rate.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            1
+I've been experiencing some concerning symptoms related to my menstrual cycle, including tenderness and dryness of the vagina, as well as heavier bleeding, which has led to me passing large clots, needing to change my protection during the night, and soaking through a sanitary pad or tampon every hour for 2 to 3 hours in a row. Along with these physical symptoms, I've also been experiencing mood swings. My periods have become irregular, occurring less than 28 days apart or more than 35 days apart, and I've noticed bleeding or spotting from the vagina between periods. Additionally, I've developed excessive growth of body hair in a male pattern, which is quite distressing. I've also been experiencing hot flashes, and my bleeding has been lasting for more days than normal, often exceeding 7 days. To make matters more complicated, the time between my periods has been changing each month, making it difficult for me to predict when my next period will be.                                                                                                                            1
+
+Column: treatments
+--------------------------------------------------
+Data type: object
+Missing values: 192591
+Unique values: 391
+Top 5 frequent values:
+treatments
+Hydration,Saliva stimulation, Stone removal                                                                                                                                                                                                                                                   4
+Eye drops to lower intraocular pressure (e.g., prostaglandin analogs, beta blockers, alpha agonists, carbonic anhydrase inhibitors), oral medications (e.g., carbonic anhydrase inhibitors), laser trabeculoplasty, surgical procedures (e.g., trabeculectomy, glaucoma drainage implants)    3
+Surgery, Radiation therapy                                                                                                                                                                                                                                                                    3
+Surgical excision                                                                                                                                                                                                                                                                             2
+Lifestyle changes, medications (antacids, proton pump inhibitors)                                                                                                                                                                                                                             2
+
+Column: contagious
+--------------------------------------------------
+Data type: float64
+Missing values: 192591
+Unique values: 2
+Numeric Summary:
+count    404.000000
+mean       0.279703
+std        0.449410
+min        0.000000
+25%        0.000000
+50%        0.000000
+75%        1.000000
+max        1.000000
+
+Column: chronic
+--------------------------------------------------
+Data type: float64
+Missing values: 192591
+Unique values: 2
+Numeric Summary:
+count    404.000000
+mean       0.727723
+std        0.445684
+min        0.000000
+25%        0.000000
+50%        1.000000
+75%        1.000000
+max        1.000000
+
+Column: url
+--------------------------------------------------
+Data type: object
+Missing values: 191282
+Unique values: 1713
+Top 5 frequent values:
+url
+https://medlineplus.gov/ency/article/000325.htm    1
+https://medlineplus.gov/ency/article/001654.htm    1
+https://medlineplus.gov/ency/article/001662.htm    1
+https://medlineplus.gov/ency/article/000162.htm    1
+https://medlineplus.gov/ency/article/000903.htm    1
+
+=== Symptoms Analysis ===
+Total unique symptoms: 13140
+Top 10 most common symptoms:
+symptoms
+sharp abdominal pain    25170
+vomiting                22122
+cough                   18959
+headache                18921
+nausea                  18835
+back pain               18592
+sharp chest pain        18367
+fever                   16891
+shortness of breath     16345
+nasal congestion        13137

@@ -31,3 +31,11 @@ unittests.cfg
 *.swp
 *.swo
 *~
+
+# Data files except original folder
+milestone1/data/clean/
+milestone1/data/prepared/
+milestone1/data/alternative/
+milestone1/data/characterization_results/
+milestone1/data/final/
+
