@@ -2,9 +2,9 @@
 
 Total records: 192995
 Unique diseases: 2321
-Unique symptoms (global): 11998
-Average UNIQUE symptoms per disease: 12.17
-Average TOTAL symptom mentions per disease: 460.96
+Unique symptoms (global): 12533
+Average UNIQUE symptoms per disease: 12.66
+Average TOTAL symptom mentions per disease: 462.42
 
 TOP 10 MOST COMMON DISEASES (by record count):
   pneumonia: 1261 records
@@ -20,22 +20,22 @@ TOP 10 MOST COMMON DISEASES (by record count):
 
 TOP 20 MOST COMMON SYMPTOMS (global counts of mentions):
   sharp abdominal pain: 25170 mentions
-  vomiting: 22267 mentions
-  headache: 19041 mentions
-  cough: 19028 mentions
-  nausea: 18910 mentions
+  vomiting: 22289 mentions
+  headache: 19157 mentions
+  cough: 19065 mentions
+  nausea: 18962 mentions
   back pain: 18603 mentions
   sharp chest pain: 18367 mentions
-  fever: 16982 mentions
-  shortness of breath: 16477 mentions
-  nasal congestion: 13148 mentions
+  fever: 17113 mentions
+  shortness of breath: 16486 mentions
+  nasal congestion: 13151 mentions
   leg pain: 13123 mentions
-  dizziness: 12854 mentions
+  dizziness: 12879 mentions
   abnormal appearing skin: 12140 mentions
   lower abdominal pain: 12124 mentions
   skin swelling: 11389 mentions
   depressive or psychotic symptoms: 11137 mentions
-  sore throat: 11115 mentions
+  sore throat: 11119 mentions
   burning abdominal pain: 11076 mentions
   arm pain: 9903 mentions
   skin rash: 9729 mentions

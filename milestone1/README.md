@@ -4,7 +4,12 @@ If it's your first time using the virtual environment run:
 
 ```bash
 python -m venv venv
+
+# if you are not running the PowerShell as Administrator, run this first:
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
 source venv/bin/activate      # or .\venv\Scripts\activate on Windows
+
 pip install -r requirements.txt
 ```
 
@@ -12,6 +17,13 @@ If not, just run:
 
 ```bash
 source venv/bin/activate      # or .\venv\Scripts\activate on Windows
+```
+
+
+To leave the virtual environment:
+
+```bash
+deactivate
 ```
 
 ## Makefile Targets
