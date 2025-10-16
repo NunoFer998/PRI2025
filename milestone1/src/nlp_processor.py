@@ -1,6 +1,6 @@
 from transformers import AutoTokenizer, AutoModelForTokenClassification, pipeline
 
-model_name = "d4data/biomedical-ner-all"  # Multi-entity biomedical NER model
+model_name = "d4data/biomedical-ner-all" 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForTokenClassification.from_pretrained(model_name)
 

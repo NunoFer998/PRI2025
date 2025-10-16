@@ -66,12 +66,13 @@ def clean_datasets_task(**kwargs):
         for col in df_cleaned.columns:
             if df_cleaned[col].dtype == pl.Boolean:
                 df_cleaned = df_cleaned.with_columns(pl.col(col).cast(pl.Int8).alias(col))
-        
+            
         df_cleaned = df_cleaned.unique()
         final_rows = df_cleaned.shape[0]
         df_cleaned = df_cleaned.rename({col: col.strip().lower().replace(' ', '_') for col in df_cleaned.columns})
         cleaned_file_path = paths['clean'] / csv_file.name
         df_cleaned.write_csv(cleaned_file_path)
+
         
         cleaning_stats[csv_file.name] = {
             'initial_rows': initial_rows,
@@ -199,6 +200,21 @@ def prepare_patient_reports_task(**kwargs):
 
     # After the loop, create a new DataFrame once
     csv_file = pl.DataFrame(updated_rows)
+
+    # Normalize the 'name' column
+    if 'name' in csv_file.columns:
+        csv_file = csv_file.with_columns(
+            pl.col('name').str.strip_chars().str.to_lowercase().str.replace_all(' ', '_').alias('name')
+        )
+    
+    # Clean duplicates and sort
+    csv_file = csv_file.unique()
+    if 'name' in csv_file.columns:
+        csv_file = csv_file.sort('name')
+        csv_file = csv_file.with_columns(
+            pl.col('name').str.strip_chars().str.to_lowercase().str.replace_all(' ', '_').alias('name')
+        )
+
     final_file_path = paths['prepared'] / 'patient_reports.csv'
     csv_file.write_csv(final_file_path)
     print(f"\n✓ Final dataset saved: {final_file_path}")
@@ -224,6 +240,12 @@ def prepare_train_0000_of_0001_task(**kwargs):
         'symptom_list': 'symptoms',
         'generated_sentence_from_symptoms': 'description'
     })
+
+    # Normalize the 'name' column
+    if 'name' in csv_file.columns:
+        csv_file = csv_file.with_columns(
+            pl.col('name').str.strip_chars().str.to_lowercase().str.replace_all(' ', '_').alias('name')
+        )
 
     if 'symptoms' in csv_file.columns:
         csv_file = csv_file.with_columns(pl.col('symptoms').str.replace_all(r'\|', ', ').alias('symptoms'))
