@@ -1,0 +1,4 @@
+<analyzer>
+  <tokenizer name="standard"/>
+  <filter name="patternReplace" pattern="_" replacement=" "/>
+</analyzer>
