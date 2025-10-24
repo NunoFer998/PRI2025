@@ -1,7 +1,11 @@
 #!/bin/bash
 
 # This script expects a container started with the following command.
+# Windows:
 # docker run -p 8983:8983 --name meic_solr -v ${PWD}:/data -d solr:9 solr-precreate diseases
+# Linux:
+# docker run -p 8983:8983 --name meic_solr -v "${PWD}/data:/data" -d solr:9 solr-precreate diseases
+
 
 # Schema definition via API
 curl -X POST -H 'Content-type:application/json' \
