@@ -1,0 +1,121 @@
+{
+  "responseHeader": {
+    "status": 0,
+    "QTime": 3,
+    "params": {
+      "q": "migraines",
+      "defType": "edismax",
+      "qf": "name^5 symptoms^3 description^1",
+      "wt": "json"
+    }
+  },
+  "response": {
+    "numFound": 8,
+    "start": 0,
+    "numFoundExact": true,
+    "docs": [
+      {
+        "name": "chronic_migraine",
+        "symptoms": [
+          "Recurrent, disabling migraines"
+        ],
+        "treatments": [
+          "Medications (such as preventive medications, pain relievers, triptans), lifestyle modifications (such as identifying triggers, stress management, regular sleep patterns), relaxation techniques, biofeedback, cognitive-behavioral therapy, nerve blocks, Botox injections, neuromodulation devices, acupuncture"
+        ],
+        "contagious": [
+          0
+        ],
+        "chronic": [
+          1
+        ],
+        "id": "5aa88297-46a8-4e8a-8c7e-33abd6827086",
+        "_version_": 1847503670018572293,
+        "_root_": "5aa88297-46a8-4e8a-8c7e-33abd6827086"
+      },
+      {
+        "name": "drug_reaction",
+        "symptoms": [
+          "headache, mig, muscle twitching, tremor, lightheaded"
+        ],
+        "description": [
+          "I have headaches and migraines, have been having difficulty sleeping. I have been having muscle twitching and tremors. Sometimes I get lightheaded"
+        ],
+        "id": "48de0657-6854-4298-a861-8764e3766e43",
+        "_version_": 1847503670927687682,
+        "_root_": "48de0657-6854-4298-a861-8764e3766e43"
+      },
+      {
+        "name": "drug_reaction",
+        "symptoms": [
+          "headache, mig, difficulties, shaking, shivering, lighthead"
+        ],
+        "description": [
+          "I have headaches and migraines, and I have been having difficulties sleeping. I've been shaking and shivering all over. Sometimes I become lightheaded."
+        ],
+        "id": "173cffa4-e5cf-4e60-a497-43a0d765816e",
+        "_version_": 1847503670932930575,
+        "_root_": "173cffa4-e5cf-4e60-a497-43a0d765816e"
+      },
+      {
+        "name": "drug_reaction",
+        "symptoms": [
+          "mig, headache, falling, trembling"
+        ],
+        "description": [
+          "I suffer migraines and headaches, and I've been having trouble falling asleep. My muscles have been trembling and twitching. I sometimes feel dizzy."
+        ],
+        "id": "1c502a09-4b22-47a5-949f-2485ee711794",
+        "_version_": 1847503670938173458,
+        "_root_": "1c502a09-4b22-47a5-949f-2485ee711794"
+      },
+      {
+        "name": "drug_reaction",
+        "symptoms": [
+          "headache, mig, difficulties, shaking, lighthead"
+        ],
+        "description": [
+          "I have headaches and migraines, and I have been having difficulties sleeping. My entire body has been shaking and twitching. Sometimes I become lightheaded."
+        ],
+        "id": "dfd9ea02-af52-4b60-b76e-cd0f4adb60f9",
+        "_version_": 1847503670939222034,
+        "_root_": "dfd9ea02-af52-4b60-b76e-cd0f4adb60f9"
+      },
+      {
+        "name": "drug_reaction",
+        "symptoms": [
+          "mig, headache, falling, trembling, di"
+        ],
+        "description": [
+          "I suffer migraines and headaches, and I've been having trouble falling asleep. My whole body has been trembling and shivering. At times, I have dizziness."
+        ],
+        "id": "02233180-8409-4f8b-9bd0-9e88bf5d4132",
+        "_version_": 1847503670904619033,
+        "_root_": "02233180-8409-4f8b-9bd0-9e88bf5d4132"
+      },
+      {
+        "name": "urinary_tract_infection",
+        "symptoms": [
+          "vomit, blood, falling asleep"
+        ],
+        "description": [
+          "I regularly vomit and get pelvic pain. There is occasionally blood in my pee, and it occasionally has an absolutely intolerable odour. I occasionally have trouble falling asleep because of my migraines."
+        ],
+        "id": "0c72ac31-8313-4024-b9e0-041083b019f3",
+        "_version_": 1847503677707780103,
+        "_root_": "0c72ac31-8313-4024-b9e0-041083b019f3"
+      },
+      {
+        "name": "migraine",
+        "symptoms": [
+          "sore, mig"
+        ],
+        "description": [
+          "Along with eyesight problems, increased appetite, a sore neck, melancholy, irritability, and regular headaches, I have also been experiencing acid reflux, indigestion, and frequent migraines. My regular activities have been made more challenging by these symptoms, which have been causing me a great deal of distress."
+        ],
+        "id": "8df61722-0afd-41eb-886d-e1fc2a1fff02",
+        "_version_": 1847503674989871115,
+        "_root_": "8df61722-0afd-41eb-886d-e1fc2a1fff02"
+      }
+    ]
+  }
+}

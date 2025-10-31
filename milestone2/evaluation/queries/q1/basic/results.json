@@ -1,0 +1,32 @@
+{
+  "responseHeader": {
+    "status": 0,
+    "QTime": 5,
+    "params": {
+      "q": "name:aase_syndrome",
+      "wt": "json"
+    }
+  },
+  "response": {
+    "numFound": 1,
+    "start": 0,
+    "numFoundExact": true,
+    "docs": [
+      {
+        "name": "aase_syndrome",
+        "symptoms": [
+          "Narrow shoulders ,  Droopy eyelids ,  Absent or small knuckles ,  Deformed ears ,  Pale skin ,  Triple-jointed thumbs ,  Cleft palate ,  Inability to fully extend the joints from birth"
+        ],
+        "description": [
+          "I've been aware of some unusual physical characteristics that have been concerning me, including my narrow shoulders, droopy eyelids, and absent or small knuckles. Additionally, my ears are deformed, and my skin is quite pale. I've also noticed that I have triple-jointed thumbs, which is quite unusual. Furthermore, I was born with a cleft palate, and I've struggled with an inability to fully extend my joints since birth."
+        ],
+        "url": [
+          "https://medlineplus.gov/ency/article/001662.htm"
+        ],
+        "id": "807c399a-c89f-4f65-b4c8-4d01129735da",
+        "_version_": 1847503667764133888,
+        "_root_": "807c399a-c89f-4f65-b4c8-4d01129735da"
+      }
+    ]
+  }
+}

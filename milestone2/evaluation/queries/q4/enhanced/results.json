@@ -1,0 +1,198 @@
+{
+  "responseHeader": {
+    "status": 0,
+    "QTime": 1,
+    "params": {
+      "q": "*:*",
+      "fq": "chronic:1",
+      "wt": "json"
+    }
+  },
+  "response": {
+    "numFound": 294,
+    "start": 0,
+    "numFoundExact": true,
+    "docs": [
+      {
+        "name": "abdominal_hernia",
+        "symptoms": [
+          "Visible bulge or swelling, discomfort or pain"
+        ],
+        "treatments": [
+          "Watchful waiting, hernia truss, surgical repair, lifestyle changes"
+        ],
+        "contagious": [
+          0
+        ],
+        "chronic": [
+          1
+        ],
+        "id": "2725d191-47d3-46e6-8dbb-04a66a386c29",
+        "_version_": 1847503667870040064,
+        "_root_": "2725d191-47d3-46e6-8dbb-04a66a386c29"
+      },
+      {
+        "name": "achalasia",
+        "symptoms": [
+          "Difficulty swallowing"
+        ],
+        "treatments": [
+          "Balloon dilation, surgery, medication"
+        ],
+        "contagious": [
+          0
+        ],
+        "chronic": [
+          1
+        ],
+        "id": "0a0422ca-bd01-47e5-9548-efbc9e382b9b",
+        "_version_": 1847503667975946242,
+        "_root_": "0a0422ca-bd01-47e5-9548-efbc9e382b9b"
+      },
+      {
+        "name": "acinic_cell_carcinoma",
+        "symptoms": [
+          "Lump, swelling, Facial changes"
+        ],
+        "treatments": [
+          "Surgery, Radiation therapy"
+        ],
+        "contagious": [
+          0
+        ],
+        "chronic": [
+          1
+        ],
+        "id": "ef02d5c0-7e98-4f24-837c-244b4236ab67",
+        "_version_": 1847503667978043392,
+        "_root_": "ef02d5c0-7e98-4f24-837c-244b4236ab67"
+      },
+      {
+        "name": "actinic_keratosis",
+        "symptoms": [
+          "Rough, scaly patches on the skin, usually in sun-exposed areas"
+        ],
+        "treatments": [
+          "Topical medications (e.g., fluorouracil, imiquimod, diclofenac), cryotherapy, curettag"
+        ],
+        "contagious": [
+          0
+        ],
+        "chronic": [
+          1
+        ],
+        "id": "6d89b30d-a13b-4aec-b34b-b04485b660d2",
+        "_version_": 1847503668069269504,
+        "_root_": "6d89b30d-a13b-4aec-b34b-b04485b660d2"
+      },
+      {
+        "name": "acute_bronchospasm",
+        "symptoms": [
+          "Wheezing, shortness of breath, chest tightness"
+        ],
+        "treatments": [
+          "Bronchodilators (inhaled medications), corticosteroids, supplemental oxygen (if needed)"
+        ],
+        "contagious": [
+          0
+        ],
+        "chronic": [
+          1
+        ],
+        "id": "ec94ebf9-0cd5-4d91-b874-2389644e27f4",
+        "_version_": 1847503668342947841,
+        "_root_": "ec94ebf9-0cd5-4d91-b874-2389644e27f4"
+      },
+      {
+        "name": "acute_glaucoma",
+        "symptoms": [
+          "Severe eye pain, blurred vision, halos around lights"
+        ],
+        "treatments": [
+          "Medications (eye drops), laser therapy, surgery (in some cases)"
+        ],
+        "contagious": [
+          0
+        ],
+        "chronic": [
+          1
+        ],
+        "id": "10fa487d-5236-45e3-ba58-814c4cdf0e09",
+        "_version_": 1847503668375453701,
+        "_root_": "10fa487d-5236-45e3-ba58-814c4cdf0e09"
+      },
+      {
+        "name": "acute_kidney_injury",
+        "symptoms": [
+          "Decreased urine output, fluid retention, fatigue"
+        ],
+        "treatments": [
+          "Treating underlying cause, supportive care, medications to manage complications, dialysis (in severe cases)"
+        ],
+        "contagious": [
+          1
+        ],
+        "chronic": [
+          1
+        ],
+        "id": "f4a179b1-4eaf-4168-bddf-653216fb7c13",
+        "_version_": 1847503668409008138,
+        "_root_": "f4a179b1-4eaf-4168-bddf-653216fb7c13"
+      },
+      {
+        "name": "acute_pancreatitis",
+        "symptoms": [
+          "Severe upper abdominal pain, nausea, vomiting, fever, rapid pulse, swollen and tender abdomen, jaundice"
+        ],
+        "treatments": [
+          "Hospitalization, intravenous fluids to restore hydration, pain management, bowel rest, nutritional support, medications to control pain and inflammation"
+        ],
+        "contagious": [
+          1
+        ],
+        "chronic": [
+          1
+        ],
+        "id": "11b9be01-fc60-4655-bfb4-9a40c3e4405d",
+        "_version_": 1847503668498137097,
+        "_root_": "11b9be01-fc60-4655-bfb4-9a40c3e4405d"
+      },
+      {
+        "name": "acute_sinusitis",
+        "symptoms": [
+          "Facial pain or pressure, nasal congestion, thick nasal discharge, post-nasal drip, cough, headache, fatigue, fever (in some cases)"
+        ],
+        "treatments": [
+          "Home remedies (such as nasal saline irrigation, steam inhalation), over-the-counter pain relievers (such as acetaminophen or ibuprofen), nasal decongestants (for short-term use), nasal corticosteroids (to reduce inflammation), plenty of fluids and rest, warm compresses, avoidance of irritants (such as smoke or allergens), prescription antibiotics (if bacterial infection is suspected or confirmed), management of underlying causes (such as allergies or nasal polyps), symptom relief medications (such as cough suppressants or antihistamines)"
+        ],
+        "contagious": [
+          1
+        ],
+        "chronic": [
+          1
+        ],
+        "id": "315c2851-8d7e-4b57-a833-b2d022cda4f7",
+        "_version_": 1847503668659617809,
+        "_root_": "315c2851-8d7e-4b57-a833-b2d022cda4f7"
+      },
+      {
+        "name": "adenoid_cystic_carcinoma",
+        "symptoms": [
+          "Lump, swelling, Facial numbness, tingling"
+        ],
+        "treatments": [
+          "Surgery, Radiation therapy"
+        ],
+        "contagious": [
+          0
+        ],
+        "chronic": [
+          1
+        ],
+        "id": "b49f1188-0411-438e-97f3-102141be91b3",
+        "_version_": 1847503668721483780,
+        "_root_": "b49f1188-0411-438e-97f3-102141be91b3"
+      }
+    ]
+  }
+}

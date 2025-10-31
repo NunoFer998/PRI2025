@@ -1,0 +1,109 @@
+{
+  "responseHeader": {
+    "status": 0,
+    "QTime": 3,
+    "params": {
+      "q": "aase syndrome",
+      "defType": "edismax",
+      "qf": "name^5 symptoms^3 description^1 treatments^1",
+      "wt": "json"
+    }
+  },
+  "response": {
+    "numFound": 1024,
+    "start": 0,
+    "numFoundExact": true,
+    "docs": [
+      {
+        "name": "infectious_gastroenteritis",
+        "symptoms": [
+          "vomiting, flu-like syndrome"
+        ],
+        "id": "86e9e9a2-3349-4fa6-81b6-bfff4e1131a3",
+        "_version_": 1847503673462095875,
+        "_root_": "86e9e9a2-3349-4fa6-81b6-bfff4e1131a3"
+      },
+      {
+        "name": "infectious_gastroenteritis",
+        "symptoms": [
+          "diarrhea, flu-like syndrome"
+        ],
+        "id": "c7242e11-091a-44fc-8a6d-2c0c2eaaac05",
+        "_version_": 1847503673509281802,
+        "_root_": "c7242e11-091a-44fc-8a6d-2c0c2eaaac05"
+      },
+      {
+        "name": "common_cold",
+        "symptoms": [
+          "nasal congestion, flu-like syndrome"
+        ],
+        "id": "2b0fb2c3-2cdb-41c4-a900-eb16339d750b",
+        "_version_": 1847503670138109954,
+        "_root_": "2b0fb2c3-2cdb-41c4-a900-eb16339d750b"
+      },
+      {
+        "name": "common_cold",
+        "symptoms": [
+          "sore throat, flu-like syndrome"
+        ],
+        "id": "b1356559-f011-4121-8f5d-3a0d0a7ed5f1",
+        "_version_": 1847503670138109982,
+        "_root_": "b1356559-f011-4121-8f5d-3a0d0a7ed5f1"
+      },
+      {
+        "name": "common_cold",
+        "symptoms": [
+          "headache, coryza, flu-like syndrome"
+        ],
+        "id": "0cced498-e81b-4f8c-bec8-338ed90ca57a",
+        "_version_": 1847503670145449994,
+        "_root_": "0cced498-e81b-4f8c-bec8-338ed90ca57a"
+      },
+      {
+        "name": "common_cold",
+        "symptoms": [
+          "cough, chills, flu-like syndrome"
+        ],
+        "id": "093cc613-3441-4049-98fd-d622ec9bf36c",
+        "_version_": 1847503670153838598,
+        "_root_": "093cc613-3441-4049-98fd-d622ec9bf36c"
+      },
+      {
+        "name": "common_cold",
+        "symptoms": [
+          "fever, coryza, flu-like syndrome"
+        ],
+        "id": "9f9e2c45-51fe-4ec8-b458-b883d4796a1e",
+        "_version_": 1847503670153838609,
+        "_root_": "9f9e2c45-51fe-4ec8-b458-b883d4796a1e"
+      },
+      {
+        "name": "common_cold",
+        "symptoms": [
+          "fever, chills, flu-like syndrome"
+        ],
+        "id": "af0e727f-8406-44cb-a340-32fe0bf514ca",
+        "_version_": 1847503670160130050,
+        "_root_": "af0e727f-8406-44cb-a340-32fe0bf514ca"
+      },
+      {
+        "name": "common_cold",
+        "symptoms": [
+          "chills, coryza, flu-like syndrome"
+        ],
+        "id": "073c0afb-bed0-45aa-ab35-e0ac5a3828dd",
+        "_version_": 1847503670162227207,
+        "_root_": "073c0afb-bed0-45aa-ab35-e0ac5a3828dd"
+      },
+      {
+        "name": "common_cold",
+        "symptoms": [
+          "headache, fever, flu-like syndrome"
+        ],
+        "id": "6cc70b6a-9906-4c55-93ab-a34d92cd3c31",
+        "_version_": 1847503670167470091,
+        "_root_": "6cc70b6a-9906-4c55-93ab-a34d92cd3c31"
+      }
+    ]
+  }
+}

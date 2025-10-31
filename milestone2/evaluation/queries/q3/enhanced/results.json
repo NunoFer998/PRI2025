@@ -1,0 +1,196 @@
+{
+  "responseHeader": {
+    "status": 0,
+    "QTime": 2,
+    "params": {
+      "q": "treatments multiple sclerosis",
+      "defType": "edismax",
+      "qf": "name^5 treatments^4 description^1",
+      "wt": "json"
+    }
+  },
+  "response": {
+    "numFound": 31,
+    "start": 0,
+    "numFoundExact": true,
+    "docs": [
+      {
+        "name": "psoriasis",
+        "symptoms": [
+          "Red, scaly patches on the skin, itching"
+        ],
+        "treatments": [
+          "Topical treatments (corticosteroids, salicylic acid), systemic medications (retinoids, immunosuppressants), phototherapy"
+        ],
+        "contagious": [
+          0
+        ],
+        "chronic": [
+          1
+        ],
+        "id": "9c90f58f-28f5-498c-aab8-3e87f3fc2297",
+        "_version_": 1847503676582658054,
+        "_root_": "9c90f58f-28f5-498c-aab8-3e87f3fc2297"
+      },
+      {
+        "name": "polycystic_ovarian_syndrome",
+        "symptoms": [
+          "Irregular periods, excessive hair growth, acne, weight gain, ovarian cysts"
+        ],
+        "treatments": [
+          "Lifestyle changes (diet, exercise, weight management), hormonal contraceptives, fertility treatments (if needed)"
+        ],
+        "contagious": [
+          0
+        ],
+        "chronic": [
+          1
+        ],
+        "id": "fdb4110a-6d89-4dea-ab4f-2cdd1e94a2a1",
+        "_version_": 1847503676466266114,
+        "_root_": "fdb4110a-6d89-4dea-ab4f-2cdd1e94a2a1"
+      },
+      {
+        "name": "viral_warts",
+        "symptoms": [
+          "Small, rough growths on the skin or mucous membranes, typically painless, may appear in clusters or as single lesions"
+        ],
+        "treatments": [
+          "Topical treatments (salicylic acid, cryotherapy), laser therapy, surgical removal, immune therapy (for persistent or recurrent cases)"
+        ],
+        "contagious": [
+          0
+        ],
+        "chronic": [
+          1
+        ],
+        "id": "edbe4118-5d3e-4b25-8fee-11a9f20b2ba9",
+        "_version_": 1847503677944758302,
+        "_root_": "edbe4118-5d3e-4b25-8fee-11a9f20b2ba9"
+      },
+      {
+        "name": "female_infertility_of_unknown_cause",
+        "symptoms": [
+          "Inability to conceive after one year of unprotected intercourse, irregular or absent menstrual cycles, hormonal imbalances, age-related factors, other"
+        ],
+        "treatments": [
+          "Fertility testing and evaluation (hormone tests, imaging, genetic screening), lifestyle modifications (healthy diet, regular exercise, stress reduction), fertility treatments (assisted reproductive technologies, fertility medications)"
+        ],
+        "contagious": [
+          0
+        ],
+        "chronic": [
+          1
+        ],
+        "id": "c94b7a73-5bdd-4f7b-8d9a-6615e627b33c",
+        "_version_": 1847503671451975704,
+        "_root_": "c94b7a73-5bdd-4f7b-8d9a-6615e627b33c"
+      },
+      {
+        "name": "spondylosis",
+        "symptoms": [
+          "Neck or back pain, stiffness, limited range of motion, numbness or weakness in the extremities"
+        ],
+        "treatments": [
+          "Medications (pain relievers, muscle relaxants), physical therapy, exercise, posture improvement, heat or cold therapy, spinal injections, surgery (in severe cases or if conservative treatments fail)"
+        ],
+        "contagious": [
+          0
+        ],
+        "chronic": [
+          1
+        ],
+        "id": "45318423-46c6-4506-b8e9-2e92fd44da53",
+        "_version_": 1847503677215997984,
+        "_root_": "45318423-46c6-4506-b8e9-2e92fd44da53"
+      },
+      {
+        "name": "neuropathic_pain",
+        "symptoms": [
+          "Shooting or burning pain, tingling or numbness"
+        ],
+        "treatments": [
+          "Medications (such as antidepressants, anticonvulsants, topical treatments), nerve blocks, spinal cord stimulation, physical therapy, occupational therapy, transcutaneous electrical nerve stimulation (TENS), acupuncture, cognitive-behavioral therapy, relaxation techniques"
+        ],
+        "contagious": [
+          0
+        ],
+        "chronic": [
+          1
+        ],
+        "id": "dc45bfd7-cbdc-4054-bef7-f7e1cd5a23db",
+        "_version_": 1847503675241529347,
+        "_root_": "dc45bfd7-cbdc-4054-bef7-f7e1cd5a23db"
+      },
+      {
+        "name": "dental_caries",
+        "symptoms": [
+          "Toothache, tooth sensitivity, visible pits or holes in the teeth, dark spots on the teeth, bad breath"
+        ],
+        "treatments": [
+          "Dental fillings, crowns, root canal treatment, tooth extraction (in severe cases), oral hygiene practices (brushing and flossing), regular dental check-ups, fluoride treatments, dietary modifications (reducing sugary and acidic foods and drinks), dental sealants (for prevention), education on proper oral care"
+        ],
+        "contagious": [
+          0
+        ],
+        "chronic": [
+          0
+        ],
+        "id": "57963217-8459-44c8-90d5-73e34e386e33",
+        "_version_": 1847503670639329301,
+        "_root_": "57963217-8459-44c8-90d5-73e34e386e33"
+      },
+      {
+        "name": "hypercholesterolemia",
+        "symptoms": [
+          "High levels of cholesterol in the blood, fatty deposits (xanthomas) on the skin or tendons, chest pain or angina, heart attacks, strokes"
+        ],
+        "treatments": [
+          "Lifestyle modifications (healthy diet, regular exercise, weight management, smoking cessation), medications to lower cholesterol levels (such as statins), regular monitoring of cholesterol levels, management of underlying conditions (such as diabetes or high blood pressure), potential additional treatments (such as bile acid sequestrants or PCSK9 inhibitors)"
+        ],
+        "contagious": [
+          0
+        ],
+        "chronic": [
+          1
+        ],
+        "id": "677db456-03bb-490e-b4ec-52ae6b8afe8b",
+        "_version_": 1847503672830853121,
+        "_root_": "677db456-03bb-490e-b4ec-52ae6b8afe8b"
+      },
+      {
+        "name": "premenstrual_syndrome_-_self-care",
+        "symptoms": [
+          "At what point during your cycle your symptoms occur ,  How long your symptoms last ,  How severe your symptoms are ,  The type of symptoms you are having ,  Whether your symptoms respond to a treatment you tried"
+        ],
+        "description": [
+          "I've been tracking my symptoms and I've noticed that they tend to occur around the same point in my cycle every month, and they usually last for a few days. The severity of my symptoms can vary, but they're often quite uncomfortable. Specifically, I've been experiencing symptoms like cramps, bloating, and mood swings, and I've tried a few treatments to see if they would help alleviate them. I've found that some of my symptoms do respond to the treatments I've tried, but I'm not sure if that's just a coincidence or if there's a deeper issue at play."
+        ],
+        "url": [
+          "https://medlineplus.gov/ency/patientinstructions/000556.htm"
+        ],
+        "id": "20e264bc-d76c-4f8f-b7d3-d462d7ee0aab",
+        "_version_": 1847503676510306313,
+        "_root_": "20e264bc-d76c-4f8f-b7d3-d462d7ee0aab"
+      },
+      {
+        "name": "endometriosis",
+        "symptoms": [
+          "Pelvic pain (during menstruation, intercourse, or bowel movements), heavy menstrual bleeding, infertility"
+        ],
+        "treatments": [
+          "Pain management (such as nonsteroidal anti-inflammatory drugs [NSAIDs], hormonal contraceptives, or progestins), hormone therapy (such as gonadotropin-releasing hormone [GnRH] agonists or oral contraceptives), surgical interventions (such as laparoscopic excision or hysterectomy), fertility treatments (if pregnancy is desired), lifestyle modifications (such as regular exercise, stress management), complementary therapies (such as acupuncture or dietary changes)"
+        ],
+        "contagious": [
+          0
+        ],
+        "chronic": [
+          1
+        ],
+        "id": "a7a06dda-3e56-4440-9b3f-9edc63a1e7a2",
+        "_version_": 1847503671293640704,
+        "_root_": "a7a06dda-3e56-4440-9b3f-9edc63a1e7a2"
+      }
+    ]
+  }
+}

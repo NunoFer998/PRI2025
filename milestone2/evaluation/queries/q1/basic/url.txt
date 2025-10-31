@@ -1,0 +1,1 @@
+http://localhost:8983/solr/diseases/select?q=name%3Aaase_syndrome&wt=json
