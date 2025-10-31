@@ -21,7 +21,13 @@ cd path/to/PRI2025/milestone2
 
 ### Step 2: Start thr Solr Container
 
-This command creates a ``Solr`` container named ``meic_solr``, maps the local data folder to the container, and pre-creates the ``diseases`` collection.
+If you already created the container and want to use it, just restart it:
+```bash
+docker start meic_solr # or the name of your container
+```
+
+
+Otherwise, this command creates a ``Solr`` container named ``meic_solr``, maps the local data folder to the container, and pre-creates the ``diseases`` collection.
 
 For Linux / WSL / Mac:
 ```bash
