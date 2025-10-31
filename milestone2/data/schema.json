@@ -4,36 +4,44 @@
     "class": "solr.TextField",
     "positionIncrementGap": "100",
     "indexAnalyzer": {
-      "tokenizer": { "class": "solr.StandardTokenizerFactory" },
+      "charFilters": [
+        {
+          "class": "solr.PatternReplaceCharFilterFactory",
+          "pattern": "_",
+          "replacement": " "
+        }
+      ],
+      "tokenizer": {
+        "class": "solr.StandardTokenizerFactory"
+      },
       "filters": [
         {
-          "class": "solr.PatternReplaceFilterFactory",
-          "pattern": "_",
-          "replacement": " ",
-          "replace": "all"
-        },
-        { "class": "solr.LowerCaseFilterFactory" }
+          "class": "solr.LowerCaseFilterFactory"
+        }
       ]
     },
     "queryAnalyzer": {
-      "tokenizer": { "class": "solr.StandardTokenizerFactory" },
+      "charFilters": [
+        {
+          "class": "solr.PatternReplaceCharFilterFactory",
+          "pattern": "_",
+          "replacement": " "
+        }
+      ],
+      "tokenizer": {
+        "class": "solr.StandardTokenizerFactory"
+      },
       "filters": [
         {
-          "class": "solr.PatternReplaceFilterFactory",
-          "pattern": "_",
-          "replacement": " ",
-          "replace": "all"
-        },
-        { "class": "solr.LowerCaseFilterFactory" }
+          "class": "solr.LowerCaseFilterFactory"
+        }
       ]
     }
   },
-
   "add-field": {
     "name": "name",
     "type": "UnderscoreTextField",
     "stored": true,
-    "indexed": true 
+    "indexed": true
   }
-
 }
