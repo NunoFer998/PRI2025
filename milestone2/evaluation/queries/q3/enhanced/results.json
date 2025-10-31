@@ -1,7 +1,7 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 2,
+    "QTime": 8,
     "params": {
       "q": "treatments multiple sclerosis",
       "defType": "edismax",
@@ -10,186 +10,99 @@
     }
   },
   "response": {
-    "numFound": 31,
+    "numFound": 904,
     "start": 0,
     "numFoundExact": true,
     "docs": [
       {
-        "name": "psoriasis",
+        "name": "multiple_sclerosis",
         "symptoms": [
-          "Red, scaly patches on the skin, itching"
+          "abnormal involuntary movements, problems with movement, loss of sensation, focal weakness, disturbance of memory, paresthesia, leg weakness"
         ],
-        "treatments": [
-          "Topical treatments (corticosteroids, salicylic acid), systemic medications (retinoids, immunosuppressants), phototherapy"
-        ],
-        "contagious": [
-          0
-        ],
-        "chronic": [
-          1
-        ],
-        "id": "9c90f58f-28f5-498c-aab8-3e87f3fc2297",
-        "_version_": 1847503676582658054,
-        "_root_": "9c90f58f-28f5-498c-aab8-3e87f3fc2297"
+        "id": "2b5104cd-95a5-468c-a4f9-e46323f31b91",
+        "_version_": 1847526240957759500,
+        "_root_": "2b5104cd-95a5-468c-a4f9-e46323f31b91"
       },
       {
-        "name": "polycystic_ovarian_syndrome",
+        "name": "multiple_sclerosis",
         "symptoms": [
-          "Irregular periods, excessive hair growth, acne, weight gain, ovarian cysts"
+          "dizziness, abnormal involuntary movements, weakness, loss of sensation, paresthesia, leg weakness"
         ],
-        "treatments": [
-          "Lifestyle changes (diet, exercise, weight management), hormonal contraceptives, fertility treatments (if needed)"
-        ],
-        "contagious": [
-          0
-        ],
-        "chronic": [
-          1
-        ],
-        "id": "fdb4110a-6d89-4dea-ab4f-2cdd1e94a2a1",
-        "_version_": 1847503676466266114,
-        "_root_": "fdb4110a-6d89-4dea-ab4f-2cdd1e94a2a1"
+        "id": "f6bb78a3-f659-4fb6-a4bc-2a455cc815b1",
+        "_version_": 1847526240958808064,
+        "_root_": "f6bb78a3-f659-4fb6-a4bc-2a455cc815b1"
       },
       {
-        "name": "viral_warts",
+        "name": "multiple_sclerosis",
         "symptoms": [
-          "Small, rough growths on the skin or mucous membranes, typically painless, may appear in clusters or as single lesions"
+          "dizziness, abnormal involuntary movements, headache, problems with movement, focal weakness, disturbance of memory"
         ],
-        "treatments": [
-          "Topical treatments (salicylic acid, cryotherapy), laser therapy, surgical removal, immune therapy (for persistent or recurrent cases)"
-        ],
-        "contagious": [
-          0
-        ],
-        "chronic": [
-          1
-        ],
-        "id": "edbe4118-5d3e-4b25-8fee-11a9f20b2ba9",
-        "_version_": 1847503677944758302,
-        "_root_": "edbe4118-5d3e-4b25-8fee-11a9f20b2ba9"
+        "id": "a8927f7c-cec8-4521-9db2-5b92ba611e50",
+        "_version_": 1847526240958808065,
+        "_root_": "a8927f7c-cec8-4521-9db2-5b92ba611e50"
       },
       {
-        "name": "female_infertility_of_unknown_cause",
+        "name": "multiple_sclerosis",
         "symptoms": [
-          "Inability to conceive after one year of unprotected intercourse, irregular or absent menstrual cycles, hormonal imbalances, age-related factors, other"
+          "abnormal involuntary movements, loss of sensation, focal weakness, disturbance of memory, leg weakness"
         ],
-        "treatments": [
-          "Fertility testing and evaluation (hormone tests, imaging, genetic screening), lifestyle modifications (healthy diet, regular exercise, stress reduction), fertility treatments (assisted reproductive technologies, fertility medications)"
-        ],
-        "contagious": [
-          0
-        ],
-        "chronic": [
-          1
-        ],
-        "id": "c94b7a73-5bdd-4f7b-8d9a-6615e627b33c",
-        "_version_": 1847503671451975704,
-        "_root_": "c94b7a73-5bdd-4f7b-8d9a-6615e627b33c"
+        "id": "89cea7d4-53a0-40d1-858c-54ba2e4f6fd9",
+        "_version_": 1847526240958808066,
+        "_root_": "89cea7d4-53a0-40d1-858c-54ba2e4f6fd9"
       },
       {
-        "name": "spondylosis",
+        "name": "multiple_sclerosis",
         "symptoms": [
-          "Neck or back pain, stiffness, limited range of motion, numbness or weakness in the extremities"
+          "dizziness, problems with movement, weakness, loss of sensation, focal weakness, disturbance of memory, paresthesia, leg weakness"
         ],
-        "treatments": [
-          "Medications (pain relievers, muscle relaxants), physical therapy, exercise, posture improvement, heat or cold therapy, spinal injections, surgery (in severe cases or if conservative treatments fail)"
-        ],
-        "contagious": [
-          0
-        ],
-        "chronic": [
-          1
-        ],
-        "id": "45318423-46c6-4506-b8e9-2e92fd44da53",
-        "_version_": 1847503677215997984,
-        "_root_": "45318423-46c6-4506-b8e9-2e92fd44da53"
+        "id": "f6360a87-c7cc-44cf-b63c-214a1aa78269",
+        "_version_": 1847526240958808067,
+        "_root_": "f6360a87-c7cc-44cf-b63c-214a1aa78269"
       },
       {
-        "name": "neuropathic_pain",
+        "name": "multiple_sclerosis",
         "symptoms": [
-          "Shooting or burning pain, tingling or numbness"
+          "abnormal involuntary movements, problems with movement, disturbance of memory, paresthesia, leg weakness"
         ],
-        "treatments": [
-          "Medications (such as antidepressants, anticonvulsants, topical treatments), nerve blocks, spinal cord stimulation, physical therapy, occupational therapy, transcutaneous electrical nerve stimulation (TENS), acupuncture, cognitive-behavioral therapy, relaxation techniques"
-        ],
-        "contagious": [
-          0
-        ],
-        "chronic": [
-          1
-        ],
-        "id": "dc45bfd7-cbdc-4054-bef7-f7e1cd5a23db",
-        "_version_": 1847503675241529347,
-        "_root_": "dc45bfd7-cbdc-4054-bef7-f7e1cd5a23db"
+        "id": "d6ba5ede-6aec-4938-ae80-16ea5fed4d30",
+        "_version_": 1847526240958808068,
+        "_root_": "d6ba5ede-6aec-4938-ae80-16ea5fed4d30"
       },
       {
-        "name": "dental_caries",
+        "name": "multiple_sclerosis",
         "symptoms": [
-          "Toothache, tooth sensitivity, visible pits or holes in the teeth, dark spots on the teeth, bad breath"
+          "abnormal involuntary movements, headache, problems with movement, weakness, focal weakness, disturbance of memory, paresthesia"
         ],
-        "treatments": [
-          "Dental fillings, crowns, root canal treatment, tooth extraction (in severe cases), oral hygiene practices (brushing and flossing), regular dental check-ups, fluoride treatments, dietary modifications (reducing sugary and acidic foods and drinks), dental sealants (for prevention), education on proper oral care"
-        ],
-        "contagious": [
-          0
-        ],
-        "chronic": [
-          0
-        ],
-        "id": "57963217-8459-44c8-90d5-73e34e386e33",
-        "_version_": 1847503670639329301,
-        "_root_": "57963217-8459-44c8-90d5-73e34e386e33"
+        "id": "8a5deaf8-3ce9-4a30-b9a8-5d8398ab9324",
+        "_version_": 1847526240958808069,
+        "_root_": "8a5deaf8-3ce9-4a30-b9a8-5d8398ab9324"
       },
       {
-        "name": "hypercholesterolemia",
+        "name": "multiple_sclerosis",
         "symptoms": [
-          "High levels of cholesterol in the blood, fatty deposits (xanthomas) on the skin or tendons, chest pain or angina, heart attacks, strokes"
+          "abnormal involuntary movements, weakness, focal weakness, paresthesia, fatigue, leg weakness"
         ],
-        "treatments": [
-          "Lifestyle modifications (healthy diet, regular exercise, weight management, smoking cessation), medications to lower cholesterol levels (such as statins), regular monitoring of cholesterol levels, management of underlying conditions (such as diabetes or high blood pressure), potential additional treatments (such as bile acid sequestrants or PCSK9 inhibitors)"
-        ],
-        "contagious": [
-          0
-        ],
-        "chronic": [
-          1
-        ],
-        "id": "677db456-03bb-490e-b4ec-52ae6b8afe8b",
-        "_version_": 1847503672830853121,
-        "_root_": "677db456-03bb-490e-b4ec-52ae6b8afe8b"
+        "id": "eb5fc88a-40bc-4cd1-a2cb-6e6d06f5979e",
+        "_version_": 1847526240958808070,
+        "_root_": "eb5fc88a-40bc-4cd1-a2cb-6e6d06f5979e"
       },
       {
-        "name": "premenstrual_syndrome_-_self-care",
+        "name": "multiple_sclerosis",
         "symptoms": [
-          "At what point during your cycle your symptoms occur ,  How long your symptoms last ,  How severe your symptoms are ,  The type of symptoms you are having ,  Whether your symptoms respond to a treatment you tried"
+          "dizziness, abnormal involuntary movements, headache, loss of sensation, disturbance of memory, paresthesia, leg weakness"
         ],
-        "description": [
-          "I've been tracking my symptoms and I've noticed that they tend to occur around the same point in my cycle every month, and they usually last for a few days. The severity of my symptoms can vary, but they're often quite uncomfortable. Specifically, I've been experiencing symptoms like cramps, bloating, and mood swings, and I've tried a few treatments to see if they would help alleviate them. I've found that some of my symptoms do respond to the treatments I've tried, but I'm not sure if that's just a coincidence or if there's a deeper issue at play."
-        ],
-        "url": [
-          "https://medlineplus.gov/ency/patientinstructions/000556.htm"
-        ],
-        "id": "20e264bc-d76c-4f8f-b7d3-d462d7ee0aab",
-        "_version_": 1847503676510306313,
-        "_root_": "20e264bc-d76c-4f8f-b7d3-d462d7ee0aab"
+        "id": "f974835c-2ab0-4a2a-92eb-4f9cb5831ac0",
+        "_version_": 1847526240958808071,
+        "_root_": "f974835c-2ab0-4a2a-92eb-4f9cb5831ac0"
       },
       {
-        "name": "endometriosis",
+        "name": "multiple_sclerosis",
         "symptoms": [
-          "Pelvic pain (during menstruation, intercourse, or bowel movements), heavy menstrual bleeding, infertility"
+          "dizziness, headache, loss of sensation, focal weakness, fatigue, leg weakness"
         ],
-        "treatments": [
-          "Pain management (such as nonsteroidal anti-inflammatory drugs [NSAIDs], hormonal contraceptives, or progestins), hormone therapy (such as gonadotropin-releasing hormone [GnRH] agonists or oral contraceptives), surgical interventions (such as laparoscopic excision or hysterectomy), fertility treatments (if pregnancy is desired), lifestyle modifications (such as regular exercise, stress management), complementary therapies (such as acupuncture or dietary changes)"
-        ],
-        "contagious": [
-          0
-        ],
-        "chronic": [
-          1
-        ],
-        "id": "a7a06dda-3e56-4440-9b3f-9edc63a1e7a2",
-        "_version_": 1847503671293640704,
-        "_root_": "a7a06dda-3e56-4440-9b3f-9edc63a1e7a2"
+        "id": "d4aafd32-d8b5-4a6a-9b4b-f16d4e45a4ab",
+        "_version_": 1847526240958808072,
+        "_root_": "d4aafd32-d8b5-4a6a-9b4b-f16d4e45a4ab"
       }
     ]
   }

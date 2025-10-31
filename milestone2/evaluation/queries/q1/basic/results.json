@@ -1,14 +1,14 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 5,
+    "QTime": 56,
     "params": {
       "q": "name:aase_syndrome",
       "wt": "json"
     }
   },
   "response": {
-    "numFound": 1,
+    "numFound": 4063,
     "start": 0,
     "numFoundExact": true,
     "docs": [
@@ -23,9 +23,132 @@
         "url": [
           "https://medlineplus.gov/ency/article/001662.htm"
         ],
-        "id": "807c399a-c89f-4f65-b4c8-4d01129735da",
-        "_version_": 1847503667764133888,
-        "_root_": "807c399a-c89f-4f65-b4c8-4d01129735da"
+        "id": "f735a5c4-7283-4c95-b294-43d88c3eb272",
+        "_version_": 1847526234006749184,
+        "_root_": "f735a5c4-7283-4c95-b294-43d88c3eb272"
+      },
+      {
+        "name": "aarskog_syndrome",
+        "symptoms": [
+          "Mildly sunken chest (pectus excavatum) ,  Testicles that have not come down (undescended) ,  Mild to moderate cognitive problems ,  Belly button that sticks out ,  Top portion of the ear folded over slightly ,  Bulge in the groin or scrotum ,  Small nose with nostrils tipped forward ,  Single crease in the palm of the hand ,  Wide-set eyes with droopy eyelids ,  Poorly developed middle section of the face ,  Wide groove above the upper lip, crease below the lower lip ,  Mild to moderate short height which may not be obvious until the child is 1 to 3 years old ,  Small, broad hands and feet with short fingers and curved-in fifth finger ,  Short fingers and toes with mild webbing ,  Delayed teeth ,  Scrotum surrounds the penis (shawl scrotum) ,  Hairline with a \"widow's peak\" ,  Delayed sexual maturity ,  Rounded face ,  Downward palpebral slant to eyes (palpebral slant is the direction of the slant from the inner to outer corner of the eye)"
+        ],
+        "description": [
+          "I've been noticing some unusual physical characteristics in myself, including a mildly sunken chest and undescended testicles. Additionally, I've been experiencing mild to moderate cognitive problems. I've also observed some distinct facial features, such as a belly button that sticks out, a top portion of the ear that's folded over slightly, and a small nose with nostrils tipped forward. My eyes are wide-set with droopy eyelids, and I have a poorly developed middle section of the face. I've also noticed a wide groove above my upper lip and a crease below my lower lip. Furthermore, my hands and feet are small and broad with short fingers and curved-in fifth fingers, and my toes are short with mild webbing. I've also had delayed teeth and a scrotum that surrounds my penis, giving it a \"shawl scrotum\" appearance. My hairline has a \"widow's peak\" shape, and I've experienced delayed sexual maturity. Overall, I have a rounded face with a downward palpebral slant to my eyes, and I'm slightly shorter than average, which wasn't noticeable until I was around 1 to 3 years old."
+        ],
+        "url": [
+          "https://medlineplus.gov/ency/article/001654.htm"
+        ],
+        "id": "32e9facf-7d2b-472b-85a5-5463d0c77229",
+        "_version_": 1847526233953271808,
+        "_root_": "32e9facf-7d2b-472b-85a5-5463d0c77229"
+      },
+      {
+        "name": "aicardi_syndrome",
+        "symptoms": [
+          "Intellectual disability ,  Coloboma (cat's eye) ,  Smaller-than-normal eyes (microphthalmia)"
+        ],
+        "description": [
+          "I've been dealing with some unusual physical features and developmental challenges, including intellectual disability, coloboma, which gives my eyes a unique \"cat's eye\" appearance, and microphthalmia, which means my eyes are smaller than normal."
+        ],
+        "url": [
+          "https://medlineplus.gov/ency/article/001664.htm"
+        ],
+        "id": "732711e9-9962-48e9-aa9c-81c0b0e590af",
+        "_version_": 1847526235052179456,
+        "_root_": "732711e9-9962-48e9-aa9c-81c0b0e590af"
+      },
+      {
+        "name": "alport_syndrome",
+        "symptoms": [
+          "Macular hole in which there is thinning or a break in the macula. The macula is a part of the retina that makes central vision sharper and more detailed. A macular hole causes blurred or distorted central vision. ,  Abnormal coloring of the retina, a condition called dot-and-fleck retinopathy. It doesn't cause vision problems, but can help diagnose Alport syndrome. ,  Flank pain ,  Swelling throughout the body (edema) ,  Abnormal urine color ,  Excessive thirst ,  Fatigue ,  Abnormal shape of the lens (anterior lenticonus), which can lead to a slow decline in vision as well as cataracts. ,  High blood pressure ,  Poor appetite ,  Corneal erosion in which there is damage to the outer layer of the covering of the eyeball, leading to pain, itching, redness of the eye, or blurred vision. ,  Blood in the urine that is visible during a cold or flu or exercise"
+        ],
+        "description": [
+          "I've been experiencing some disturbing symptoms lately, including blurred or distorted central vision, which I've learned could be due to a macular hole in my retina. Additionally, I've noticed abnormal coloring of my retina, although I've been told it doesn't affect my vision. I've also been dealing with flank pain, swelling throughout my body, and unusual urine color. I've been feeling excessively thirsty, fatigued, and have a poor appetite. Furthermore, I've been diagnosed with high blood pressure and have noticed an abnormal shape of the lens in my eye, which could lead to a slow decline in vision and even cataracts. To make matters worse, I've experienced corneal erosion, causing pain, itching, redness, and blurred vision in my eye. Occasionally, I've also noticed blood in my urine, especially during cold or flu, or after exercising."
+        ],
+        "url": [
+          "https://medlineplus.gov/ency/article/000504.htm"
+        ],
+        "id": "9fa1a50c-c5a4-427a-b189-e53b344755a1",
+        "_version_": 1847526235178008591,
+        "_root_": "9fa1a50c-c5a4-427a-b189-e53b344755a1"
+      },
+      {
+        "name": "alstrom_syndrome",
+        "symptoms": [
+          "Slowed growth ,  Hypothyroidism ,  Blindness or severe vision impairment in infancy ,  Impaired heart function (cardiomyopathy), which may lead to heart failure ,  Dark patches of skin (acanthosis nigricans) ,  Obesity ,  Liver dysfunction ,  Small penis ,  Progressive kidney failure ,  Symptoms of childhood-onset or type 2 diabetes ,  Gastrointestinal reflux"
+        ],
+        "description": [
+          "I've been concerned about my overall health lately, as I've noticed slowed growth and have been diagnosed with hypothyroidism, which may be related to my blindness or severe vision impairment in infancy. Additionally, I've been experiencing impaired heart function, which could lead to heart failure, and I've developed dark patches of skin, known as acanthosis nigricans. I've also been struggling with obesity, liver dysfunction, and a small penis, which may be indicative of underlying hormonal issues. Furthermore, I've been experiencing symptoms of progressive kidney failure, as well as symptoms of childhood-onset or type 2 diabetes. To make matters worse, I've been dealing with gastrointestinal reflux, which has been affecting my daily life."
+        ],
+        "url": [
+          "https://medlineplus.gov/ency/article/001665.htm"
+        ],
+        "id": "40a365ff-3795-4d9d-9593-f4b4bf748d3a",
+        "_version_": 1847526235179057152,
+        "_root_": "40a365ff-3795-4d9d-9593-f4b4bf748d3a"
+      },
+      {
+        "name": "angelman_syndrome",
+        "symptoms": [
+          "Light hair, skin, and eye color compared to rest of family ,  Excessive movement of the hands and limbs ,  Laughing and smiling often ,  Unusual chewing and mouthing movements ,  Crossed eyes ,  Small head size compared to body, flattened back of head ,  Trembling arm and leg movements ,  Happy, excitable personality ,  Walking with arms uplifted and hands waving ,  Severe intellectual disability ,  Little or no speech ,  Loss of muscle tone (floppiness) ,  Unstable or jerky walking ,  Trouble feeding ,  Heartburn (acid reflux) ,  Sleep problems ,  Seizures ,  Tongue thrusting, drooling"
+        ],
+        "description": [
+          "I've noticed that I have some distinct physical characteristics, such as light hair, skin, and eye color compared to the rest of my family, and a smaller head size compared to my body, with a flattened back of the head. I've also been experiencing excessive movement of my hands and limbs, and I often exhibit unusual chewing and mouthing movements. Additionally, I've been dealing with crossed eyes and trembling arm and leg movements. Despite these physical challenges, I have a happy, excitable personality, and I often walk with my arms uplifted and my hands waving. However, I struggle with severe intellectual disability, and I have little or no speech. I've also been experiencing loss of muscle tone, which makes my body feel floppy, and I have unstable or jerky walking patterns. Furthermore, I have trouble feeding, and I often suffer from heartburn and acid reflux. I've also been having sleep problems, and I'm prone to seizures. Lastly, I've been exhibiting tongue thrusting and drooling behaviors."
+        ],
+        "url": [
+          "https://medlineplus.gov/ency/article/007616.htm"
+        ],
+        "id": "7dac0836-0d6e-458a-ae6e-ad9f887706b2",
+        "_version_": 1847526235215757322,
+        "_root_": "7dac0836-0d6e-458a-ae6e-ad9f887706b2"
+      },
+      {
+        "name": "apert_syndrome",
+        "symptoms": [
+          "Large or late-closing soft spot on a baby's skull (fontanelle) ,  Pfeiffer syndrome ,  Webbing or fusion of the toes ,  Prominent or bulging eyes ,  Fusion or severe webbing of the 2nd, 3rd, and 4th fingers, often called \"mitten hands\" ,  Hearing loss ,  Short height ,  Severe under-development of the midface ,  Early closure of sutures between bones of the skull, noted by ridging along sutures (craniosynostosis) ,  Saethre-Chotzen syndrome ,  Skeletal (limb) abnormalities ,  Possible, slow intellectual development (varies from person to person) ,  Frequent ear infections ,  Carpenter syndrome (kleeblattschadel, cloverleaf skull deformity) ,  Crouzon disease (craniofacial dysostosis)"
+        ],
+        "description": [
+          "I've been concerned about my baby's development, as I've noticed a large or late-closing soft spot on their skull, and after researching, I'm worried it might be related to a condition such as Pfeiffer syndrome or Saethre-Chotzen syndrome, which can cause a range of symptoms including webbing or fusion of the toes, prominent or bulging eyes, and fusion or severe webbing of the fingers, often referred to as \"mitten hands\". Additionally, I've noticed hearing loss, short height, and severe under-development of the midface, which could be related to the early closure of sutures between the bones of the skull, known as craniosynostosis. I've also been concerned about possible slow intellectual development, and my baby has been experiencing frequent ear infections. Furthermore, I've learned that these symptoms can be associated with Carpenter syndrome, also known as kleeblattschadel or cloverleaf skull deformity, or Crouzon disease, which is a type of craniofacial dysostosis."
+        ],
+        "url": [
+          "https://medlineplus.gov/ency/article/001581.htm"
+        ],
+        "id": "13ca9e02-7ed5-4203-87df-b707fb4a4844",
+        "_version_": 1847526235329003522,
+        "_root_": "13ca9e02-7ed5-4203-87df-b707fb4a4844"
+      },
+      {
+        "name": "asherman_syndrome",
+        "symptoms": [
+          "Infertility ,  Amenorrhea (lack of menstrual periods) ,  Repeated miscarriages"
+        ],
+        "description": [
+          "I've been struggling with infertility, and I've also been experiencing amenorrhea, which means I haven't been having menstrual periods. To make matters worse, I've had repeated miscarriages, and I'm not sure what's causing these issues or how to overcome them."
+        ],
+        "url": [
+          "https://medlineplus.gov/ency/article/001483.htm"
+        ],
+        "id": "2072ea69-4792-46f5-84be-59acd7927122",
+        "_version_": 1847526235441201152,
+        "_root_": "2072ea69-4792-46f5-84be-59acd7927122"
+      },
+      {
+        "name": "asperger_syndrome",
+        "symptoms": [
+          "anxiety and nervousness, lack of growth, excessive anger, antisocial behavior"
+        ],
+        "id": "f82c1e5d-b312-47e6-bc61-144e90a28d1e",
+        "_version_": 1847526235441201153,
+        "_root_": "f82c1e5d-b312-47e6-bc61-144e90a28d1e"
+      },
+      {
+        "name": "asperger_syndrome",
+        "symptoms": [
+          "anxiety and nervousness, depression, depressive or psychotic symptoms, hostile behavior, excessive anger, antisocial behavior"
+        ],
+        "id": "b9f8e032-ab57-4d67-a0d8-8a2a89c5e1c0",
+        "_version_": 1847526235441201154,
+        "_root_": "b9f8e032-ab57-4d67-a0d8-8a2a89c5e1c0"
       }
     ]
   }

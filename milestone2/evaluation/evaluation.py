@@ -19,6 +19,7 @@ information_needs = [
             "q": "aase syndrome",
             "defType": "edismax",
             "qf": "name^5 symptoms^3 description^1 treatments^1",
+            "q.op": "AND",
             "wt": "json"
         }
     },
