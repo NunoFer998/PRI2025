@@ -1,7 +1,7 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 8,
+    "QTime": 2,
     "params": {
       "q": "treatments multiple sclerosis",
       "defType": "edismax",
@@ -19,90 +19,90 @@
         "symptoms": [
           "abnormal involuntary movements, problems with movement, loss of sensation, focal weakness, disturbance of memory, paresthesia, leg weakness"
         ],
-        "id": "2b5104cd-95a5-468c-a4f9-e46323f31b91",
-        "_version_": 1847526240957759500,
-        "_root_": "2b5104cd-95a5-468c-a4f9-e46323f31b91"
+        "id": "a4211b0e-1d98-491a-82b7-cef3a735ac8c",
+        "_version_": 1847973331937001484,
+        "_root_": "a4211b0e-1d98-491a-82b7-cef3a735ac8c"
       },
       {
         "name": "multiple_sclerosis",
         "symptoms": [
           "dizziness, abnormal involuntary movements, weakness, loss of sensation, paresthesia, leg weakness"
         ],
-        "id": "f6bb78a3-f659-4fb6-a4bc-2a455cc815b1",
-        "_version_": 1847526240958808064,
-        "_root_": "f6bb78a3-f659-4fb6-a4bc-2a455cc815b1"
+        "id": "9e413dfd-4152-4933-bd21-3fffa31f671d",
+        "_version_": 1847973331937001485,
+        "_root_": "9e413dfd-4152-4933-bd21-3fffa31f671d"
       },
       {
         "name": "multiple_sclerosis",
         "symptoms": [
           "dizziness, abnormal involuntary movements, headache, problems with movement, focal weakness, disturbance of memory"
         ],
-        "id": "a8927f7c-cec8-4521-9db2-5b92ba611e50",
-        "_version_": 1847526240958808065,
-        "_root_": "a8927f7c-cec8-4521-9db2-5b92ba611e50"
+        "id": "2695af4f-be97-441f-9d25-d31ae4b8d89e",
+        "_version_": 1847973331937001486,
+        "_root_": "2695af4f-be97-441f-9d25-d31ae4b8d89e"
       },
       {
         "name": "multiple_sclerosis",
         "symptoms": [
           "abnormal involuntary movements, loss of sensation, focal weakness, disturbance of memory, leg weakness"
         ],
-        "id": "89cea7d4-53a0-40d1-858c-54ba2e4f6fd9",
-        "_version_": 1847526240958808066,
-        "_root_": "89cea7d4-53a0-40d1-858c-54ba2e4f6fd9"
+        "id": "32d8f863-d238-46c9-957a-64a7d30568ce",
+        "_version_": 1847973331937001487,
+        "_root_": "32d8f863-d238-46c9-957a-64a7d30568ce"
       },
       {
         "name": "multiple_sclerosis",
         "symptoms": [
           "dizziness, problems with movement, weakness, loss of sensation, focal weakness, disturbance of memory, paresthesia, leg weakness"
         ],
-        "id": "f6360a87-c7cc-44cf-b63c-214a1aa78269",
-        "_version_": 1847526240958808067,
-        "_root_": "f6360a87-c7cc-44cf-b63c-214a1aa78269"
+        "id": "093acf72-2e1e-42d5-9f2a-daf62ebca5f5",
+        "_version_": 1847973331937001488,
+        "_root_": "093acf72-2e1e-42d5-9f2a-daf62ebca5f5"
       },
       {
         "name": "multiple_sclerosis",
         "symptoms": [
           "abnormal involuntary movements, problems with movement, disturbance of memory, paresthesia, leg weakness"
         ],
-        "id": "d6ba5ede-6aec-4938-ae80-16ea5fed4d30",
-        "_version_": 1847526240958808068,
-        "_root_": "d6ba5ede-6aec-4938-ae80-16ea5fed4d30"
+        "id": "81f89689-d790-4fe8-a607-d09f029b7658",
+        "_version_": 1847973331937001489,
+        "_root_": "81f89689-d790-4fe8-a607-d09f029b7658"
       },
       {
         "name": "multiple_sclerosis",
         "symptoms": [
           "abnormal involuntary movements, headache, problems with movement, weakness, focal weakness, disturbance of memory, paresthesia"
         ],
-        "id": "8a5deaf8-3ce9-4a30-b9a8-5d8398ab9324",
-        "_version_": 1847526240958808069,
-        "_root_": "8a5deaf8-3ce9-4a30-b9a8-5d8398ab9324"
+        "id": "60a43297-7fbc-4d0e-8084-4fede1c28817",
+        "_version_": 1847973331938050048,
+        "_root_": "60a43297-7fbc-4d0e-8084-4fede1c28817"
       },
       {
         "name": "multiple_sclerosis",
         "symptoms": [
           "abnormal involuntary movements, weakness, focal weakness, paresthesia, fatigue, leg weakness"
         ],
-        "id": "eb5fc88a-40bc-4cd1-a2cb-6e6d06f5979e",
-        "_version_": 1847526240958808070,
-        "_root_": "eb5fc88a-40bc-4cd1-a2cb-6e6d06f5979e"
+        "id": "c0f12da4-956b-4bb9-8627-94131f2c9bd7",
+        "_version_": 1847973331938050049,
+        "_root_": "c0f12da4-956b-4bb9-8627-94131f2c9bd7"
       },
       {
         "name": "multiple_sclerosis",
         "symptoms": [
           "dizziness, abnormal involuntary movements, headache, loss of sensation, disturbance of memory, paresthesia, leg weakness"
         ],
-        "id": "f974835c-2ab0-4a2a-92eb-4f9cb5831ac0",
-        "_version_": 1847526240958808071,
-        "_root_": "f974835c-2ab0-4a2a-92eb-4f9cb5831ac0"
+        "id": "e1ee1e53-1aa8-4bba-9cd5-71c35b692ced",
+        "_version_": 1847973331938050050,
+        "_root_": "e1ee1e53-1aa8-4bba-9cd5-71c35b692ced"
       },
       {
         "name": "multiple_sclerosis",
         "symptoms": [
           "dizziness, headache, loss of sensation, focal weakness, fatigue, leg weakness"
         ],
-        "id": "d4aafd32-d8b5-4a6a-9b4b-f16d4e45a4ab",
-        "_version_": 1847526240958808072,
-        "_root_": "d4aafd32-d8b5-4a6a-9b4b-f16d4e45a4ab"
+        "id": "1e857037-16e8-4872-a8e9-ae97a1751f1c",
+        "_version_": 1847973331938050051,
+        "_root_": "1e857037-16e8-4872-a8e9-ae97a1751f1c"
       }
     ]
   }

@@ -1,7 +1,7 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 13,
+    "QTime": 0,
     "params": {
       "q": "*:*",
       "fq": "chronic:1",
@@ -27,9 +27,9 @@
         "chronic": [
           1
         ],
-        "id": "bfd2123e-81fc-4ec5-9242-a676dff0429b",
-        "_version_": 1847526234139918336,
-        "_root_": "bfd2123e-81fc-4ec5-9242-a676dff0429b"
+        "id": "c23ae8b3-7876-4f06-afe3-0f289c0b2be7",
+        "_version_": 1847973322600480768,
+        "_root_": "c23ae8b3-7876-4f06-afe3-0f289c0b2be7"
       },
       {
         "name": "achalasia",
@@ -45,9 +45,9 @@
         "chronic": [
           1
         ],
-        "id": "12848866-34d9-4bc6-ab17-a021f6ae8520",
-        "_version_": 1847526234270990347,
-        "_root_": "12848866-34d9-4bc6-ab17-a021f6ae8520"
+        "id": "142fdb08-7f68-4473-b91a-fc875daedc19",
+        "_version_": 1847973322779787271,
+        "_root_": "142fdb08-7f68-4473-b91a-fc875daedc19"
       },
       {
         "name": "acinic_cell_carcinoma",
@@ -63,9 +63,9 @@
         "chronic": [
           1
         ],
-        "id": "fa2fed66-edf5-4fa5-a1cf-2bfa6fa076e0",
-        "_version_": 1847526234274136065,
-        "_root_": "fa2fed66-edf5-4fa5-a1cf-2bfa6fa076e0"
+        "id": "cc7f1d2c-2759-4f4d-acc2-5f6abc151fb3",
+        "_version_": 1847973322783981569,
+        "_root_": "cc7f1d2c-2759-4f4d-acc2-5f6abc151fb3"
       },
       {
         "name": "actinic_keratosis",
@@ -81,9 +81,9 @@
         "chronic": [
           1
         ],
-        "id": "506e4bfe-80df-4027-86eb-4d6f3a1471ec",
-        "_version_": 1847526234371653636,
-        "_root_": "506e4bfe-80df-4027-86eb-4d6f3a1471ec"
+        "id": "273803fd-6c1a-40e7-ab43-be2fa4108a26",
+        "_version_": 1847973322905616391,
+        "_root_": "273803fd-6c1a-40e7-ab43-be2fa4108a26"
       },
       {
         "name": "acute_bronchospasm",
@@ -99,9 +99,9 @@
         "chronic": [
           1
         ],
-        "id": "8be564b0-789e-4461-a5c3-99cc9260c99d",
-        "_version_": 1847526234679934991,
-        "_root_": "8be564b0-789e-4461-a5c3-99cc9260c99d"
+        "id": "191b9e47-ccb4-4014-bc0b-fc190e599ad6",
+        "_version_": 1847973323300929536,
+        "_root_": "191b9e47-ccb4-4014-bc0b-fc190e599ad6"
       },
       {
         "name": "acute_glaucoma",
@@ -117,9 +117,9 @@
         "chronic": [
           1
         ],
-        "id": "443bc6e1-04e9-4997-90e4-24262d1d1a62",
-        "_version_": 1847526234713489425,
-        "_root_": "443bc6e1-04e9-4997-90e4-24262d1d1a62"
+        "id": "ff00583b-83b7-4c6a-bda0-bf1efdcb464c",
+        "_version_": 1847973323352309772,
+        "_root_": "ff00583b-83b7-4c6a-bda0-bf1efdcb464c"
       },
       {
         "name": "acute_kidney_injury",
@@ -135,9 +135,9 @@
         "chronic": [
           1
         ],
-        "id": "6cb62958-6918-45b5-93a3-0fbb12ead2ca",
-        "_version_": 1847526234745995270,
-        "_root_": "6cb62958-6918-45b5-93a3-0fbb12ead2ca"
+        "id": "39c528e3-5d04-4d3c-85ad-ecc2e17be2ca",
+        "_version_": 1847973323393204227,
+        "_root_": "39c528e3-5d04-4d3c-85ad-ecc2e17be2ca"
       },
       {
         "name": "acute_pancreatitis",
@@ -153,9 +153,9 @@
         "chronic": [
           1
         ],
-        "id": "9f2f8005-1139-48dd-a33f-61f0ccc882f8",
-        "_version_": 1847526234845609993,
-        "_root_": "9f2f8005-1139-48dd-a33f-61f0ccc882f8"
+        "id": "0b6bd216-569c-4623-89d8-ddbe2359ed39",
+        "_version_": 1847973323631230980,
+        "_root_": "0b6bd216-569c-4623-89d8-ddbe2359ed39"
       },
       {
         "name": "acute_sinusitis",
@@ -171,9 +171,9 @@
         "chronic": [
           1
         ],
-        "id": "0e5e3ecf-4904-40cf-bd4d-58483994fa3f",
-        "_version_": 1847526234969341957,
-        "_root_": "0e5e3ecf-4904-40cf-bd4d-58483994fa3f"
+        "id": "761cf27b-a214-4706-83be-6284989db4a3",
+        "_version_": 1847973323873452037,
+        "_root_": "761cf27b-a214-4706-83be-6284989db4a3"
       },
       {
         "name": "adenoid_cystic_carcinoma",
@@ -189,9 +189,9 @@
         "chronic": [
           1
         ],
-        "id": "0eeeac36-9b99-4a05-b2ba-06e1ba5882b7",
-        "_version_": 1847526235015479306,
-        "_root_": "0eeeac36-9b99-4a05-b2ba-06e1ba5882b7"
+        "id": "07428425-c764-4377-b335-fc0c53784f37",
+        "_version_": 1847973323978309635,
+        "_root_": "07428425-c764-4377-b335-fc0c53784f37"
       }
     ]
   }

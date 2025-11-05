@@ -4,7 +4,7 @@ import os
 from urllib.parse import urlencode
 
 SOLR_URL = "http://localhost:8983/solr/diseases/select"
-SAVE_PATH = "queries"
+SAVE_PATH = os.path.join(os.path.dirname(__file__), "queries")
 os.makedirs(SAVE_PATH, exist_ok=True)
 
 information_needs = [

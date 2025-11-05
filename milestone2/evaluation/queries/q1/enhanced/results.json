@@ -1,7 +1,7 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 12,
+    "QTime": 3,
     "params": {
       "q": "aase syndrome",
       "defType": "edismax",
@@ -26,9 +26,9 @@
         "url": [
           "https://medlineplus.gov/ency/article/001662.htm"
         ],
-        "id": "f735a5c4-7283-4c95-b294-43d88c3eb272",
-        "_version_": 1847526234006749184,
-        "_root_": "f735a5c4-7283-4c95-b294-43d88c3eb272"
+        "id": "ff93bd85-0ec0-487e-837b-93114d95dd61",
+        "_version_": 1847973322413834240,
+        "_root_": "ff93bd85-0ec0-487e-837b-93114d95dd61"
       }
     ]
   }

@@ -1,7 +1,7 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 56,
+    "QTime": 3,
     "params": {
       "q": "name:aase_syndrome",
       "wt": "json"
@@ -23,9 +23,9 @@
         "url": [
           "https://medlineplus.gov/ency/article/001662.htm"
         ],
-        "id": "f735a5c4-7283-4c95-b294-43d88c3eb272",
-        "_version_": 1847526234006749184,
-        "_root_": "f735a5c4-7283-4c95-b294-43d88c3eb272"
+        "id": "ff93bd85-0ec0-487e-837b-93114d95dd61",
+        "_version_": 1847973322413834240,
+        "_root_": "ff93bd85-0ec0-487e-837b-93114d95dd61"
       },
       {
         "name": "aarskog_syndrome",
@@ -38,9 +38,9 @@
         "url": [
           "https://medlineplus.gov/ency/article/001654.htm"
         ],
-        "id": "32e9facf-7d2b-472b-85a5-5463d0c77229",
-        "_version_": 1847526233953271808,
-        "_root_": "32e9facf-7d2b-472b-85a5-5463d0c77229"
+        "id": "1ec008e5-26a8-40bb-a9bd-75f2739d067d",
+        "_version_": 1847973322340433920,
+        "_root_": "1ec008e5-26a8-40bb-a9bd-75f2739d067d"
       },
       {
         "name": "aicardi_syndrome",
@@ -53,9 +53,9 @@
         "url": [
           "https://medlineplus.gov/ency/article/001664.htm"
         ],
-        "id": "732711e9-9962-48e9-aa9c-81c0b0e590af",
-        "_version_": 1847526235052179456,
-        "_root_": "732711e9-9962-48e9-aa9c-81c0b0e590af"
+        "id": "5ade759f-a99d-4834-83bf-a7c00a7e2692",
+        "_version_": 1847973324017106944,
+        "_root_": "5ade759f-a99d-4834-83bf-a7c00a7e2692"
       },
       {
         "name": "alport_syndrome",
@@ -68,9 +68,9 @@
         "url": [
           "https://medlineplus.gov/ency/article/000504.htm"
         ],
-        "id": "9fa1a50c-c5a4-427a-b189-e53b344755a1",
-        "_version_": 1847526235178008591,
-        "_root_": "9fa1a50c-c5a4-427a-b189-e53b344755a1"
+        "id": "0d144069-3ce2-4a0b-9c6f-624ad6e9c58b",
+        "_version_": 1847973324191170569,
+        "_root_": "0d144069-3ce2-4a0b-9c6f-624ad6e9c58b"
       },
       {
         "name": "alstrom_syndrome",
@@ -83,9 +83,9 @@
         "url": [
           "https://medlineplus.gov/ency/article/001665.htm"
         ],
-        "id": "40a365ff-3795-4d9d-9593-f4b4bf748d3a",
-        "_version_": 1847526235179057152,
-        "_root_": "40a365ff-3795-4d9d-9593-f4b4bf748d3a"
+        "id": "e7a3e8cf-ba79-491f-b67a-ee76b848ecce",
+        "_version_": 1847973324193267712,
+        "_root_": "e7a3e8cf-ba79-491f-b67a-ee76b848ecce"
       },
       {
         "name": "angelman_syndrome",
@@ -98,9 +98,9 @@
         "url": [
           "https://medlineplus.gov/ency/article/007616.htm"
         ],
-        "id": "7dac0836-0d6e-458a-ae6e-ad9f887706b2",
-        "_version_": 1847526235215757322,
-        "_root_": "7dac0836-0d6e-458a-ae6e-ad9f887706b2"
+        "id": "234ae20b-111c-4d09-a57c-c92e9e55a48b",
+        "_version_": 1847973324234162176,
+        "_root_": "234ae20b-111c-4d09-a57c-c92e9e55a48b"
       },
       {
         "name": "apert_syndrome",
@@ -113,9 +113,9 @@
         "url": [
           "https://medlineplus.gov/ency/article/001581.htm"
         ],
-        "id": "13ca9e02-7ed5-4203-87df-b707fb4a4844",
-        "_version_": 1847526235329003522,
-        "_root_": "13ca9e02-7ed5-4203-87df-b707fb4a4844"
+        "id": "d321fbe4-7c19-4d09-958f-00c432fecc07",
+        "_version_": 1847973324439683075,
+        "_root_": "d321fbe4-7c19-4d09-958f-00c432fecc07"
       },
       {
         "name": "asherman_syndrome",
@@ -128,27 +128,27 @@
         "url": [
           "https://medlineplus.gov/ency/article/001483.htm"
         ],
-        "id": "2072ea69-4792-46f5-84be-59acd7927122",
-        "_version_": 1847526235441201152,
-        "_root_": "2072ea69-4792-46f5-84be-59acd7927122"
+        "id": "c7a160ba-7b09-4d0a-b17b-b72eb17eefe3",
+        "_version_": 1847973324521472019,
+        "_root_": "c7a160ba-7b09-4d0a-b17b-b72eb17eefe3"
       },
       {
         "name": "asperger_syndrome",
         "symptoms": [
           "anxiety and nervousness, lack of growth, excessive anger, antisocial behavior"
         ],
-        "id": "f82c1e5d-b312-47e6-bc61-144e90a28d1e",
-        "_version_": 1847526235441201153,
-        "_root_": "f82c1e5d-b312-47e6-bc61-144e90a28d1e"
+        "id": "68d0d346-b282-461d-863a-afc59832a51f",
+        "_version_": 1847973324521472020,
+        "_root_": "68d0d346-b282-461d-863a-afc59832a51f"
       },
       {
         "name": "asperger_syndrome",
         "symptoms": [
           "anxiety and nervousness, depression, depressive or psychotic symptoms, hostile behavior, excessive anger, antisocial behavior"
         ],
-        "id": "b9f8e032-ab57-4d67-a0d8-8a2a89c5e1c0",
-        "_version_": 1847526235441201154,
-        "_root_": "b9f8e032-ab57-4d67-a0d8-8a2a89c5e1c0"
+        "id": "20cf2bba-f5d8-406d-85fc-f3f449f93284",
+        "_version_": 1847973324521472021,
+        "_root_": "20cf2bba-f5d8-406d-85fc-f3f449f93284"
       }
     ]
   }
