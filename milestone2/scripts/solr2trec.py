@@ -25,10 +25,15 @@ def solr_to_trec(solr_response, qid, run_id="run0"):
         # Extract the document results from the Solr response
         docs = solr_response["response"]["docs"]
 
+        try:
+            qid_int = int(qid)
+        except ValueError:
+            print(f"Error: QID '{qid}' is not a valid integer.", file=sys.stderr)
+            sys.exit(1)
+
         # Enumerate through the results and write them in TREC format
         for rank, doc in enumerate(docs, start=1):
-            # Use the provided qid instead of the hardcoded '0'
-            print(f"{qid} Q0 {doc['id']} {rank} {doc['score']} {run_id}")
+            print(f"{qid_int} Q0 {doc['id']} {rank} {doc['score']} {run_id}")
 
     except KeyError:
         print("Error: Invalid Solr response format. 'docs' key not found.", file=sys.stderr)

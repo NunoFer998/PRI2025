@@ -1,76 +1,85 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
-# run_evaluation.sh - runs the end-to-end evaluation pipeline
-# NOTE: this script must be executed from the evaluation directory
-
 # Default paths
 QUERIES_DIR="queries/basic"
 ENHANCED_QUERIES_DIR="queries/enhanced"
 QRELS_DIR="my_qrels"
 COLLECTION="diseases"
-TREC_EVAL="trec_eval"  # Adjust this path if trec_eval is elsewhere
+TREC_EVAL_BIN="trec_eval/trec_eval" 
 
-echo "=== Starting evaluation pipeline ==="
-echo "Queries dir: ${QUERIES_DIR}"
-echo "Qrels dir: ${QRELS_DIR}"
+QRELS_FILE="qrels_trec.txt"
+RESULTS_BASIC="results_basic.txt"
+RESULTS_ENHANCED="results_enhanced.txt"
+EVAL_BASIC="eval_results_basic.txt"
+EVAL_ENHANCED="eval_results_enhanced.txt"
+
+echo "Starting evaluation pipeline..."
 echo "Collection: ${COLLECTION}"
 echo ""
 
-# Convert qrels to TREC format
+# Convert qrels 
 echo "Step 1: Converting qrels to TREC format..."
-./scripts/qrels2trec.py --qrels "${QRELS_DIR}" > qrels_trec.txt
-echo "✓ Created qrels_trec.txt"
+./scripts/qrels2trec.py --qrels "${QRELS_DIR}" > "${QRELS_FILE}"
+echo "Created ${QRELS_FILE}"
 echo ""
 
-# Query Solr and convert results to TREC format
-echo "Step 2: Querying Solr and converting to TREC format..."
-> results_trec.txt  # Clear/create empty file
-
+# Run BASIC queries 
+echo "Step 2a: Running BASIC queries..."
+> "${RESULTS_BASIC}"
 for query_file in "${QUERIES_DIR}"/*; do
     if [ -f "$query_file" ]; then
-        # Extract QID from filename, e.g., "0001.json" -> "0001"
         QID=$(basename "$query_file" .json)
-        echo "  Processing ${QID}..."
-        
+        echo "  Processing ${QID} (basic)..."
         ./scripts/query_solr.py \
             --query "$query_file" \
             --collection "${COLLECTION}" \
-        | ./scripts/solr2trec.py --qid "$QID" >> results_trec.txt
+        | ./scripts/solr2trec.py --qid "$QID" --run-id "basic" >> "${RESULTS_BASIC}"
     fi
 done
-
-for query_file in "${ENHANCED_QUERIES_DIR}"/*; do
-    if [ -f "$query_file" ]; then
-        # Extract QID from filename, e.g., "0001.json" -> "0001"
-        QID=$(basename "$query_file" .json)
-        echo "  Processing ${QID} (enhanced)..."
-
-        ./scripts/query_solr.py \
-            --query "$query_file" \
-            --collection "${COLLECTION}" \
-        | ./scripts/solr2trec.py --qid "$QID" >> results_trec.txt
-    fi
-done
-echo "✓ Created results_trec.txt"
+echo "✓ Created ${RESULTS_BASIC}"
 echo ""
 
-# Run evaluation pipeline and plot
-echo "Step 3: Running trec_eval and generating plots..."
-# Make sure trec_eval path is correct
-./${TREC_EVAL}/trec_eval \
-    -q -m all_trec \
-    qrels_trec.txt results_trec.txt \
-| tee eval_results.txt
-# Note: Piping to two commands can be tricky with error handling.
-# Let's check if eval_results.txt was created and is not empty before plotting
-if [ -s eval_results.txt ]; then
-    ./scripts/plot_pr.py --eval_file eval_results.txt --output pr_curve.png
-    echo "✓ Evaluation complete"
+# Run ENHANCED queries 
+echo "Step 2b: Running ENHANCED queries..."
+> "${RESULTS_ENHANCED}" 
+for query_file in "${ENHANCED_QUERIES_DIR}"/*; do
+    if [ -f "$query_file" ]; then
+        QID=$(basename "$query_file" .json)
+        echo "  Processing ${QID} (enhanced)..."
+        ./scripts/query_solr.py \
+            --query "$query_file" \
+            --collection "${COLLECTION}" \
+        | ./scripts/solr2trec.py --qid "$QID" --run-id "enhanced" >> "${RESULTS_ENHANCED}"
+    fi
+done
+echo "Created ${RESULTS_ENHANCED}"
+echo ""
+
+# Run trec_eval (separately for each run) 
+echo "Step 3: Running trec_eval..."
+
+# Evaluate BASIC run
+echo "  Evaluating BASIC run..."
+if [ -s "${RESULTS_BASIC}" ]; then
+    "${TREC_EVAL_BIN}" -q -m all_trec "${QRELS_FILE}" "${RESULTS_BASIC}" > "${EVAL_BASIC}"
+    echo "Basic evaluation complete. Results in ${EVAL_BASIC}"
 else
-    echo "✗ Evaluation failed. eval_results.txt is empty."
+    echo "Evaluation failed: ${RESULTS_BASIC} is empty."
+fi
+
+# Evaluate ENHANCED run
+echo "  Evaluating ENHANCED run..."
+if [ -s "${RESULTS_ENHANCED}" ]; then
+    "${TREC_EVAL_BIN}" -q -m all_trec "${QRELS_FILE}" "${RESULTS_ENHANCED}" > "${EVAL_ENHANCED}"
+    echo "Enhanced evaluation complete. Results in ${EVAL_ENHANCED}"
+else
+    echo "Evaluation failed: ${RESULTS_ENHANCED} is empty."
 fi
 echo ""
 
+
 # Cleanup
-# rm -f qrels_trec.txt results_trec.txt
+# echo "Step 4: Cleaning up temporary files..."
+#  -f "${QRELS_FILE}" "${RESULTS_BASIC}" "${RESULTS_ENHANCED}"
+echo "✓ Done. Final reports are in ${EVAL_BASIC} and ${EVAL_ENHANCED}"
