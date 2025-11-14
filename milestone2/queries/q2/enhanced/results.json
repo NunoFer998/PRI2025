@@ -1,0 +1,131 @@
+{
+  "responseHeader": {
+    "status": 0,
+    "QTime": 626,
+    "params": {
+      "q": "headache fatigue",
+      "defType": "edismax",
+      "qf": "name^5 symptoms^3 description^1 treatments^1",
+      "fl": "*,score",
+      "q.op": "AND",
+      "wt": "json"
+    }
+  },
+  "response": {
+    "numFound": 11929,
+    "start": 0,
+    "maxScore": 517.33685,
+    "numFoundExact": true,
+    "docs": [
+      {
+        "name": "chronic_fatigue_syndrome",
+        "symptoms": [
+          "Extreme fatigue, cognitive difficulties, unrefreshing sleep"
+        ],
+        "treatments": [
+          "Symptom management (such as medications to address pain, sleep disturbances, and other symptoms), graded exercise therapy, cognitive-behavioral therapy, sleep management techniques, pacing and energy conservation, stress reduction techniques, nutritional support, medications for specific symptoms"
+        ],
+        "contagious": true,
+        "chronic": true,
+        "id": "8fd2f4b6-00f6-4e94-b955-7b0deb4a19f0",
+        "_version_": 1848783542898655516,
+        "_root_": "8fd2f4b6-00f6-4e94-b955-7b0deb4a19f0",
+        "score": 517.33685
+      },
+      {
+        "name": "myalgic_encephalomyelitis/chronic_fatigue_syndrome_(me/cfs)",
+        "symptoms": [
+          "There is no way to predict what will cause a crash or know how long it will take to recover. It can take days, weeks, or longer to recover. ,  Not relieved by sleep or bed rest ,  Forgetfulness, concentration problems, problems following details (also called \"brain fog\") ,  Digestive problems, such as irritable bowel syndrome ,  Not due to unusual or intense activity ,  Joint pain without swelling or redness, muscle aches, muscle weakness all over, or headaches that differ from those you have had in the past ,  Worsening symptoms after physical or mental activity ,  Sensitivity to noise, food, odors, or chemicals ,  New ,  Lasts at least 6 months ,  Sore throat, sore lymph nodes in the neck or under the arms, chills and night sweats ,  Allergies ,  For example, you may experience a crash after shopping at the grocery store and need to take a nap before driving home. Or you may need someone to come pick you up. ,  Profound fatigue ,  Worsening symptoms when standing or sitting upright. This is called orthostatic intolerance. You may feel dizzy, lightheaded, or faint when standing or sitting up. You also may have vision changes or see spots. ,  Sleep problems ,  Severe enough to keep you from participating in certain activities"
+        ],
+        "description": "I've been dealing with a mysterious condition that's been affecting me for at least six months now, and I've noticed that there's no way to predict what will trigger a crash or how long it will take to recover - it can take days, weeks, or even longer. The symptoms aren't relieved by sleep or bed rest, and I've been experiencing forgetfulness, concentration problems, and what's often called \"brain fog\". I've also had digestive problems, like irritable bowel syndrome, and joint pain, muscle aches, and headaches that are different from what I've had in the past, all without any signs of swelling or redness. My symptoms worsen after physical or mental activity, and I've become extremely sensitive to noise, food, odors, or chemicals. I've developed allergies, and I've had recurring sore throats, sore lymph nodes, chills, and night sweats. The fatigue is profound, and I often need to take a nap or have someone pick me up after doing simple tasks, like grocery shopping. Even standing or sitting upright worsens my symptoms, causing dizziness, lightheadedness, or faintness, and sometimes I experience vision changes or see spots. I've also had sleep problems, and all these symptoms are severe enough to keep me from participating in certain activities.",
+        "url": "https://medlineplus.gov/ency/article/001244.htm",
+        "id": "7cc60458-6a3a-4c02-b074-a9a10b085aec",
+        "_version_": 1848783627493577359,
+        "_root_": "7cc60458-6a3a-4c02-b074-a9a10b085aec",
+        "score": 491.11993
+      },
+      {
+        "name": "nerve_damage_from_diabetes_-_self-care",
+        "symptoms": [
+          "Shortness of breath ,  Not know you have a blister or small wound on your toes ,  Nausea, constipation, or diarrhea ,  Sweating ,  Rapid heart rate ,  Heartburn and bloating ,  Have the joints in your feet to become damaged which can make it harder to walk ,  Sudden fatigue ,  Not notice when you step on something sharp ,  Be more likely to bump your toes or feet against objects ,  Not notice when you touch something too hot or too cold ,  Bladder problems. You may leak urine. You may not be able to tell when your bladder is full. Some people are not able to empty their bladder. ,  Sweating too much. Particularly when the temperature is cool, when you are at rest, or at other unusual times. ,  Throwing up undigested food several hours after a meal ,  Lightheadedness, or even fainting, when sitting or standing up ,  Be more likely to have infections of the skin on your feet and in your toenails ,  Sexual problems. Men may have problems with erections. Women may have trouble with vaginal dryness or orgasm. ,  Experience changes in the muscles in your feet which can cause increased pressure on your toes and balls of your feet ,  Swallowing problems ,  Nausea and vomiting ,  Feeling full after eating only a small amount of food ,  Not being able to tell when your blood sugar gets too low (\"hypoglycemia unawareness\")."
+        ],
+        "description": "I've been experiencing a multitude of symptoms lately, including shortness of breath, nausea, constipation, and diarrhea, which have been accompanied by sweating and a rapid heart rate. I've also been dealing with heartburn and bloating, and I've noticed that I'm more prone to fatigue, which can be quite sudden. Additionally, I've been having trouble with my feet, including damaged joints that make it harder to walk, and I've become more likely to bump into objects or not notice when I step on something sharp. Furthermore, I've been experiencing bladder problems, such as leaking urine or not being able to tell when my bladder is full, and I've had issues with sweating excessively, even in cool temperatures or when I'm at rest. I've also had instances of throwing up undigested food hours after eating, and I've experienced lightheadedness and even fainting when sitting or standing up. On top of this, I've been more susceptible to infections on my feet and in my toenails, and I've noticed changes in my muscles that have put increased pressure on my toes and the balls of my feet. Moreover, I've had swallowing problems, nausea, and vomiting, and I often feel full after eating only a small amount of food. Lastly, I've had trouble recognizing when my blood sugar gets too low, which is a concern for me.",
+        "url": "https://medlineplus.gov/ency/patientinstructions/000326.htm",
+        "id": "37e3cf12-71a7-4bd7-9247-bcc2285ddfd4",
+        "_version_": 1848783627493578053,
+        "_root_": "37e3cf12-71a7-4bd7-9247-bcc2285ddfd4",
+        "score": 179.23785
+      },
+      {
+        "name": "restless_leg_syndrome",
+        "symptoms": [
+          "headache, fatigue"
+        ],
+        "id": "0d3fda6f-b5d7-4ffb-9b30-cfbe4e7e0734",
+        "_version_": 1848783643232705028,
+        "_root_": "0d3fda6f-b5d7-4ffb-9b30-cfbe4e7e0734",
+        "score": 177.48636
+      },
+      {
+        "name": "restless_leg_syndrome",
+        "symptoms": [
+          "insomnia, headache, fatigue"
+        ],
+        "id": "d93dc505-a906-4352-86d1-b1420903fac5",
+        "_version_": 1848783643232704949,
+        "_root_": "d93dc505-a906-4352-86d1-b1420903fac5",
+        "score": 176.99135
+      },
+      {
+        "name": "primary_immunodeficiency",
+        "symptoms": [
+          "cough, frontal headache, fatigue"
+        ],
+        "id": "6ffdaa30-1605-4515-8736-f0cd6a603620",
+        "_version_": 1848783637994022468,
+        "_root_": "6ffdaa30-1605-4515-8736-f0cd6a603620",
+        "score": 176.49925
+      },
+      {
+        "name": "restless_leg_syndrome",
+        "symptoms": [
+          "insomnia, headache, fatigue, sleepiness"
+        ],
+        "id": "795e4098-93c9-4ec9-bf10-9cb10bd795af",
+        "_version_": 1848783643232704944,
+        "_root_": "795e4098-93c9-4ec9-bf10-9cb10bd795af",
+        "score": 176.49925
+      },
+      {
+        "name": "restless_leg_syndrome",
+        "symptoms": [
+          "insomnia, headache, fatigue, apnea"
+        ],
+        "id": "6980d15b-9473-4d6b-9a6d-5099c6918e4f",
+        "_version_": 1848783643232704948,
+        "_root_": "6980d15b-9473-4d6b-9a6d-5099c6918e4f",
+        "score": 176.49925
+      },
+      {
+        "name": "narcolepsy",
+        "symptoms": [
+          "headache, fatigue, sleepiness, apnea"
+        ],
+        "id": "e2288df2-e810-4f66-b434-7b4368d3280d",
+        "_version_": 1848783627493577793,
+        "_root_": "e2288df2-e810-4f66-b434-7b4368d3280d",
+        "score": 176.49925
+      },
+      {
+        "name": "narcolepsy",
+        "symptoms": [
+          "insomnia, headache, fatigue, apnea"
+        ],
+        "id": "743a59e2-f3eb-44f9-90b3-40385002f69a",
+        "_version_": 1848783627493577809,
+        "_root_": "743a59e2-f3eb-44f9-90b3-40385002f69a",
+        "score": 176.49925
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+http://localhost:8983/solr/diseases/select?q=%2A%3A%2A&fq=chronic%3A1&fl=%2A%2Cscore&wt=json

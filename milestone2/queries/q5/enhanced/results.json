@@ -1,0 +1,121 @@
+{
+  "responseHeader": {
+    "status": 0,
+    "QTime": 42,
+    "params": {
+      "q": "migraines",
+      "defType": "edismax",
+      "qf": "name^5 symptoms^3 description^1",
+      "fl": "*,score",
+      "wt": "json"
+    }
+  },
+  "response": {
+    "numFound": 477,
+    "start": 0,
+    "maxScore": 147.21158,
+    "numFoundExact": true,
+    "docs": [
+      {
+        "name": "migraine",
+        "symptoms": [
+          "vomiting, spots or clouds in vision, symptoms of the face, disturbance of memory"
+        ],
+        "id": "dd0927c2-da02-480f-9115-4d464ac2344e",
+        "_version_": 1848783627493573919,
+        "_root_": "dd0927c2-da02-480f-9115-4d464ac2344e",
+        "score": 147.21158
+      },
+      {
+        "name": "migraine",
+        "symptoms": [
+          "nausea, diminished vision, spots or clouds in vision, blindness, symptoms of the face"
+        ],
+        "id": "be28f359-3d3f-49d8-80b1-247205b217df",
+        "_version_": 1848783627493573920,
+        "_root_": "be28f359-3d3f-49d8-80b1-247205b217df",
+        "score": 147.21158
+      },
+      {
+        "name": "migraine",
+        "symptoms": [
+          "diminished vision, spots or clouds in vision, blindness, disturbance of memory"
+        ],
+        "id": "c9468afa-9a12-40b0-a8a1-e748cc998f1e",
+        "_version_": 1848783627493573921,
+        "_root_": "c9468afa-9a12-40b0-a8a1-e748cc998f1e",
+        "score": 147.21158
+      },
+      {
+        "name": "migraine",
+        "symptoms": [
+          "dizziness, vomiting, headache, diminished vision, spots or clouds in vision, blindness, disturbance of memory"
+        ],
+        "id": "00e977c3-66e0-4834-b804-3a8a14e3891b",
+        "_version_": 1848783627493573922,
+        "_root_": "00e977c3-66e0-4834-b804-3a8a14e3891b",
+        "score": 147.21158
+      },
+      {
+        "name": "migraine",
+        "symptoms": [
+          "vomiting, headache, diminished vision, symptoms of the face"
+        ],
+        "id": "00b8798f-b1a3-4918-b173-f1e820f06110",
+        "_version_": 1848783627493573923,
+        "_root_": "00b8798f-b1a3-4918-b173-f1e820f06110",
+        "score": 147.21158
+      },
+      {
+        "name": "migraine",
+        "symptoms": [
+          "dizziness, vomiting, headache, nausea, diminished vision, spots or clouds in vision, blindness, symptoms of the face"
+        ],
+        "id": "d0cb665c-3e17-4b60-8041-3ef3d0def1a0",
+        "_version_": 1848783627493573924,
+        "_root_": "d0cb665c-3e17-4b60-8041-3ef3d0def1a0",
+        "score": 147.21158
+      },
+      {
+        "name": "migraine",
+        "symptoms": [
+          "dizziness, vomiting, spots or clouds in vision, symptoms of the face, disturbance of memory"
+        ],
+        "id": "818453c3-7d11-4a7a-8f55-bae6cbaf1fff",
+        "_version_": 1848783627493573925,
+        "_root_": "818453c3-7d11-4a7a-8f55-bae6cbaf1fff",
+        "score": 147.21158
+      },
+      {
+        "name": "migraine",
+        "symptoms": [
+          "vomiting, headache, nausea, diminished vision, spots or clouds in vision, blindness, symptoms of the face"
+        ],
+        "id": "b0a49ac2-f028-4fbd-959e-25696bd6450b",
+        "_version_": 1848783627493573926,
+        "_root_": "b0a49ac2-f028-4fbd-959e-25696bd6450b",
+        "score": 147.21158
+      },
+      {
+        "name": "migraine",
+        "symptoms": [
+          "vomiting, headache, nausea, spots or clouds in vision, blindness"
+        ],
+        "id": "27e2ec5c-4a00-4419-b172-a4236b695bb5",
+        "_version_": 1848783627493573927,
+        "_root_": "27e2ec5c-4a00-4419-b172-a4236b695bb5",
+        "score": 147.21158
+      },
+      {
+        "name": "migraine",
+        "symptoms": [
+          "vomiting, headache, blindness, disturbance of memory"
+        ],
+        "id": "77384d07-8919-4467-9998-221f007fb4ad",
+        "_version_": 1848783627493573928,
+        "_root_": "77384d07-8919-4467-9998-221f007fb4ad",
+        "score": 147.21158
+      }
+    ]
+  }
+}
