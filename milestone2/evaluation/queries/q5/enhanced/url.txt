@@ -1,1 +1,0 @@
-http://localhost:8983/solr/diseases/select?q=migraines&defType=edismax&qf=name%5E5+symptoms%5E3+description%5E1&fl=%2A%2Cscore&wt=json
