@@ -1,8 +1,9 @@
 {
-  "query": "treatments multiple sclerosis",
+  "query": "treatments psoriasis",
   "fields": "id, score",
   "params": {
     "defType": "edismax",
-    "qf": "name^5 treatments^4 description^1"
+    "qf": "name^5 treatments^4 description^1",
+    "q.op": "AND"
   }
 }

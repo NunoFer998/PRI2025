@@ -1,4 +1,4 @@
 {
-  "query": "symptoms: migraines OR description:migraines",
+  "query": "name:migraines OR symptoms:migraines OR description:migraines",
   "fields": "id, score"
 }
