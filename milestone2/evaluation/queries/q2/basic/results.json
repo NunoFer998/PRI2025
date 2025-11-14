@@ -1,14 +1,14 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 1,
+    "QTime": 680,
     "params": {
       "q": "symptoms:(headache AND fatigue)",
       "wt": "json"
     }
   },
   "response": {
-    "numFound": 595,
+    "numFound": 11166,
     "start": 0,
     "numFoundExact": true,
     "docs": [
@@ -17,90 +17,90 @@
         "symptoms": [
           "headache, fatigue"
         ],
-        "id": "159bc81e-26bc-44d7-a391-652e5e31076f",
-        "_version_": 1847973333471068175,
-        "_root_": "159bc81e-26bc-44d7-a391-652e5e31076f"
-      },
-      {
-        "name": "multiple_sclerosis",
-        "symptoms": [
-          "headache, weakness, fatigue"
-        ],
-        "id": "151a65a4-317d-45aa-84d0-2b99e2b9e598",
-        "_version_": 1847973331959021570,
-        "_root_": "151a65a4-317d-45aa-84d0-2b99e2b9e598"
+        "id": "a8dd32c7-24cb-4502-b3a8-326b7e9ef3b6",
+        "_version_": 1848764122824454184,
+        "_root_": "a8dd32c7-24cb-4502-b3a8-326b7e9ef3b6"
       },
       {
         "name": "restless_leg_syndrome",
         "symptoms": [
           "insomnia, headache, fatigue"
         ],
-        "id": "0c87752f-cb2a-4f3c-ba8f-fa15b2770f76",
-        "_version_": 1847973333468971015,
-        "_root_": "0c87752f-cb2a-4f3c-ba8f-fa15b2770f76"
-      },
-      {
-        "name": "restless_leg_syndrome",
-        "symptoms": [
-          "depression, headache, fatigue"
-        ],
-        "id": "d229edc3-db95-4bf2-b969-8b6258761238",
-        "_version_": 1847973333472116763,
-        "_root_": "d229edc3-db95-4bf2-b969-8b6258761238"
-      },
-      {
-        "name": "lyme_disease",
-        "symptoms": [
-          "hip pain, headache, fatigue"
-        ],
-        "id": "a258ed88-02c0-48a1-b289-6ef8a24e6186",
-        "_version_": 1847973331535396869,
-        "_root_": "a258ed88-02c0-48a1-b289-6ef8a24e6186"
+        "id": "cd2aa5d5-af84-4954-bf65-a82ed55f9068",
+        "_version_": 1848764122824454105,
+        "_root_": "cd2aa5d5-af84-4954-bf65-a82ed55f9068"
       },
       {
         "name": "narcolepsy",
         "symptoms": [
           "headache, fatigue, sleepiness, apnea"
         ],
-        "id": "80d83db3-4056-4446-bfa6-341b12c9c021",
-        "_version_": 1847973332084850697,
-        "_root_": "80d83db3-4056-4446-bfa6-341b12c9c021"
+        "id": "f4807210-611f-4c93-b94d-301a16238328",
+        "_version_": 1848764101761700853,
+        "_root_": "f4807210-611f-4c93-b94d-301a16238328"
       },
       {
         "name": "narcolepsy",
         "symptoms": [
           "insomnia, headache, fatigue, apnea"
         ],
-        "id": "29ab93d0-d783-4d61-9eec-cf07cb74f354",
-        "_version_": 1847973332085899273,
-        "_root_": "29ab93d0-d783-4d61-9eec-cf07cb74f354"
+        "id": "9f058720-d578-46fa-b689-ef1058718648",
+        "_version_": 1848764101761700869,
+        "_root_": "9f058720-d578-46fa-b689-ef1058718648"
       },
       {
         "name": "narcolepsy",
         "symptoms": [
           "insomnia, headache, fatigue, sleepiness"
         ],
-        "id": "ad95286c-c15b-48c9-97f7-2e2355a26438",
-        "_version_": 1847973332086947850,
-        "_root_": "ad95286c-c15b-48c9-97f7-2e2355a26438"
-      },
-      {
-        "name": "primary_immunodeficiency",
-        "symptoms": [
-          "cough, frontal headache, fatigue"
-        ],
-        "id": "16cf0756-b95e-4f92-9f4b-60b1759594f2",
-        "_version_": 1847973333269741577,
-        "_root_": "16cf0756-b95e-4f92-9f4b-60b1759594f2"
+        "id": "beb4b1ec-0d3f-4ae6-b122-205d483d45d2",
+        "_version_": 1848764101761700885,
+        "_root_": "beb4b1ec-0d3f-4ae6-b122-205d483d45d2"
       },
       {
         "name": "restless_leg_syndrome",
         "symptoms": [
           "insomnia, headache, fatigue, sleepiness"
         ],
-        "id": "bd365191-03f9-4b0c-98c2-f4b365560503",
-        "_version_": 1847973333468971010,
-        "_root_": "bd365191-03f9-4b0c-98c2-f4b365560503"
+        "id": "f459044e-a7e4-4d28-9bb0-b4763cd23a45",
+        "_version_": 1848764122824454100,
+        "_root_": "f459044e-a7e4-4d28-9bb0-b4763cd23a45"
+      },
+      {
+        "name": "restless_leg_syndrome",
+        "symptoms": [
+          "insomnia, headache, fatigue, apnea"
+        ],
+        "id": "9d773e66-3027-46bb-89bd-f0c57c4820a6",
+        "_version_": 1848764122824454104,
+        "_root_": "9d773e66-3027-46bb-89bd-f0c57c4820a6"
+      },
+      {
+        "name": "primary_immunodeficiency",
+        "symptoms": [
+          "cough, frontal headache, fatigue"
+        ],
+        "id": "6aad88ac-072a-428b-80c9-0a230c363449",
+        "_version_": 1848764122824446611,
+        "_root_": "6aad88ac-072a-428b-80c9-0a230c363449"
+      },
+      {
+        "name": "narcolepsy",
+        "symptoms": [
+          "insomnia, headache, fatigue, sleepiness, apnea"
+        ],
+        "id": "42dfcf95-fe44-451b-bfad-5a510692ac0d",
+        "_version_": 1848764101761700870,
+        "_root_": "42dfcf95-fe44-451b-bfad-5a510692ac0d"
+      },
+      {
+        "name": "restless_leg_syndrome",
+        "symptoms": [
+          "insomnia, headache, fatigue, sleepiness, apnea"
+        ],
+        "id": "275af127-630a-490d-8160-ed65b0a2342d",
+        "_version_": 1848764122824454122,
+        "_root_": "275af127-630a-490d-8160-ed65b0a2342d"
       }
     ]
   }

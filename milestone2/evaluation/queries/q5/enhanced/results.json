@@ -1,7 +1,7 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 1,
+    "QTime": 20,
     "params": {
       "q": "migraines",
       "defType": "edismax",
@@ -10,111 +10,99 @@
     }
   },
   "response": {
-    "numFound": 8,
+    "numFound": 477,
     "start": 0,
     "numFoundExact": true,
     "docs": [
       {
-        "name": "chronic_migraine",
+        "name": "migraine",
         "symptoms": [
-          "Recurrent, disabling migraines"
+          "vomiting, spots or clouds in vision, symptoms of the face, disturbance of memory"
         ],
-        "treatments": [
-          "Medications (such as preventive medications, pain relievers, triptans), lifestyle modifications (such as identifying triggers, stress management, regular sleep patterns), relaxation techniques, biofeedback, cognitive-behavioral therapy, nerve blocks, Botox injections, neuromodulation devices, acupuncture"
-        ],
-        "contagious": [
-          0
-        ],
-        "chronic": [
-          1
-        ],
-        "id": "3bd5ea8c-8709-4258-b2a0-239fe4aeef06",
-        "_version_": 1847973325065682975,
-        "_root_": "3bd5ea8c-8709-4258-b2a0-239fe4aeef06"
-      },
-      {
-        "name": "drug_reaction",
-        "symptoms": [
-          "headache, mig, muscle twitching, tremor, lightheaded"
-        ],
-        "description": [
-          "I have headaches and migraines, have been having difficulty sleeping. I have been having muscle twitching and tremors. Sometimes I get lightheaded"
-        ],
-        "id": "3eafc26b-364e-4e03-b50e-5b465f47642c",
-        "_version_": 1847973326272593930,
-        "_root_": "3eafc26b-364e-4e03-b50e-5b465f47642c"
-      },
-      {
-        "name": "drug_reaction",
-        "symptoms": [
-          "headache, mig, difficulties, shaking, shivering, lighthead"
-        ],
-        "description": [
-          "I have headaches and migraines, and I have been having difficulties sleeping. I've been shaking and shivering all over. Sometimes I become lightheaded."
-        ],
-        "id": "1bc0f4ce-1ac4-4b4d-81d2-9d7741a9396b",
-        "_version_": 1847973326277836821,
-        "_root_": "1bc0f4ce-1ac4-4b4d-81d2-9d7741a9396b"
-      },
-      {
-        "name": "drug_reaction",
-        "symptoms": [
-          "mig, headache, falling, trembling"
-        ],
-        "description": [
-          "I suffer migraines and headaches, and I've been having trouble falling asleep. My muscles have been trembling and twitching. I sometimes feel dizzy."
-        ],
-        "id": "6a03c026-80ec-4775-a654-4e78d094be4e",
-        "_version_": 1847973326284128262,
-        "_root_": "6a03c026-80ec-4775-a654-4e78d094be4e"
-      },
-      {
-        "name": "drug_reaction",
-        "symptoms": [
-          "headache, mig, difficulties, shaking, lighthead"
-        ],
-        "description": [
-          "I have headaches and migraines, and I have been having difficulties sleeping. My entire body has been shaking and twitching. Sometimes I become lightheaded."
-        ],
-        "id": "d374038f-2715-48da-833e-e30e2659493b",
-        "_version_": 1847973326285176844,
-        "_root_": "d374038f-2715-48da-833e-e30e2659493b"
-      },
-      {
-        "name": "drug_reaction",
-        "symptoms": [
-          "mig, headache, falling, trembling, di"
-        ],
-        "description": [
-          "I suffer migraines and headaches, and I've been having trouble falling asleep. My whole body has been trembling and shivering. At times, I have dizziness."
-        ],
-        "id": "1d2858eb-bee8-4b23-a4d2-59015d257811",
-        "_version_": 1847973326254768133,
-        "_root_": "1d2858eb-bee8-4b23-a4d2-59015d257811"
-      },
-      {
-        "name": "urinary_tract_infection",
-        "symptoms": [
-          "vomit, blood, falling asleep"
-        ],
-        "description": [
-          "I regularly vomit and get pelvic pain. There is occasionally blood in my pee, and it occasionally has an absolutely intolerable odour. I occasionally have trouble falling asleep because of my migraines."
-        ],
-        "id": "33f36640-fd6f-48ed-820d-831280b4fd36",
-        "_version_": 1847973334753476620,
-        "_root_": "33f36640-fd6f-48ed-820d-831280b4fd36"
+        "id": "46916f6a-7b09-4122-ae66-f3c17bc03016",
+        "_version_": 1848764101761696979,
+        "_root_": "46916f6a-7b09-4122-ae66-f3c17bc03016"
       },
       {
         "name": "migraine",
         "symptoms": [
-          "sore, mig"
+          "nausea, diminished vision, spots or clouds in vision, blindness, symptoms of the face"
         ],
-        "description": [
-          "Along with eyesight problems, increased appetite, a sore neck, melancholy, irritability, and regular headaches, I have also been experiencing acid reflux, indigestion, and frequent migraines. My regular activities have been made more challenging by these symptoms, which have been causing me a great deal of distress."
+        "id": "c0e5205d-eda1-4a5f-967e-07506671ae66",
+        "_version_": 1848764101761696980,
+        "_root_": "c0e5205d-eda1-4a5f-967e-07506671ae66"
+      },
+      {
+        "name": "migraine",
+        "symptoms": [
+          "diminished vision, spots or clouds in vision, blindness, disturbance of memory"
         ],
-        "id": "f4d450c3-1d78-4492-9653-cd9955571405",
-        "_version_": 1847973331811172359,
-        "_root_": "f4d450c3-1d78-4492-9653-cd9955571405"
+        "id": "7337501b-18bb-4f22-9e31-2eb7ad58958f",
+        "_version_": 1848764101761696981,
+        "_root_": "7337501b-18bb-4f22-9e31-2eb7ad58958f"
+      },
+      {
+        "name": "migraine",
+        "symptoms": [
+          "dizziness, vomiting, headache, diminished vision, spots or clouds in vision, blindness, disturbance of memory"
+        ],
+        "id": "cbfbe3e3-8bc7-49c9-98b3-7a2d42973a78",
+        "_version_": 1848764101761696982,
+        "_root_": "cbfbe3e3-8bc7-49c9-98b3-7a2d42973a78"
+      },
+      {
+        "name": "migraine",
+        "symptoms": [
+          "vomiting, headache, diminished vision, symptoms of the face"
+        ],
+        "id": "55db15f0-33fb-4a2b-a1b7-caf2d75f557f",
+        "_version_": 1848764101761696983,
+        "_root_": "55db15f0-33fb-4a2b-a1b7-caf2d75f557f"
+      },
+      {
+        "name": "migraine",
+        "symptoms": [
+          "dizziness, vomiting, headache, nausea, diminished vision, spots or clouds in vision, blindness, symptoms of the face"
+        ],
+        "id": "82a0d6cb-5a14-48ae-b965-c6a7ea45b94f",
+        "_version_": 1848764101761696984,
+        "_root_": "82a0d6cb-5a14-48ae-b965-c6a7ea45b94f"
+      },
+      {
+        "name": "migraine",
+        "symptoms": [
+          "dizziness, vomiting, spots or clouds in vision, symptoms of the face, disturbance of memory"
+        ],
+        "id": "c7823e71-d159-42ba-b8f7-54d71d7f0a61",
+        "_version_": 1848764101761696985,
+        "_root_": "c7823e71-d159-42ba-b8f7-54d71d7f0a61"
+      },
+      {
+        "name": "migraine",
+        "symptoms": [
+          "vomiting, headache, nausea, diminished vision, spots or clouds in vision, blindness, symptoms of the face"
+        ],
+        "id": "51e248e1-9719-4e02-9e5b-65c72bb63fa8",
+        "_version_": 1848764101761696986,
+        "_root_": "51e248e1-9719-4e02-9e5b-65c72bb63fa8"
+      },
+      {
+        "name": "migraine",
+        "symptoms": [
+          "vomiting, headache, nausea, spots or clouds in vision, blindness"
+        ],
+        "id": "83d887c4-6c44-4edc-8839-a89861cf3b8d",
+        "_version_": 1848764101761696987,
+        "_root_": "83d887c4-6c44-4edc-8839-a89861cf3b8d"
+      },
+      {
+        "name": "migraine",
+        "symptoms": [
+          "vomiting, headache, blindness, disturbance of memory"
+        ],
+        "id": "87c810b1-57f7-4c33-821e-92d76a2ab5da",
+        "_version_": 1848764101761696988,
+        "_root_": "87c810b1-57f7-4c33-821e-92d76a2ab5da"
       }
     ]
   }

@@ -1,47 +1,102 @@
 {
-  "add-field-type": {
-    "name": "UnderscoreTextField",
-    "class": "solr.TextField",
-    "positionIncrementGap": "100",
-    "indexAnalyzer": {
-      "charFilters": [
-        {
-          "class": "solr.PatternReplaceCharFilterFactory",
-          "pattern": "_",
-          "replacement": " "
-        }
-      ],
-      "tokenizer": {
-        "class": "solr.StandardTokenizerFactory"
+  "add-field-type": [
+    {
+      "name": "text_symptom_boosted",
+      "class": "solr.TextField",
+      "positionIncrementGap": "100",
+      
+      "indexAnalyzer": {
+        "tokenizer": {
+          "class": "solr.PatternTokenizerFactory",
+          "pattern": "[\\W_]+" 
+        },
+        "filters": [
+          {
+            "class": "solr.LowerCaseFilterFactory"
+          },
+          {
+            "class": "solr.ASCIIFoldingFilterFactory"
+          },
+          {
+            "class": "solr.SynonymGraphFilterFactory",
+            "synonyms": "synonyms_diseases.txt",
+            "ignoreCase": "true"
+          },
+          {
+            "class": "solr.EnglishMinimalStemFilterFactory"
+          }
+        ]
       },
-      "filters": [
-        {
-          "class": "solr.LowerCaseFilterFactory"
-        }
-      ]
-    },
-    "queryAnalyzer": {
-      "charFilters": [
-        {
-          "class": "solr.PatternReplaceCharFilterFactory",
-          "pattern": "_",
-          "replacement": " "
-        }
-      ],
-      "tokenizer": {
-        "class": "solr.StandardTokenizerFactory"
-      },
-      "filters": [
-        {
-          "class": "solr.LowerCaseFilterFactory"
-        }
-      ]
+      
+      "queryAnalyzer": {
+        "tokenizer": {
+          "class": "solr.PatternTokenizerFactory",
+          "pattern": "[\\W_]+" 
+        },
+        "filters": [
+          {
+            "class": "solr.LowerCaseFilterFactory"
+          },
+          {
+            "class": "solr.ASCIIFoldingFilterFactory"
+          },
+          {
+            "class": "solr.SynonymGraphFilterFactory",
+            "synonyms": "synonyms_diseases.txt",
+            "ignoreCase": "true"
+          },
+          {
+            "class": "solr.EnglishMinimalStemFilterFactory"
+          }
+        ]
+      }
     }
-  },
-  "add-field": {
-    "name": "name",
-    "type": "UnderscoreTextField",
-    "stored": true,
-    "indexed": true
-  }
+  ],
+
+  "add-field": [
+    {
+      "name": "name",
+      "type": "text_symptom_boosted",
+      "stored": true,
+      "indexed": true
+    },
+    {
+      "name": "symptoms",
+      "type": "text_symptom_boosted",
+      "stored": true,
+      "indexed": true,
+      "multiValued": true
+    },
+    {
+      "name": "description",
+      "type": "text_symptom_boosted",
+      "stored": true,
+      "indexed": true
+    },
+    {
+      "name": "treatments",
+      "type": "text_symptom_boosted",
+      "stored": true,
+      "indexed": true,
+      "multiValued": true
+    },
+    {
+      "name": "contagious",
+      "type": "boolean",
+      "stored": true,
+      "indexed": false
+    },
+    {
+      "name": "chronic",
+      "type": "boolean",
+      "stored": true,
+      "indexed": false
+    },
+    {
+      "name": "url",
+      "type": "string",
+      "stored": true,
+      "indexed": false
+    }
+  ]
 }

@@ -39,3 +39,13 @@ milestone1/data/alternative/
 milestone1/data/characterization_results/
 milestone1/data/final/
 
+
+# Evaluation outputs (generated results, plots, trec files)
+/milestone2/evaluation/queries/
+/milestone2/evaluation/**/results.json
+/milestone2/evaluation/**/results.trec
+/milestone2/evaluation/**/precision_recall.png
+
+# Generated synonym files
+/milestone2/data/synonyms_diseases.txt
+

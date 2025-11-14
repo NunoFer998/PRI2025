@@ -1,7 +1,7 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 0,
+    "QTime": 40,
     "params": {
       "q": "*:*",
       "fq": "chronic:1",
@@ -14,150 +14,6 @@
     "numFoundExact": true,
     "docs": [
       {
-        "name": "abdominal_hernia",
-        "symptoms": [
-          "Visible bulge or swelling, discomfort or pain"
-        ],
-        "treatments": [
-          "Watchful waiting, hernia truss, surgical repair, lifestyle changes"
-        ],
-        "contagious": [
-          0
-        ],
-        "chronic": [
-          1
-        ],
-        "id": "c23ae8b3-7876-4f06-afe3-0f289c0b2be7",
-        "_version_": 1847973322600480768,
-        "_root_": "c23ae8b3-7876-4f06-afe3-0f289c0b2be7"
-      },
-      {
-        "name": "achalasia",
-        "symptoms": [
-          "Difficulty swallowing"
-        ],
-        "treatments": [
-          "Balloon dilation, surgery, medication"
-        ],
-        "contagious": [
-          0
-        ],
-        "chronic": [
-          1
-        ],
-        "id": "142fdb08-7f68-4473-b91a-fc875daedc19",
-        "_version_": 1847973322779787271,
-        "_root_": "142fdb08-7f68-4473-b91a-fc875daedc19"
-      },
-      {
-        "name": "acinic_cell_carcinoma",
-        "symptoms": [
-          "Lump, swelling, Facial changes"
-        ],
-        "treatments": [
-          "Surgery, Radiation therapy"
-        ],
-        "contagious": [
-          0
-        ],
-        "chronic": [
-          1
-        ],
-        "id": "cc7f1d2c-2759-4f4d-acc2-5f6abc151fb3",
-        "_version_": 1847973322783981569,
-        "_root_": "cc7f1d2c-2759-4f4d-acc2-5f6abc151fb3"
-      },
-      {
-        "name": "actinic_keratosis",
-        "symptoms": [
-          "Rough, scaly patches on the skin, usually in sun-exposed areas"
-        ],
-        "treatments": [
-          "Topical medications (e.g., fluorouracil, imiquimod, diclofenac), cryotherapy, curettag"
-        ],
-        "contagious": [
-          0
-        ],
-        "chronic": [
-          1
-        ],
-        "id": "273803fd-6c1a-40e7-ab43-be2fa4108a26",
-        "_version_": 1847973322905616391,
-        "_root_": "273803fd-6c1a-40e7-ab43-be2fa4108a26"
-      },
-      {
-        "name": "acute_bronchospasm",
-        "symptoms": [
-          "Wheezing, shortness of breath, chest tightness"
-        ],
-        "treatments": [
-          "Bronchodilators (inhaled medications), corticosteroids, supplemental oxygen (if needed)"
-        ],
-        "contagious": [
-          0
-        ],
-        "chronic": [
-          1
-        ],
-        "id": "191b9e47-ccb4-4014-bc0b-fc190e599ad6",
-        "_version_": 1847973323300929536,
-        "_root_": "191b9e47-ccb4-4014-bc0b-fc190e599ad6"
-      },
-      {
-        "name": "acute_glaucoma",
-        "symptoms": [
-          "Severe eye pain, blurred vision, halos around lights"
-        ],
-        "treatments": [
-          "Medications (eye drops), laser therapy, surgery (in some cases)"
-        ],
-        "contagious": [
-          0
-        ],
-        "chronic": [
-          1
-        ],
-        "id": "ff00583b-83b7-4c6a-bda0-bf1efdcb464c",
-        "_version_": 1847973323352309772,
-        "_root_": "ff00583b-83b7-4c6a-bda0-bf1efdcb464c"
-      },
-      {
-        "name": "acute_kidney_injury",
-        "symptoms": [
-          "Decreased urine output, fluid retention, fatigue"
-        ],
-        "treatments": [
-          "Treating underlying cause, supportive care, medications to manage complications, dialysis (in severe cases)"
-        ],
-        "contagious": [
-          1
-        ],
-        "chronic": [
-          1
-        ],
-        "id": "39c528e3-5d04-4d3c-85ad-ecc2e17be2ca",
-        "_version_": 1847973323393204227,
-        "_root_": "39c528e3-5d04-4d3c-85ad-ecc2e17be2ca"
-      },
-      {
-        "name": "acute_pancreatitis",
-        "symptoms": [
-          "Severe upper abdominal pain, nausea, vomiting, fever, rapid pulse, swollen and tender abdomen, jaundice"
-        ],
-        "treatments": [
-          "Hospitalization, intravenous fluids to restore hydration, pain management, bowel rest, nutritional support, medications to control pain and inflammation"
-        ],
-        "contagious": [
-          1
-        ],
-        "chronic": [
-          1
-        ],
-        "id": "0b6bd216-569c-4623-89d8-ddbe2359ed39",
-        "_version_": 1847973323631230980,
-        "_root_": "0b6bd216-569c-4623-89d8-ddbe2359ed39"
-      },
-      {
         "name": "acute_sinusitis",
         "symptoms": [
           "Facial pain or pressure, nasal congestion, thick nasal discharge, post-nasal drip, cough, headache, fatigue, fever (in some cases)"
@@ -165,15 +21,11 @@
         "treatments": [
           "Home remedies (such as nasal saline irrigation, steam inhalation), over-the-counter pain relievers (such as acetaminophen or ibuprofen), nasal decongestants (for short-term use), nasal corticosteroids (to reduce inflammation), plenty of fluids and rest, warm compresses, avoidance of irritants (such as smoke or allergens), prescription antibiotics (if bacterial infection is suspected or confirmed), management of underlying causes (such as allergies or nasal polyps), symptom relief medications (such as cough suppressants or antihistamines)"
         ],
-        "contagious": [
-          1
-        ],
-        "chronic": [
-          1
-        ],
-        "id": "761cf27b-a214-4706-83be-6284989db4a3",
-        "_version_": 1847973323873452037,
-        "_root_": "761cf27b-a214-4706-83be-6284989db4a3"
+        "contagious": true,
+        "chronic": true,
+        "id": "a6ca30ba-aea1-4bbf-8147-3459e21b9476",
+        "_version_": 1848763969904314027,
+        "_root_": "a6ca30ba-aea1-4bbf-8147-3459e21b9476"
       },
       {
         "name": "adenoid_cystic_carcinoma",
@@ -183,15 +35,123 @@
         "treatments": [
           "Surgery, Radiation therapy"
         ],
-        "contagious": [
-          0
+        "contagious": false,
+        "chronic": true,
+        "id": "2b4525a3-77c7-4820-847b-9bb854efd405",
+        "_version_": 1848763969904314957,
+        "_root_": "2b4525a3-77c7-4820-847b-9bb854efd405"
+      },
+      {
+        "name": "adrenal_cancer",
+        "symptoms": [
+          "Abdominal or back pain, unexplained weight loss, hormonal imbalances"
         ],
-        "chronic": [
-          1
+        "treatments": [
+          "Surgery (adrenalectomy), chemotherapy, radiation therapy, targeted therapy, hormone replacement therapy"
         ],
-        "id": "07428425-c764-4377-b335-fc0c53784f37",
-        "_version_": 1847973323978309635,
-        "_root_": "07428425-c764-4377-b335-fc0c53784f37"
+        "contagious": false,
+        "chronic": true,
+        "id": "d3312182-d41a-4484-9a9e-d05f20497a2c",
+        "_version_": 1848763975160824115,
+        "_root_": "d3312182-d41a-4484-9a9e-d05f20497a2c"
+      },
+      {
+        "name": "acute_bronchospasm",
+        "symptoms": [
+          "Wheezing, shortness of breath, chest tightness"
+        ],
+        "treatments": [
+          "Bronchodilators (inhaled medications), corticosteroids, supplemental oxygen (if needed)"
+        ],
+        "contagious": false,
+        "chronic": true,
+        "id": "87a18bb4-92fb-47e5-af5f-e8901d8167a5",
+        "_version_": 1848763959381854548,
+        "_root_": "87a18bb4-92fb-47e5-af5f-e8901d8167a5"
+      },
+      {
+        "name": "acute_glaucoma",
+        "symptoms": [
+          "Severe eye pain, blurred vision, halos around lights"
+        ],
+        "treatments": [
+          "Medications (eye drops), laser therapy, surgery (in some cases)"
+        ],
+        "contagious": false,
+        "chronic": true,
+        "id": "60387bdd-46ac-468f-8321-350f792c27f7",
+        "_version_": 1848763964649898513,
+        "_root_": "60387bdd-46ac-468f-8321-350f792c27f7"
+      },
+      {
+        "name": "acute_kidney_injury",
+        "symptoms": [
+          "Decreased urine output, fluid retention, fatigue"
+        ],
+        "treatments": [
+          "Treating underlying cause, supportive care, medications to manage complications, dialysis (in severe cases)"
+        ],
+        "contagious": true,
+        "chronic": true,
+        "id": "00faa111-d6fb-4f89-a661-cc44f30fbdb1",
+        "_version_": 1848763964649898862,
+        "_root_": "00faa111-d6fb-4f89-a661-cc44f30fbdb1"
+      },
+      {
+        "name": "acute_pancreatitis",
+        "symptoms": [
+          "Severe upper abdominal pain, nausea, vomiting, fever, rapid pulse, swollen and tender abdomen, jaundice"
+        ],
+        "treatments": [
+          "Hospitalization, intravenous fluids to restore hydration, pain management, bowel rest, nutritional support, medications to control pain and inflammation"
+        ],
+        "contagious": true,
+        "chronic": true,
+        "id": "353dba23-7ed3-4454-bd09-a6e1555c97b5",
+        "_version_": 1848763969904312472,
+        "_root_": "353dba23-7ed3-4454-bd09-a6e1555c97b5"
+      },
+      {
+        "name": "abdominal_hernia",
+        "symptoms": [
+          "Visible bulge or swelling, discomfort or pain"
+        ],
+        "treatments": [
+          "Watchful waiting, hernia truss, surgical repair, lifestyle changes"
+        ],
+        "contagious": false,
+        "chronic": true,
+        "id": "34457542-5aba-4514-9f1e-609a72fd5d5a",
+        "_version_": 1848763920489119744,
+        "_root_": "34457542-5aba-4514-9f1e-609a72fd5d5a"
+      },
+      {
+        "name": "achalasia",
+        "symptoms": [
+          "Difficulty swallowing"
+        ],
+        "treatments": [
+          "Balloon dilation, surgery, medication"
+        ],
+        "contagious": false,
+        "chronic": true,
+        "id": "7f21543f-938b-4b85-9518-61c017fb6126",
+        "_version_": 1848763952702423412,
+        "_root_": "7f21543f-938b-4b85-9518-61c017fb6126"
+      },
+      {
+        "name": "acinic_cell_carcinoma",
+        "symptoms": [
+          "Lump, swelling, Facial changes"
+        ],
+        "treatments": [
+          "Surgery, Radiation therapy"
+        ],
+        "contagious": false,
+        "chronic": true,
+        "id": "0bee6151-82b0-49fc-91e4-56c1ff6c8ad8",
+        "_version_": 1848763952702423428,
+        "_root_": "0bee6151-82b0-49fc-91e4-56c1ff6c8ad8"
       }
     ]
   }

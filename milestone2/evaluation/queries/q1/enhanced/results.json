@@ -1,11 +1,11 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 3,
+    "QTime": 99,
     "params": {
       "q": "aase syndrome",
       "defType": "edismax",
-      "qf": "name^5 symptoms^3 description^1 treatments^1",
+      "qf": "name^5 symptoms^3 treatments^1",
       "q.op": "AND",
       "wt": "json"
     }
@@ -20,15 +20,11 @@
         "symptoms": [
           "Narrow shoulders ,  Droopy eyelids ,  Absent or small knuckles ,  Deformed ears ,  Pale skin ,  Triple-jointed thumbs ,  Cleft palate ,  Inability to fully extend the joints from birth"
         ],
-        "description": [
-          "I've been aware of some unusual physical characteristics that have been concerning me, including my narrow shoulders, droopy eyelids, and absent or small knuckles. Additionally, my ears are deformed, and my skin is quite pale. I've also noticed that I have triple-jointed thumbs, which is quite unusual. Furthermore, I was born with a cleft palate, and I've struggled with an inability to fully extend my joints since birth."
-        ],
-        "url": [
-          "https://medlineplus.gov/ency/article/001662.htm"
-        ],
-        "id": "ff93bd85-0ec0-487e-837b-93114d95dd61",
-        "_version_": 1847973322413834240,
-        "_root_": "ff93bd85-0ec0-487e-837b-93114d95dd61"
+        "description": "I've been aware of some unusual physical characteristics that have been concerning me, including my narrow shoulders, droopy eyelids, and absent or small knuckles. Additionally, my ears are deformed, and my skin is quite pale. I've also noticed that I have triple-jointed thumbs, which is quite unusual. Furthermore, I was born with a cleft palate, and I've struggled with an inability to fully extend my joints since birth.",
+        "url": "https://medlineplus.gov/ency/article/001662.htm",
+        "id": "f95bee9c-75b6-4152-a915-e98d2530d3a1",
+        "_version_": 1848763919735193600,
+        "_root_": "f95bee9c-75b6-4152-a915-e98d2530d3a1"
       }
     ]
   }
