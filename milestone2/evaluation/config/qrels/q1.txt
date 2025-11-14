@@ -1,4 +1,0 @@
-# Relevance judgments for Query 1: What are the symptoms of aase syndrome?
-# List relevant document IDs (one per line)
-# TODO: Replace with actual disease IDs from your Solr collection
-aase_syndrome

@@ -4,7 +4,7 @@ from nltk import download
 from nltk.corpus import wordnet
 import os
 
-FILE_PATH = "synonyms_diseases.txt"
+FILE_PATH = "data/synonyms_diseases.txt"
 
 def synonyms():
 
@@ -14,7 +14,7 @@ def synonyms():
     nltk.download('wordnet', quiet=True)
 
     # Use your merged disease dataset
-    file_path = '/home/manjeri998/PRI2025/milestone2/data/merged_disease_symptom_list.csv'
+    file_path = 'data/merged_disease_symptom_list.csv'
     dataset = pd.read_csv(file_path)
 
     # Extract text from symptoms, descriptions, and treatments

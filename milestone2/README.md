@@ -24,33 +24,16 @@ Make sure your terminal is in the `milestone2` directory:
 cd path/to/PRI2025/milestone2
 ```
 
-### Step 2: Start thr Solr Container
+### Step 2: Run the Startup Script
 
-If you already created the container and want to use it, just restart it:
-```bash
-docker start meic_solr # or the name of your container
-```
+The provided script will:
 
-
-Otherwise, this command creates a ``Solr`` container named ``meic_solr``, maps the local data folder to the container, and pre-creates the ``diseases`` collection.
-
-For Linux / WSL / Mac:
-```bash
-docker run -p 8983:8983 --name meic_solr -v "${PWD}/data:/data" -d solr:9 solr-precreate diseases
-```
-
-For Windows Command Prompt / Powershell:
-```bash
-docker run -p 8983:8983 --name meic_solr -v ${PWD}/data:/data -d solr:9 solr-precreate diseases
-```
-
-### Step 3: Run the Startup Script
-
-The script will:
-
-1. Apply the schema (``schema.json``) to the ``diseases`` collection
-2. Post the CSV dataset (``merged_disease_symptom_list.csv``) to ``Solr``
-3. Commit the changes so the data becomes searchable
+1. Detect whether the container ``meic_solr`` already exists
+2. Start it if it exists, but is stopped
+3. Create it automatically (with the correct configuration) if it does not exist.
+4. Apply the schema (``schema.json``) to the ``diseases`` collection
+5. Post the CSV dataset (``merged_disease_symptom_list.csv``) to ``Solr``
+5. Commit the changes so the data becomes searchable
 
 Make the script executable (Linux / WSL / Mac):
 ```bash

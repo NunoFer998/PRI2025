@@ -1,6 +1,0 @@
-{
-  "query": "*:*",
-  "filter": "chronic:1",
-  "fields": "*,score",
-  "limit": 100
-}

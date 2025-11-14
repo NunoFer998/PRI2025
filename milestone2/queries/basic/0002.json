@@ -1,0 +1,4 @@
+{
+  "query": "symptoms:(headache AND fatigue)",
+  "fields": "id, score"
+}

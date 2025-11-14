@@ -1,9 +1,0 @@
-{
-  "query": "migraines",
-  "params": {
-    "defType": "edismax",
-    "qf": "name^5 symptoms^3 description^1"
-  },
-  "fields": "*,score",
-  "limit": 100
-}

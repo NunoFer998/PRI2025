@@ -1,5 +1,0 @@
-{
-  "query": "name:aase_syndrome",
-  "fields": "*,score",
-  "limit": 100
-}

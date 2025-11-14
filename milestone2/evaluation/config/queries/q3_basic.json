@@ -1,5 +1,0 @@
-{
-  "query": "name:multiple_sclerosis",
-  "fields": "*,score",
-  "limit": 100
-}

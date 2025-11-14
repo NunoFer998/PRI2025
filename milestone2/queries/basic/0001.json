@@ -1,0 +1,4 @@
+{
+  "query": "name:aase_syndrome",
+  "fields": "id, score"
+}

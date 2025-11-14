@@ -1,7 +1,0 @@
-# Relevance judgments for Query 2: What diseases can cause headache and fatigue?
-# List relevant document IDs (one per line)
-# TODO: Replace with actual disease IDs from your Solr collection that have headache AND fatigue as symptoms
-migraine
-chronic_fatigue_syndrome
-influenza
-tension_headache
