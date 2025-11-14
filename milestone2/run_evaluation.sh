@@ -26,22 +26,30 @@ echo ""
 # Query Solr and convert results to TREC format
 echo "Step 2: Querying Solr and converting to TREC format..."
 > results_trec.txt  # Clear/create empty file
+
 for query_file in "${QUERIES_DIR}"/*; do
     if [ -f "$query_file" ]; then
-        echo "  Processing $(basename $query_file)..."
+        # Extract QID from filename, e.g., "0001.json" -> "0001"
+        QID=$(basename "$query_file" .json)
+        echo "  Processing ${QID}..."
+        
         ./scripts/query_solr.py \
             --query "$query_file" \
             --collection "${COLLECTION}" \
-        | ./scripts/solr2trec.py >> results_trec.txt
+        | ./scripts/solr2trec.py --qid "$QID" >> results_trec.txt
     fi
 done
+
 for query_file in "${ENHANCED_QUERIES_DIR}"/*; do
     if [ -f "$query_file" ]; then
-        echo "  Processing $(basename $query_file)..."
+        # Extract QID from filename, e.g., "0001.json" -> "0001"
+        QID=$(basename "$query_file" .json)
+        echo "  Processing ${QID} (enhanced)..."
+
         ./scripts/query_solr.py \
             --query "$query_file" \
             --collection "${COLLECTION}" \
-        | ./scripts/solr2trec.py >> results_trec.txt
+        | ./scripts/solr2trec.py --qid "$QID" >> results_trec.txt
     fi
 done
 echo "✓ Created results_trec.txt"
@@ -49,13 +57,20 @@ echo ""
 
 # Run evaluation pipeline and plot
 echo "Step 3: Running trec_eval and generating plots..."
-./trec_eval/trec_eval \
+# Make sure trec_eval path is correct
+./${TREC_EVAL}/trec_eval \
     -q -m all_trec \
     qrels_trec.txt results_trec.txt \
-| tee eval_results.txt \
-| ./scripts/plot_pr.py --qrels qrels_trec.txt --output pr_curve.png
-echo "✓ Evaluation complete"
+| tee eval_results.txt
+# Note: Piping to two commands can be tricky with error handling.
+# Let's check if eval_results.txt was created and is not empty before plotting
+if [ -s eval_results.txt ]; then
+    ./scripts/plot_pr.py --eval_file eval_results.txt --output pr_curve.png
+    echo "✓ Evaluation complete"
+else
+    echo "✗ Evaluation failed. eval_results.txt is empty."
+fi
 echo ""
 
 # Cleanup
-rm -f qrels_trec.txt results_trec.txt
+# rm -f qrels_trec.txt results_trec.txt
