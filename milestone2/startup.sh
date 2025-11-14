@@ -12,44 +12,77 @@ SOLR_CORE="diseases"
 echo "Checking container status..."
 
 if ! docker ps -a --format '{{.Names}}' | grep -q "^${CONTAINER_NAME}$"; then
-    echo -e "Container '${CONTAINER_NAME}' does not exist. Creating it..."
-
+    echo "Container '${CONTAINER_NAME}' does not exist. Creating it..."
     docker run -p ${HOST_PORT}:8983 \
         --name ${CONTAINER_NAME} \
         -v "${LOCAL_DATA_PATH}:/data" \
         -d ${IMAGE} solr-precreate ${SOLR_CORE}
-
 else
     if ! docker ps --format '{{.Names}}' | grep -q "^${CONTAINER_NAME}$"; then
-        echo -e "Container '${CONTAINER_NAME}' exists but is stopped. Starting it...\n"
+        echo "Container '${CONTAINER_NAME}' exists but is stopped. Starting it..."
         docker start ${CONTAINER_NAME}
     else
-        echo -e "Container '${CONTAINER_NAME}' is already running.\n"
+        echo "Container '${CONTAINER_NAME}' is already running."
     fi
 fi
 
-echo -e "\nWaiting for Solr to start...\n"
-sleep 10
-
-# Schema definition via API
-echo "Checking if schema was already applied..."
-
-FIELD_EXISTS=$(curl -s "http://localhost:8983/solr/diseases/schema/field/name" | grep -c '"name"')
-
-if [ "$FIELD_EXISTS" -gt 0 ]; then
-    echo -e "Schema already applied. Skipping schema update.\n"
-else
-    echo "Updating schema..."
-    curl -X POST -H 'Content-type:application/json' \
-        --data-binary "@data/schema.json" \
-        http://localhost:8983/solr/diseases/schema
-
-    echo -e "\nAllowing schema to reload...\n"
+echo "Waiting for Solr to be ready..."
+until curl -s "http://localhost:${HOST_PORT}/solr/admin/cores" > /dev/null; do
+    echo "Solr not ready yet, waiting 5s..."
     sleep 5
+done
+echo "Solr is ready!"
+
+echo "Waiting for 'diseases' core to be fully ready..."
+until curl -s -o /dev/null -w "%{http_code}" http://localhost:8983/solr/diseases/select | grep -q "200"; do
+  echo -n "."
+  sleep 2
+done
+
+echo "Core is ready."
+if [ -f "data/synonyms_diseases.txt" ]; then
+  echo "Copying synonyms file to Solr..."
+  docker cp data/synonyms_diseases.txt meic_solr:/var/solr/data/diseases/conf/synonyms_diseases.txt
+  echo "Successfully copied synonyms file."
+else
+  echo "Warning: synonyms_diseases.txt not found in data/ directory. Schema update will likely fail."
 fi
 
-# Populate collection using mapped path inside container.
-echo -e "Deleting old data and re-indexing...\n"
-docker exec -it ${CONTAINER_NAME} bin/solr post -c ${SOLR_CORE} /data/merged_disease_symptom_list.csv -params "overwrite=true"
+echo "Updating schema..."
+curl -s -X POST -H 'Content-type:application/json' \
+  --data-binary "@data/schema.json" \
+  http://localhost:8983/solr/diseases/schema
 
-echo -e "\nSetup complete!"
+echo "Waiting for core to stabilize after schema update..."
+until curl -s -o /dev/null -w "%{http_code}" http://localhost:8983/solr/diseases/select | grep -q "200"; do
+  echo -n "."
+  sleep 2
+done
+echo "Core is stable."
+
+if [ -f "data/synonyms_diseases.txt" ]; then
+    echo "Copying synonyms file to Solr..."
+    docker cp data/synonyms_diseases.txt meic_solr:/var/solr/data/diseases/conf/synonyms_diseases.txt
+    
+    echo "Reloading core to apply synonyms..."
+    curl -s "http://localhost:8983/solr/admin/cores?action=RELOAD&core=diseases" >/dev/null
+    
+    echo "Waiting for core reload..."
+    until curl -s -o /dev/null -w "%{http_code}" http://localhost:8983/solr/diseases/select | grep -q "200"; do
+      echo -n "."
+      sleep 1
+    done
+    echo "Synonyms applied successfully."
+else
+    echo "Warning: synonyms_diseases.txt not found in data/ directory. Skipping synonyms setup."
+fi
+
+echo "Deleting old data and re-indexing..."
+
+curl -s -X POST -H 'Content-type:application/json' \
+    --data-binary '{"delete": {"query":"*:*"}}' \
+    http://localhost:8983/solr/diseases/update?commit=true
+
+docker exec meic_solr bin/solr post -c diseases /data/merged_disease_symptom_list.csv -params "overwrite=true"
+
+echo "Setup completed"

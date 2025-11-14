@@ -84,13 +84,13 @@
       "name": "contagious",
       "type": "boolean",
       "stored": true,
-      "indexed": false
+      "indexed": true
     },
     {
       "name": "chronic",
       "type": "boolean",
       "stored": true,
-      "indexed": false
+      "indexed": true
     },
     {
       "name": "url",
