@@ -1,1 +1,0 @@
-http://localhost:8983/solr/diseases/select?q=name%3A+multiple_sclerosis&wt=json

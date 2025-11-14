@@ -1,1 +1,0 @@
-http://localhost:8983/solr/diseases/select?q=symptoms%3A+migraines+OR+description%3Amigraines&wt=json

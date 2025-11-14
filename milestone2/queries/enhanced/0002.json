@@ -1,0 +1,9 @@
+{
+  "query": "headache fatigue",
+  "fields": "id, score",
+  "params": {
+    "defType": "edismax",
+    "q.op": "AND",
+    "qf": "name^5 symptoms^3 description^1 treatments^1"
+  }
+}

@@ -1,1 +1,0 @@
-http://localhost:8983/solr/diseases/select?q=symptoms%3A%28headache+AND+fatigue%29&wt=json

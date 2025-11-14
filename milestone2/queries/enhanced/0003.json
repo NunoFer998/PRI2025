@@ -1,0 +1,8 @@
+{
+  "query": "treatments multiple sclerosis",
+  "fields": "id, score",
+  "params": {
+    "defType": "edismax",
+    "qf": "name^5 treatments^4 description^1"
+  }
+}
