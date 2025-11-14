@@ -1,7 +1,7 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 12,
+    "QTime": 27,
     "params": {
       "q": "migraines",
       "defType": "edismax",
@@ -21,9 +21,9 @@
         "symptoms": [
           "vomiting, spots or clouds in vision, symptoms of the face, disturbance of memory"
         ],
-        "id": "46916f6a-7b09-4122-ae66-f3c17bc03016",
-        "_version_": 1848764101761696979,
-        "_root_": "46916f6a-7b09-4122-ae66-f3c17bc03016",
+        "id": "a4dd3374-c972-43bc-91a3-949e4627a1e7",
+        "_version_": 1848781742525128697,
+        "_root_": "a4dd3374-c972-43bc-91a3-949e4627a1e7",
         "score": 147.21158
       },
       {
@@ -31,9 +31,9 @@
         "symptoms": [
           "nausea, diminished vision, spots or clouds in vision, blindness, symptoms of the face"
         ],
-        "id": "c0e5205d-eda1-4a5f-967e-07506671ae66",
-        "_version_": 1848764101761696980,
-        "_root_": "c0e5205d-eda1-4a5f-967e-07506671ae66",
+        "id": "ac29191f-69d6-492e-9691-2c39b2eecb11",
+        "_version_": 1848781742525128698,
+        "_root_": "ac29191f-69d6-492e-9691-2c39b2eecb11",
         "score": 147.21158
       },
       {
@@ -41,9 +41,9 @@
         "symptoms": [
           "diminished vision, spots or clouds in vision, blindness, disturbance of memory"
         ],
-        "id": "7337501b-18bb-4f22-9e31-2eb7ad58958f",
-        "_version_": 1848764101761696981,
-        "_root_": "7337501b-18bb-4f22-9e31-2eb7ad58958f",
+        "id": "4071267f-234b-49f8-92d6-a7fa9fdabaff",
+        "_version_": 1848781742525128699,
+        "_root_": "4071267f-234b-49f8-92d6-a7fa9fdabaff",
         "score": 147.21158
       },
       {
@@ -51,9 +51,9 @@
         "symptoms": [
           "dizziness, vomiting, headache, diminished vision, spots or clouds in vision, blindness, disturbance of memory"
         ],
-        "id": "cbfbe3e3-8bc7-49c9-98b3-7a2d42973a78",
-        "_version_": 1848764101761696982,
-        "_root_": "cbfbe3e3-8bc7-49c9-98b3-7a2d42973a78",
+        "id": "ca5c5c40-f511-4e30-8a30-4aa99bbe7564",
+        "_version_": 1848781742525128700,
+        "_root_": "ca5c5c40-f511-4e30-8a30-4aa99bbe7564",
         "score": 147.21158
       },
       {
@@ -61,9 +61,9 @@
         "symptoms": [
           "vomiting, headache, diminished vision, symptoms of the face"
         ],
-        "id": "55db15f0-33fb-4a2b-a1b7-caf2d75f557f",
-        "_version_": 1848764101761696983,
-        "_root_": "55db15f0-33fb-4a2b-a1b7-caf2d75f557f",
+        "id": "ccebdb9a-70ff-4b13-a178-a0c62cbbcce7",
+        "_version_": 1848781742525128701,
+        "_root_": "ccebdb9a-70ff-4b13-a178-a0c62cbbcce7",
         "score": 147.21158
       },
       {
@@ -71,9 +71,9 @@
         "symptoms": [
           "dizziness, vomiting, headache, nausea, diminished vision, spots or clouds in vision, blindness, symptoms of the face"
         ],
-        "id": "82a0d6cb-5a14-48ae-b965-c6a7ea45b94f",
-        "_version_": 1848764101761696984,
-        "_root_": "82a0d6cb-5a14-48ae-b965-c6a7ea45b94f",
+        "id": "6148dd68-cc8e-4897-a149-f4cfb2f45fbc",
+        "_version_": 1848781742525128702,
+        "_root_": "6148dd68-cc8e-4897-a149-f4cfb2f45fbc",
         "score": 147.21158
       },
       {
@@ -81,9 +81,9 @@
         "symptoms": [
           "dizziness, vomiting, spots or clouds in vision, symptoms of the face, disturbance of memory"
         ],
-        "id": "c7823e71-d159-42ba-b8f7-54d71d7f0a61",
-        "_version_": 1848764101761696985,
-        "_root_": "c7823e71-d159-42ba-b8f7-54d71d7f0a61",
+        "id": "df4bfeaa-89de-41bf-8873-9b9a63a1978e",
+        "_version_": 1848781742525128703,
+        "_root_": "df4bfeaa-89de-41bf-8873-9b9a63a1978e",
         "score": 147.21158
       },
       {
@@ -91,9 +91,9 @@
         "symptoms": [
           "vomiting, headache, nausea, diminished vision, spots or clouds in vision, blindness, symptoms of the face"
         ],
-        "id": "51e248e1-9719-4e02-9e5b-65c72bb63fa8",
-        "_version_": 1848764101761696986,
-        "_root_": "51e248e1-9719-4e02-9e5b-65c72bb63fa8",
+        "id": "9d63c088-aed6-45a8-bec1-a828aff30de4",
+        "_version_": 1848781742525128704,
+        "_root_": "9d63c088-aed6-45a8-bec1-a828aff30de4",
         "score": 147.21158
       },
       {
@@ -101,9 +101,9 @@
         "symptoms": [
           "vomiting, headache, nausea, spots or clouds in vision, blindness"
         ],
-        "id": "83d887c4-6c44-4edc-8839-a89861cf3b8d",
-        "_version_": 1848764101761696987,
-        "_root_": "83d887c4-6c44-4edc-8839-a89861cf3b8d",
+        "id": "13bc75f8-d7c4-40f1-bb31-24efe56320e0",
+        "_version_": 1848781742525128705,
+        "_root_": "13bc75f8-d7c4-40f1-bb31-24efe56320e0",
         "score": 147.21158
       },
       {
@@ -111,9 +111,9 @@
         "symptoms": [
           "vomiting, headache, blindness, disturbance of memory"
         ],
-        "id": "87c810b1-57f7-4c33-821e-92d76a2ab5da",
-        "_version_": 1848764101761696988,
-        "_root_": "87c810b1-57f7-4c33-821e-92d76a2ab5da",
+        "id": "fe707d70-a862-46ac-92b9-6c8f1bc3f5d2",
+        "_version_": 1848781742525128706,
+        "_root_": "fe707d70-a862-46ac-92b9-6c8f1bc3f5d2",
         "score": 147.21158
       }
     ]

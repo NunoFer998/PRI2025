@@ -1,7 +1,7 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 6,
+    "QTime": 51,
     "params": {
       "q": "*:*",
       "fl": "*,score",
@@ -16,153 +16,153 @@
     "numFoundExact": true,
     "docs": [
       {
-        "name": "acute_sinusitis",
+        "name": "bursitis",
         "symptoms": [
-          "Facial pain or pressure, nasal congestion, thick nasal discharge, post-nasal drip, cough, headache, fatigue, fever (in some cases)"
+          "Joint pain, swelling, tenderness, limited range of motion"
         ],
         "treatments": [
-          "Home remedies (such as nasal saline irrigation, steam inhalation), over-the-counter pain relievers (such as acetaminophen or ibuprofen), nasal decongestants (for short-term use), nasal corticosteroids (to reduce inflammation), plenty of fluids and rest, warm compresses, avoidance of irritants (such as smoke or allergens), prescription antibiotics (if bacterial infection is suspected or confirmed), management of underlying causes (such as allergies or nasal polyps), symptom relief medications (such as cough suppressants or antihistamines)"
+          "Rest, ice, compression, elevation (RICE therapy), pain relievers, physical therapy, steroid injections"
+        ],
+        "contagious": false,
+        "chronic": true,
+        "id": "6c7764b9-a869-4bec-a7ed-91163ed8699a",
+        "_version_": 1848781705741076560,
+        "_root_": "6c7764b9-a869-4bec-a7ed-91163ed8699a",
+        "score": 1.0
+      },
+      {
+        "name": "cannabis_use_disorder",
+        "symptoms": [
+          "Increased appetite, relaxation, altered perception of time, impaired memory and concentration, bloodshot eyes, anxiety or paranoia (in some individuals), withdrawal symptoms (such as irritability, insomnia) when attempting to stop or reduce cannabis use, continued use despite negative consequences (such as relationship problems, job difficulties)"
+        ],
+        "treatments": [
+          "Counseling or therapy (such as cognitive-behavioral therapy, motivational interviewing), support groups, addressing underlying psychological or social factors, lifestyle changes, addressing co-occurring mental health conditions, harm reduction strategies, ongoing monitoring and support"
+        ],
+        "contagious": false,
+        "chronic": true,
+        "id": "802805de-077a-47e7-8f52-a5c788cf2fb6",
+        "_version_": 1848781705741077251,
+        "_root_": "802805de-077a-47e7-8f52-a5c788cf2fb6",
+        "score": 1.0
+      },
+      {
+        "name": "carbon_monoxide_poisoning",
+        "symptoms": [
+          "Headache, dizziness, nausea, confusion"
+        ],
+        "treatments": [
+          "Fresh air, oxygen therapy, immediate medical attention"
+        ],
+        "contagious": false,
+        "chronic": true,
+        "id": "9c131fa8-3968-4f39-8dc8-db98485b04c5",
+        "_version_": 1848781705741077263,
+        "_root_": "9c131fa8-3968-4f39-8dc8-db98485b04c5",
+        "score": 1.0
+      },
+      {
+        "name": "chagas_disease",
+        "symptoms": [
+          "Fever, fatigue, body aches, heart and digestive problems"
+        ],
+        "treatments": [
+          "Antiparasitic medications, medications to manage symptoms, supportive care"
         ],
         "contagious": true,
         "chronic": true,
-        "id": "a6ca30ba-aea1-4bbf-8147-3459e21b9476",
-        "_version_": 1848763969904314027,
-        "_root_": "a6ca30ba-aea1-4bbf-8147-3459e21b9476",
+        "id": "fc523272-b8b1-4478-8ada-0a3684ca8590",
+        "_version_": 1848781705741079452,
+        "_root_": "fc523272-b8b1-4478-8ada-0a3684ca8590",
         "score": 1.0
       },
       {
-        "name": "adenoid_cystic_carcinoma",
+        "name": "benzodiazepine_use_disorder",
         "symptoms": [
-          "Lump, swelling, Facial numbness, tingling"
+          "Sedation, relaxation, reduced anxiety, drowsiness, poor coordination, memory impairment, withdrawal symptoms (such as rebound anxiety, insomnia, tremors) when attempting to stop or reduce benzodiazepine use, continued use despite negative consequences (such as relationship problems, health risks)"
         ],
         "treatments": [
-          "Surgery, Radiation therapy"
+          "Gradual tapering off benzodiazepines under medical supervision, counseling or therapy (such as cognitive-behavioral therapy), support groups, addressing underlying psychological or social factors, lifestyle changes, addressing co-occurring mental health conditions, harm reduction strategies, ongoing monitoring and support"
         ],
         "contagious": false,
         "chronic": true,
-        "id": "2b4525a3-77c7-4820-847b-9bb854efd405",
-        "_version_": 1848763969904314957,
-        "_root_": "2b4525a3-77c7-4820-847b-9bb854efd405",
+        "id": "b818394b-f9f7-4664-ba31-4becc6dc8aab",
+        "_version_": 1848781700483520407,
+        "_root_": "b818394b-f9f7-4664-ba31-4becc6dc8aab",
         "score": 1.0
       },
       {
-        "name": "adrenal_cancer",
+        "name": "binge_eating_disorder",
         "symptoms": [
-          "Abdominal or back pain, unexplained weight loss, hormonal imbalances"
+          "Recurrent episodes of binge eating without compensatory behaviors"
         ],
         "treatments": [
-          "Surgery (adrenalectomy), chemotherapy, radiation therapy, targeted therapy, hormone replacement therapy"
+          "Psychotherapy (such as cognitive-behavioral therapy or interpersonal therapy), nutritional counseling, medications (in some cases), support groups"
         ],
         "contagious": false,
         "chronic": true,
-        "id": "d3312182-d41a-4484-9a9e-d05f20497a2c",
-        "_version_": 1848763975160824115,
-        "_root_": "d3312182-d41a-4484-9a9e-d05f20497a2c",
+        "id": "917074d8-858c-46cd-87ba-479e43ad7168",
+        "_version_": 1848781700483520418,
+        "_root_": "917074d8-858c-46cd-87ba-479e43ad7168",
         "score": 1.0
       },
       {
-        "name": "acute_bronchospasm",
+        "name": "bipolar_disorder",
         "symptoms": [
-          "Wheezing, shortness of breath, chest tightness"
+          "Mood swings, manic episodes, depressive episodes"
         ],
         "treatments": [
-          "Bronchodilators (inhaled medications), corticosteroids, supplemental oxygen (if needed)"
+          "Medications (mood stabilizers, antipsychotics), therapy"
         ],
         "contagious": false,
         "chronic": true,
-        "id": "87a18bb4-92fb-47e5-af5f-e8901d8167a5",
-        "_version_": 1848763959381854548,
-        "_root_": "87a18bb4-92fb-47e5-af5f-e8901d8167a5",
+        "id": "a80df8c1-65e3-41e0-a22b-1d502aea5048",
+        "_version_": 1848781700483520881,
+        "_root_": "a80df8c1-65e3-41e0-a22b-1d502aea5048",
         "score": 1.0
       },
       {
-        "name": "acute_glaucoma",
+        "name": "bladder_cancer",
         "symptoms": [
-          "Severe eye pain, blurred vision, halos around lights"
+          "Blood in urine, frequent urination, pelvic pain"
         ],
         "treatments": [
-          "Medications (eye drops), laser therapy, surgery (in some cases)"
+          "Surgery, chemotherapy, radiation therapy"
         ],
         "contagious": false,
         "chronic": true,
-        "id": "60387bdd-46ac-468f-8321-350f792c27f7",
-        "_version_": 1848763964649898513,
-        "_root_": "60387bdd-46ac-468f-8321-350f792c27f7",
+        "id": "3ee88d68-a452-45d4-bd0a-5c80b2ff8de4",
+        "_version_": 1848781700483520972,
+        "_root_": "3ee88d68-a452-45d4-bd0a-5c80b2ff8de4",
         "score": 1.0
       },
       {
-        "name": "acute_kidney_injury",
+        "name": "bladder_disorder",
         "symptoms": [
-          "Decreased urine output, fluid retention, fatigue"
+          "Frequent urination, urgency, pelvic pain"
         ],
         "treatments": [
-          "Treating underlying cause, supportive care, medications to manage complications, dialysis (in severe cases)"
+          "Medications, bladder training, lifestyle changes"
+        ],
+        "contagious": false,
+        "chronic": true,
+        "id": "e4a13626-309e-4cb1-aa64-dbc60b9747b3",
+        "_version_": 1848781700483521065,
+        "_root_": "e4a13626-309e-4cb1-aa64-dbc60b9747b3",
+        "score": 1.0
+      },
+      {
+        "name": "bone_cancer",
+        "symptoms": [
+          "Bone pain, fractures, fatigue, unexplained weight loss"
+        ],
+        "treatments": [
+          "Surgery, chemotherapy, radiation therapy, targeted therapy"
         ],
         "contagious": true,
         "chronic": true,
-        "id": "00faa111-d6fb-4f89-a661-cc44f30fbdb1",
-        "_version_": 1848763964649898862,
-        "_root_": "00faa111-d6fb-4f89-a661-cc44f30fbdb1",
-        "score": 1.0
-      },
-      {
-        "name": "acute_pancreatitis",
-        "symptoms": [
-          "Severe upper abdominal pain, nausea, vomiting, fever, rapid pulse, swollen and tender abdomen, jaundice"
-        ],
-        "treatments": [
-          "Hospitalization, intravenous fluids to restore hydration, pain management, bowel rest, nutritional support, medications to control pain and inflammation"
-        ],
-        "contagious": true,
-        "chronic": true,
-        "id": "353dba23-7ed3-4454-bd09-a6e1555c97b5",
-        "_version_": 1848763969904312472,
-        "_root_": "353dba23-7ed3-4454-bd09-a6e1555c97b5",
-        "score": 1.0
-      },
-      {
-        "name": "abdominal_hernia",
-        "symptoms": [
-          "Visible bulge or swelling, discomfort or pain"
-        ],
-        "treatments": [
-          "Watchful waiting, hernia truss, surgical repair, lifestyle changes"
-        ],
-        "contagious": false,
-        "chronic": true,
-        "id": "34457542-5aba-4514-9f1e-609a72fd5d5a",
-        "_version_": 1848763920489119744,
-        "_root_": "34457542-5aba-4514-9f1e-609a72fd5d5a",
-        "score": 1.0
-      },
-      {
-        "name": "achalasia",
-        "symptoms": [
-          "Difficulty swallowing"
-        ],
-        "treatments": [
-          "Balloon dilation, surgery, medication"
-        ],
-        "contagious": false,
-        "chronic": true,
-        "id": "7f21543f-938b-4b85-9518-61c017fb6126",
-        "_version_": 1848763952702423412,
-        "_root_": "7f21543f-938b-4b85-9518-61c017fb6126",
-        "score": 1.0
-      },
-      {
-        "name": "acinic_cell_carcinoma",
-        "symptoms": [
-          "Lump, swelling, Facial changes"
-        ],
-        "treatments": [
-          "Surgery, Radiation therapy"
-        ],
-        "contagious": false,
-        "chronic": true,
-        "id": "0bee6151-82b0-49fc-91e4-56c1ff6c8ad8",
-        "_version_": 1848763952702423428,
-        "_root_": "0bee6151-82b0-49fc-91e4-56c1ff6c8ad8",
+        "id": "862e1279-0a09-4d7b-9b3c-2b263a5f4050",
+        "_version_": 1848781700483522312,
+        "_root_": "862e1279-0a09-4d7b-9b3c-2b263a5f4050",
         "score": 1.0
       }
     ]

@@ -1,7 +1,7 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 205,
+    "QTime": 282,
     "params": {
       "q": "headache fatigue",
       "defType": "edismax",
@@ -27,9 +27,9 @@
         ],
         "contagious": true,
         "chronic": true,
-        "id": "0e838d45-7e40-421a-bf06-bdd24593b52f",
-        "_version_": 1848764017594598569,
-        "_root_": "0e838d45-7e40-421a-bf06-bdd24593b52f",
+        "id": "ef1dab73-2a4b-4467-b3e2-d14d2ec9b2f6",
+        "_version_": 1848781710989197581,
+        "_root_": "ef1dab73-2a4b-4467-b3e2-d14d2ec9b2f6",
         "score": 517.33685
       },
       {
@@ -39,9 +39,9 @@
         ],
         "description": "I've been dealing with a mysterious condition that's been affecting me for at least six months now, and I've noticed that there's no way to predict what will trigger a crash or how long it will take to recover - it can take days, weeks, or even longer. The symptoms aren't relieved by sleep or bed rest, and I've been experiencing forgetfulness, concentration problems, and what's often called \"brain fog\". I've also had digestive problems, like irritable bowel syndrome, and joint pain, muscle aches, and headaches that are different from what I've had in the past, all without any signs of swelling or redness. My symptoms worsen after physical or mental activity, and I've become extremely sensitive to noise, food, odors, or chemicals. I've developed allergies, and I've had recurring sore throats, sore lymph nodes, chills, and night sweats. The fatigue is profound, and I often need to take a nap or have someone pick me up after doing simple tasks, like grocery shopping. Even standing or sitting upright worsens my symptoms, causing dizziness, lightheadedness, or faintness, and sometimes I experience vision changes or see spots. I've also had sleep problems, and all these symptoms are severe enough to keep me from participating in certain activities.",
         "url": "https://medlineplus.gov/ency/article/001244.htm",
-        "id": "7f4a354f-f412-4fd8-9dcb-efd80214b695",
-        "_version_": 1848764101761700419,
-        "_root_": "7f4a354f-f412-4fd8-9dcb-efd80214b695",
+        "id": "7bee624b-194a-4e2f-b9c1-bfc71680d18c",
+        "_version_": 1848781742525132137,
+        "_root_": "7bee624b-194a-4e2f-b9c1-bfc71680d18c",
         "score": 491.11993
       },
       {
@@ -51,9 +51,9 @@
         ],
         "description": "I've been experiencing a multitude of symptoms lately, including shortness of breath, nausea, constipation, and diarrhea, which have been accompanied by sweating and a rapid heart rate. I've also been dealing with heartburn and bloating, and I've noticed that I'm more prone to fatigue, which can be quite sudden. Additionally, I've been having trouble with my feet, including damaged joints that make it harder to walk, and I've become more likely to bump into objects or not notice when I step on something sharp. Furthermore, I've been experiencing bladder problems, such as leaking urine or not being able to tell when my bladder is full, and I've had issues with sweating excessively, even in cool temperatures or when I'm at rest. I've also had instances of throwing up undigested food hours after eating, and I've experienced lightheadedness and even fainting when sitting or standing up. On top of this, I've been more susceptible to infections on my feet and in my toenails, and I've noticed changes in my muscles that have put increased pressure on my toes and the balls of my feet. Moreover, I've had swallowing problems, nausea, and vomiting, and I often feel full after eating only a small amount of food. Lastly, I've had trouble recognizing when my blood sugar gets too low, which is a concern for me.",
         "url": "https://medlineplus.gov/ency/patientinstructions/000326.htm",
-        "id": "354051c4-a62a-4ffb-b52a-8ad4d993086a",
-        "_version_": 1848764101761701113,
-        "_root_": "354051c4-a62a-4ffb-b52a-8ad4d993086a",
+        "id": "abbd4916-78c3-4411-9e43-8396021e5957",
+        "_version_": 1848781742525132831,
+        "_root_": "abbd4916-78c3-4411-9e43-8396021e5957",
         "score": 179.23785
       },
       {
@@ -61,9 +61,9 @@
         "symptoms": [
           "headache, fatigue"
         ],
-        "id": "a8dd32c7-24cb-4502-b3a8-326b7e9ef3b6",
-        "_version_": 1848764122824454184,
-        "_root_": "a8dd32c7-24cb-4502-b3a8-326b7e9ef3b6",
+        "id": "6f5e812c-456e-4366-8599-088c6b14789c",
+        "_version_": 1848781753001455965,
+        "_root_": "6f5e812c-456e-4366-8599-088c6b14789c",
         "score": 177.48636
       },
       {
@@ -71,19 +71,49 @@
         "symptoms": [
           "insomnia, headache, fatigue"
         ],
-        "id": "cd2aa5d5-af84-4954-bf65-a82ed55f9068",
-        "_version_": 1848764122824454105,
-        "_root_": "cd2aa5d5-af84-4954-bf65-a82ed55f9068",
+        "id": "e12ad8c7-dd9e-4840-a144-d5f0049778b4",
+        "_version_": 1848781753001455886,
+        "_root_": "e12ad8c7-dd9e-4840-a144-d5f0049778b4",
         "score": 176.99135
+      },
+      {
+        "name": "primary_immunodeficiency",
+        "symptoms": [
+          "cough, frontal headache, fatigue"
+        ],
+        "id": "5d68bf86-ee32-4f18-ae74-137fa88b0001",
+        "_version_": 1848781753001448392,
+        "_root_": "5d68bf86-ee32-4f18-ae74-137fa88b0001",
+        "score": 176.49925
+      },
+      {
+        "name": "restless_leg_syndrome",
+        "symptoms": [
+          "insomnia, headache, fatigue, sleepiness"
+        ],
+        "id": "64b7bf0b-0953-4222-b117-190c6dea3532",
+        "_version_": 1848781753001455881,
+        "_root_": "64b7bf0b-0953-4222-b117-190c6dea3532",
+        "score": 176.49925
+      },
+      {
+        "name": "restless_leg_syndrome",
+        "symptoms": [
+          "insomnia, headache, fatigue, apnea"
+        ],
+        "id": "1e70234a-49f9-48ec-8301-f01f938bf992",
+        "_version_": 1848781753001455885,
+        "_root_": "1e70234a-49f9-48ec-8301-f01f938bf992",
+        "score": 176.49925
       },
       {
         "name": "narcolepsy",
         "symptoms": [
           "headache, fatigue, sleepiness, apnea"
         ],
-        "id": "f4807210-611f-4c93-b94d-301a16238328",
-        "_version_": 1848764101761700853,
-        "_root_": "f4807210-611f-4c93-b94d-301a16238328",
+        "id": "74d0d081-361f-4067-abf3-7ef41e0c6837",
+        "_version_": 1848781742525132571,
+        "_root_": "74d0d081-361f-4067-abf3-7ef41e0c6837",
         "score": 176.49925
       },
       {
@@ -91,39 +121,9 @@
         "symptoms": [
           "insomnia, headache, fatigue, apnea"
         ],
-        "id": "9f058720-d578-46fa-b689-ef1058718648",
-        "_version_": 1848764101761700869,
-        "_root_": "9f058720-d578-46fa-b689-ef1058718648",
-        "score": 176.49925
-      },
-      {
-        "name": "narcolepsy",
-        "symptoms": [
-          "insomnia, headache, fatigue, sleepiness"
-        ],
-        "id": "beb4b1ec-0d3f-4ae6-b122-205d483d45d2",
-        "_version_": 1848764101761700885,
-        "_root_": "beb4b1ec-0d3f-4ae6-b122-205d483d45d2",
-        "score": 176.49925
-      },
-      {
-        "name": "restless_leg_syndrome",
-        "symptoms": [
-          "insomnia, headache, fatigue, sleepiness"
-        ],
-        "id": "f459044e-a7e4-4d28-9bb0-b4763cd23a45",
-        "_version_": 1848764122824454100,
-        "_root_": "f459044e-a7e4-4d28-9bb0-b4763cd23a45",
-        "score": 176.49925
-      },
-      {
-        "name": "restless_leg_syndrome",
-        "symptoms": [
-          "insomnia, headache, fatigue, apnea"
-        ],
-        "id": "9d773e66-3027-46bb-89bd-f0c57c4820a6",
-        "_version_": 1848764122824454104,
-        "_root_": "9d773e66-3027-46bb-89bd-f0c57c4820a6",
+        "id": "a0cca057-633c-4bba-9cd6-b8baee755eec",
+        "_version_": 1848781742525132587,
+        "_root_": "a0cca057-633c-4bba-9cd6-b8baee755eec",
         "score": 176.49925
       }
     ]

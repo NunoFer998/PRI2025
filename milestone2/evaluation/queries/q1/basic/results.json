@@ -1,7 +1,7 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 34,
+    "QTime": 145,
     "params": {
       "q": "name:aase_syndrome",
       "fl": "*,score",
@@ -21,33 +21,31 @@
         ],
         "description": "I've been aware of some unusual physical characteristics that have been concerning me, including my narrow shoulders, droopy eyelids, and absent or small knuckles. Additionally, my ears are deformed, and my skin is quite pale. I've also noticed that I have triple-jointed thumbs, which is quite unusual. Furthermore, I was born with a cleft palate, and I've struggled with an inability to fully extend my joints since birth.",
         "url": "https://medlineplus.gov/ency/article/001662.htm",
-        "id": "f95bee9c-75b6-4152-a915-e98d2530d3a1",
-        "_version_": 1848763919735193600,
-        "_root_": "f95bee9c-75b6-4152-a915-e98d2530d3a1",
+        "id": "923e77d6-354b-4c11-8540-608bed3550af",
+        "_version_": 1848781651844268032,
+        "_root_": "923e77d6-354b-4c11-8540-608bed3550af",
         "score": 11.221084
       },
       {
-        "name": "aicardi_syndrome",
+        "name": "carcinoid_syndrome",
         "symptoms": [
-          "Intellectual disability ,  Coloboma (cat's eye) ,  Smaller-than-normal eyes (microphthalmia)"
+          "Diarrhea ,  Difficulty breathing, such as wheezing ,  Heart problems, such as leaking heart valves, slow heartbeat, low or high blood pressure ,  Flushing (face, neck, or upper chest), or widened blood vessels seen on the skin (telangiectasias)"
         ],
-        "description": "I've been dealing with some unusual physical features and developmental challenges, including intellectual disability, coloboma, which gives my eyes a unique \"cat's eye\" appearance, and microphthalmia, which means my eyes are smaller than normal.",
-        "url": "https://medlineplus.gov/ency/article/001664.htm",
-        "id": "e3240af5-8f71-4146-bff0-38495e669358",
-        "_version_": 1848763975160824127,
-        "_root_": "e3240af5-8f71-4146-bff0-38495e669358",
+        "description": "I've been experiencing some distressing symptoms lately, including persistent diarrhea and difficulty breathing, which is often accompanied by wheezing. Additionally, I've been concerned about potential heart problems, such as leaking heart valves, a slow heartbeat, or abnormal blood pressure, which could be high or low. Furthermore, I've noticed some unusual physical changes, including flushing on my face, neck, or upper chest, as well as widened blood vessels visible on my skin, known as telangiectasias.",
+        "url": "https://medlineplus.gov/ency/article/000347.htm",
+        "id": "27429fd5-4332-460b-8fb5-856076112588",
+        "_version_": 1848781705741077294,
+        "_root_": "27429fd5-4332-460b-8fb5-856076112588",
         "score": 2.72935
       },
       {
-        "name": "aarskog_syndrome",
+        "name": "carcinoid_syndrome",
         "symptoms": [
-          "Mildly sunken chest (pectus excavatum) ,  Testicles that have not come down (undescended) ,  Mild to moderate cognitive problems ,  Belly button that sticks out ,  Top portion of the ear folded over slightly ,  Bulge in the groin or scrotum ,  Small nose with nostrils tipped forward ,  Single crease in the palm of the hand ,  Wide-set eyes with droopy eyelids ,  Poorly developed middle section of the face ,  Wide groove above the upper lip, crease below the lower lip ,  Mild to moderate short height which may not be obvious until the child is 1 to 3 years old ,  Small, broad hands and feet with short fingers and curved-in fifth finger ,  Short fingers and toes with mild webbing ,  Delayed teeth ,  Scrotum surrounds the penis (shawl scrotum) ,  Hairline with a \"widow's peak\" ,  Delayed sexual maturity ,  Rounded face ,  Downward palpebral slant to eyes (palpebral slant is the direction of the slant from the inner to outer corner of the eye)"
+          "involuntary urination, knee lump or mass"
         ],
-        "description": "I've been noticing some unusual physical characteristics in myself, including a mildly sunken chest and undescended testicles. Additionally, I've been experiencing mild to moderate cognitive problems. I've also observed some distinct facial features, such as a belly button that sticks out, a top portion of the ear that's folded over slightly, and a small nose with nostrils tipped forward. My eyes are wide-set with droopy eyelids, and I have a poorly developed middle section of the face. I've also noticed a wide groove above my upper lip and a crease below my lower lip. Furthermore, my hands and feet are small and broad with short fingers and curved-in fifth fingers, and my toes are short with mild webbing. I've also had delayed teeth and a scrotum that surrounds my penis, giving it a \"shawl scrotum\" appearance. My hairline has a \"widow's peak\" shape, and I've experienced delayed sexual maturity. Overall, I have a rounded face with a downward palpebral slant to my eyes, and I'm slightly shorter than average, which wasn't noticeable until I was around 1 to 3 years old.",
-        "url": "https://medlineplus.gov/ency/article/001654.htm",
-        "id": "82b8a9e4-12d6-403d-959e-89f3a2984de5",
-        "_version_": 1848763919389163520,
-        "_root_": "82b8a9e4-12d6-403d-959e-89f3a2984de5",
+        "id": "532dea30-89f2-4d68-ba36-0ac0dec0c214",
+        "_version_": 1848781705741077295,
+        "_root_": "532dea30-89f2-4d68-ba36-0ac0dec0c214",
         "score": 2.72935
       },
       {
@@ -57,67 +55,21 @@
         ],
         "description": "I've been struggling with some concerning habits lately, including excessive exercise and forcing myself to vomit, which has led me to throw away packages of laxatives, diet pills, emetics, or diuretics. I've also been spending an inordinate amount of time exercising, and I've noticed that I've been suddenly eating large amounts of food or buying large quantities that seem to disappear quickly. Furthermore, I've been relying on laxatives, enemas, or diuretics, and I've developed a habit of regularly going to the bathroom right after meals, which is causing me a lot of distress.",
         "url": "https://medlineplus.gov/ency/article/000341.htm",
-        "id": "11346ef8-c267-402e-b648-6535789a3161",
-        "_version_": 1848764002659729408,
-        "_root_": "11346ef8-c267-402e-b648-6535789a3161",
+        "id": "3dfa3718-7256-434d-a61b-4dd8ba501f62",
+        "_version_": 1848781705741075649,
+        "_root_": "3dfa3718-7256-434d-a61b-4dd8ba501f62",
         "score": 2.72935
       },
       {
-        "name": "carcinoid_syndrome",
+        "name": "apert_syndrome",
         "symptoms": [
-          "Diarrhea ,  Difficulty breathing, such as wheezing ,  Heart problems, such as leaking heart valves, slow heartbeat, low or high blood pressure ,  Flushing (face, neck, or upper chest), or widened blood vessels seen on the skin (telangiectasias)"
+          "Large or late-closing soft spot on a baby's skull (fontanelle) ,  Pfeiffer syndrome ,  Webbing or fusion of the toes ,  Prominent or bulging eyes ,  Fusion or severe webbing of the 2nd, 3rd, and 4th fingers, often called \"mitten hands\" ,  Hearing loss ,  Short height ,  Severe under-development of the midface ,  Early closure of sutures between bones of the skull, noted by ridging along sutures (craniosynostosis) ,  Saethre-Chotzen syndrome ,  Skeletal (limb) abnormalities ,  Possible, slow intellectual development (varies from person to person) ,  Frequent ear infections ,  Carpenter syndrome (kleeblattschadel, cloverleaf skull deformity) ,  Crouzon disease (craniofacial dysostosis)"
         ],
-        "description": "I've been experiencing some distressing symptoms lately, including persistent diarrhea and difficulty breathing, which is often accompanied by wheezing. Additionally, I've been concerned about potential heart problems, such as leaking heart valves, a slow heartbeat, or abnormal blood pressure, which could be high or low. Furthermore, I've noticed some unusual physical changes, including flushing on my face, neck, or upper chest, as well as widened blood vessels visible on my skin, known as telangiectasias.",
-        "url": "https://medlineplus.gov/ency/article/000347.htm",
-        "id": "a28e8b77-23c0-4973-b7a0-1d283c3e9e2e",
-        "_version_": 1848764005031608320,
-        "_root_": "a28e8b77-23c0-4973-b7a0-1d283c3e9e2e",
-        "score": 2.72935
-      },
-      {
-        "name": "carcinoid_syndrome",
-        "symptoms": [
-          "involuntary urination, knee lump or mass"
-        ],
-        "id": "0d6fcad9-e69a-482e-9014-b7c5c26dbf88",
-        "_version_": 1848764005038948352,
-        "_root_": "0d6fcad9-e69a-482e-9014-b7c5c26dbf88",
-        "score": 2.72935
-      },
-      {
-        "name": "alport_syndrome",
-        "symptoms": [
-          "Macular hole in which there is thinning or a break in the macula. The macula is a part of the retina that makes central vision sharper and more detailed. A macular hole causes blurred or distorted central vision. ,  Abnormal coloring of the retina, a condition called dot-and-fleck retinopathy. It doesn't cause vision problems, but can help diagnose Alport syndrome. ,  Flank pain ,  Swelling throughout the body (edema) ,  Abnormal urine color ,  Excessive thirst ,  Fatigue ,  Abnormal shape of the lens (anterior lenticonus), which can lead to a slow decline in vision as well as cataracts. ,  High blood pressure ,  Poor appetite ,  Corneal erosion in which there is damage to the outer layer of the covering of the eyeball, leading to pain, itching, redness of the eye, or blurred vision. ,  Blood in the urine that is visible during a cold or flu or exercise"
-        ],
-        "description": "I've been experiencing some disturbing symptoms lately, including blurred or distorted central vision, which I've learned could be due to a macular hole in my retina. Additionally, I've noticed abnormal coloring of my retina, although I've been told it doesn't affect my vision. I've also been dealing with flank pain, swelling throughout my body, and unusual urine color. I've been feeling excessively thirsty, fatigued, and have a poor appetite. Furthermore, I've been diagnosed with high blood pressure and have noticed an abnormal shape of the lens in my eye, which could lead to a slow decline in vision and even cataracts. To make matters worse, I've experienced corneal erosion, causing pain, itching, redness, and blurred vision in my eye. Occasionally, I've also noticed blood in my urine, especially during cold or flu, or after exercising.",
-        "url": "https://medlineplus.gov/ency/article/000504.htm",
-        "id": "d391765b-1673-4a61-b01f-ab628d4daac9",
-        "_version_": 1848763975160826274,
-        "_root_": "d391765b-1673-4a61-b01f-ab628d4daac9",
-        "score": 2.72935
-      },
-      {
-        "name": "alstrom_syndrome",
-        "symptoms": [
-          "Slowed growth ,  Hypothyroidism ,  Blindness or severe vision impairment in infancy ,  Impaired heart function (cardiomyopathy), which may lead to heart failure ,  Dark patches of skin (acanthosis nigricans) ,  Obesity ,  Liver dysfunction ,  Small penis ,  Progressive kidney failure ,  Symptoms of childhood-onset or type 2 diabetes ,  Gastrointestinal reflux"
-        ],
-        "description": "I've been concerned about my overall health lately, as I've noticed slowed growth and have been diagnosed with hypothyroidism, which may be related to my blindness or severe vision impairment in infancy. Additionally, I've been experiencing impaired heart function, which could lead to heart failure, and I've developed dark patches of skin, known as acanthosis nigricans. I've also been struggling with obesity, liver dysfunction, and a small penis, which may be indicative of underlying hormonal issues. Furthermore, I've been experiencing symptoms of progressive kidney failure, as well as symptoms of childhood-onset or type 2 diabetes. To make matters worse, I've been dealing with gastrointestinal reflux, which has been affecting my daily life.",
-        "url": "https://medlineplus.gov/ency/article/001665.htm",
-        "id": "0074be4d-883f-4dcb-a439-d26100c60fa7",
-        "_version_": 1848763975160826275,
-        "_root_": "0074be4d-883f-4dcb-a439-d26100c60fa7",
-        "score": 2.72935
-      },
-      {
-        "name": "angelman_syndrome",
-        "symptoms": [
-          "Light hair, skin, and eye color compared to rest of family ,  Excessive movement of the hands and limbs ,  Laughing and smiling often ,  Unusual chewing and mouthing movements ,  Crossed eyes ,  Small head size compared to body, flattened back of head ,  Trembling arm and leg movements ,  Happy, excitable personality ,  Walking with arms uplifted and hands waving ,  Severe intellectual disability ,  Little or no speech ,  Loss of muscle tone (floppiness) ,  Unstable or jerky walking ,  Trouble feeding ,  Heartburn (acid reflux) ,  Sleep problems ,  Seizures ,  Tongue thrusting, drooling"
-        ],
-        "description": "I've noticed that I have some distinct physical characteristics, such as light hair, skin, and eye color compared to the rest of my family, and a smaller head size compared to my body, with a flattened back of the head. I've also been experiencing excessive movement of my hands and limbs, and I often exhibit unusual chewing and mouthing movements. Additionally, I've been dealing with crossed eyes and trembling arm and leg movements. Despite these physical challenges, I have a happy, excitable personality, and I often walk with my arms uplifted and my hands waving. However, I struggle with severe intellectual disability, and I have little or no speech. I've also been experiencing loss of muscle tone, which makes my body feel floppy, and I have unstable or jerky walking patterns. Furthermore, I have trouble feeding, and I often suffer from heartburn and acid reflux. I've also been having sleep problems, and I'm prone to seizures. Lastly, I've been exhibiting tongue thrusting and drooling behaviors.",
-        "url": "https://medlineplus.gov/ency/article/007616.htm",
-        "id": "4a2103e4-a376-49c2-9be7-1f2e46a0d646",
-        "_version_": 1848763975160826863,
-        "_root_": "4a2103e4-a376-49c2-9be7-1f2e46a0d646",
+        "description": "I've been concerned about my baby's development, as I've noticed a large or late-closing soft spot on their skull, and after researching, I'm worried it might be related to a condition such as Pfeiffer syndrome or Saethre-Chotzen syndrome, which can cause a range of symptoms including webbing or fusion of the toes, prominent or bulging eyes, and fusion or severe webbing of the fingers, often referred to as \"mitten hands\". Additionally, I've noticed hearing loss, short height, and severe under-development of the midface, which could be related to the early closure of sutures between the bones of the skull, known as craniosynostosis. I've also been concerned about possible slow intellectual development, and my baby has been experiencing frequent ear infections. Furthermore, I've learned that these symptoms can be associated with Carpenter syndrome, also known as kleeblattschadel or cloverleaf skull deformity, or Crouzon disease, which is a type of craniofacial dysostosis.",
+        "url": "https://medlineplus.gov/ency/article/001581.htm",
+        "id": "ee2fa05b-2ea9-4897-848a-ee8578102a0d",
+        "_version_": 1848781695232249875,
+        "_root_": "ee2fa05b-2ea9-4897-848a-ee8578102a0d",
         "score": 2.72935
       },
       {
@@ -127,9 +79,49 @@
         ],
         "description": "I've been struggling with infertility, and I've also been experiencing amenorrhea, which means I haven't been having menstrual periods. To make matters worse, I've had repeated miscarriages, and I'm not sure what's causing these issues or how to overcome them.",
         "url": "https://medlineplus.gov/ency/article/001483.htm",
-        "id": "d0d23bf0-3dd8-47ff-8594-9a041189d64e",
-        "_version_": 1848763985682236004,
-        "_root_": "d0d23bf0-3dd8-47ff-8594-9a041189d64e",
+        "id": "21bf384a-98ea-4913-8ced-c27e1737ba53",
+        "_version_": 1848781700483514730,
+        "_root_": "21bf384a-98ea-4913-8ced-c27e1737ba53",
+        "score": 2.72935
+      },
+      {
+        "name": "asperger_syndrome",
+        "symptoms": [
+          "anxiety and nervousness, lack of growth, excessive anger, antisocial behavior"
+        ],
+        "id": "66d7a9f7-ab80-46d6-95a2-a37933b851a4",
+        "_version_": 1848781700483514731,
+        "_root_": "66d7a9f7-ab80-46d6-95a2-a37933b851a4",
+        "score": 2.72935
+      },
+      {
+        "name": "asperger_syndrome",
+        "symptoms": [
+          "anxiety and nervousness, depression, depressive or psychotic symptoms, hostile behavior, excessive anger, antisocial behavior"
+        ],
+        "id": "e749c66f-9a37-4e90-b9af-46c7b4a5a593",
+        "_version_": 1848781700483514732,
+        "_root_": "e749c66f-9a37-4e90-b9af-46c7b4a5a593",
+        "score": 2.72935
+      },
+      {
+        "name": "asperger_syndrome",
+        "symptoms": [
+          "anxiety and nervousness, depression, depressive or psychotic symptoms, lack of growth, antisocial behavior"
+        ],
+        "id": "6f78fe93-f4df-4b9a-b216-9e543311a75e",
+        "_version_": 1848781700483514733,
+        "_root_": "6f78fe93-f4df-4b9a-b216-9e543311a75e",
+        "score": 2.72935
+      },
+      {
+        "name": "asperger_syndrome",
+        "symptoms": [
+          "depression, hostile behavior"
+        ],
+        "id": "c66140dc-fecd-490c-9828-32ab0b76702a",
+        "_version_": 1848781700483514734,
+        "_root_": "c66140dc-fecd-490c-9828-32ab0b76702a",
         "score": 2.72935
       }
     ]

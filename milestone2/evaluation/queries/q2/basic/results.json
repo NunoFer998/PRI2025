@@ -1,7 +1,7 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 87,
+    "QTime": 385,
     "params": {
       "q": "symptoms:(headache AND fatigue)",
       "fl": "*,score",
@@ -19,9 +19,9 @@
         "symptoms": [
           "headache, fatigue"
         ],
-        "id": "a8dd32c7-24cb-4502-b3a8-326b7e9ef3b6",
-        "_version_": 1848764122824454184,
-        "_root_": "a8dd32c7-24cb-4502-b3a8-326b7e9ef3b6",
+        "id": "6f5e812c-456e-4366-8599-088c6b14789c",
+        "_version_": 1848781753001455965,
+        "_root_": "6f5e812c-456e-4366-8599-088c6b14789c",
         "score": 59.162125
       },
       {
@@ -29,79 +29,79 @@
         "symptoms": [
           "insomnia, headache, fatigue"
         ],
-        "id": "cd2aa5d5-af84-4954-bf65-a82ed55f9068",
-        "_version_": 1848764122824454105,
-        "_root_": "cd2aa5d5-af84-4954-bf65-a82ed55f9068",
+        "id": "e12ad8c7-dd9e-4840-a144-d5f0049778b4",
+        "_version_": 1848781753001455886,
+        "_root_": "e12ad8c7-dd9e-4840-a144-d5f0049778b4",
         "score": 58.997116
-      },
-      {
-        "name": "narcolepsy",
-        "symptoms": [
-          "headache, fatigue, sleepiness, apnea"
-        ],
-        "id": "f4807210-611f-4c93-b94d-301a16238328",
-        "_version_": 1848764101761700853,
-        "_root_": "f4807210-611f-4c93-b94d-301a16238328",
-        "score": 58.833084
-      },
-      {
-        "name": "narcolepsy",
-        "symptoms": [
-          "insomnia, headache, fatigue, apnea"
-        ],
-        "id": "9f058720-d578-46fa-b689-ef1058718648",
-        "_version_": 1848764101761700869,
-        "_root_": "9f058720-d578-46fa-b689-ef1058718648",
-        "score": 58.833084
-      },
-      {
-        "name": "narcolepsy",
-        "symptoms": [
-          "insomnia, headache, fatigue, sleepiness"
-        ],
-        "id": "beb4b1ec-0d3f-4ae6-b122-205d483d45d2",
-        "_version_": 1848764101761700885,
-        "_root_": "beb4b1ec-0d3f-4ae6-b122-205d483d45d2",
-        "score": 58.833084
-      },
-      {
-        "name": "restless_leg_syndrome",
-        "symptoms": [
-          "insomnia, headache, fatigue, sleepiness"
-        ],
-        "id": "f459044e-a7e4-4d28-9bb0-b4763cd23a45",
-        "_version_": 1848764122824454100,
-        "_root_": "f459044e-a7e4-4d28-9bb0-b4763cd23a45",
-        "score": 58.833084
-      },
-      {
-        "name": "restless_leg_syndrome",
-        "symptoms": [
-          "insomnia, headache, fatigue, apnea"
-        ],
-        "id": "9d773e66-3027-46bb-89bd-f0c57c4820a6",
-        "_version_": 1848764122824454104,
-        "_root_": "9d773e66-3027-46bb-89bd-f0c57c4820a6",
-        "score": 58.833084
       },
       {
         "name": "primary_immunodeficiency",
         "symptoms": [
           "cough, frontal headache, fatigue"
         ],
-        "id": "6aad88ac-072a-428b-80c9-0a230c363449",
-        "_version_": 1848764122824446611,
-        "_root_": "6aad88ac-072a-428b-80c9-0a230c363449",
+        "id": "5d68bf86-ee32-4f18-ae74-137fa88b0001",
+        "_version_": 1848781753001448392,
+        "_root_": "5d68bf86-ee32-4f18-ae74-137fa88b0001",
+        "score": 58.833084
+      },
+      {
+        "name": "restless_leg_syndrome",
+        "symptoms": [
+          "insomnia, headache, fatigue, sleepiness"
+        ],
+        "id": "64b7bf0b-0953-4222-b117-190c6dea3532",
+        "_version_": 1848781753001455881,
+        "_root_": "64b7bf0b-0953-4222-b117-190c6dea3532",
+        "score": 58.833084
+      },
+      {
+        "name": "restless_leg_syndrome",
+        "symptoms": [
+          "insomnia, headache, fatigue, apnea"
+        ],
+        "id": "1e70234a-49f9-48ec-8301-f01f938bf992",
+        "_version_": 1848781753001455885,
+        "_root_": "1e70234a-49f9-48ec-8301-f01f938bf992",
         "score": 58.833084
       },
       {
         "name": "narcolepsy",
         "symptoms": [
-          "insomnia, headache, fatigue, sleepiness, apnea"
+          "headache, fatigue, sleepiness, apnea"
         ],
-        "id": "42dfcf95-fe44-451b-bfad-5a510692ac0d",
-        "_version_": 1848764101761700870,
-        "_root_": "42dfcf95-fe44-451b-bfad-5a510692ac0d",
+        "id": "74d0d081-361f-4067-abf3-7ef41e0c6837",
+        "_version_": 1848781742525132571,
+        "_root_": "74d0d081-361f-4067-abf3-7ef41e0c6837",
+        "score": 58.833084
+      },
+      {
+        "name": "narcolepsy",
+        "symptoms": [
+          "insomnia, headache, fatigue, apnea"
+        ],
+        "id": "a0cca057-633c-4bba-9cd6-b8baee755eec",
+        "_version_": 1848781742525132587,
+        "_root_": "a0cca057-633c-4bba-9cd6-b8baee755eec",
+        "score": 58.833084
+      },
+      {
+        "name": "narcolepsy",
+        "symptoms": [
+          "insomnia, headache, fatigue, sleepiness"
+        ],
+        "id": "710a7c85-61a2-41ec-b6fb-175e30733dea",
+        "_version_": 1848781742525132603,
+        "_root_": "710a7c85-61a2-41ec-b6fb-175e30733dea",
+        "score": 58.833084
+      },
+      {
+        "name": "primary_immunodeficiency",
+        "symptoms": [
+          "frontal headache, decreased appetite, fatigue"
+        ],
+        "id": "6d6b0089-29e9-405e-8270-6f3986e9d708",
+        "_version_": 1848781753001448391,
+        "_root_": "6d6b0089-29e9-405e-8270-6f3986e9d708",
         "score": 58.670013
       },
       {
@@ -109,9 +109,9 @@
         "symptoms": [
           "insomnia, headache, fatigue, sleepiness, apnea"
         ],
-        "id": "275af127-630a-490d-8160-ed65b0a2342d",
-        "_version_": 1848764122824454122,
-        "_root_": "275af127-630a-490d-8160-ed65b0a2342d",
+        "id": "a0f50708-0b5c-47e6-9b70-3856536fbb16",
+        "_version_": 1848781753001455903,
+        "_root_": "a0f50708-0b5c-47e6-9b70-3856536fbb16",
         "score": 58.670013
       }
     ]

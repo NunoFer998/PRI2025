@@ -1,0 +1,6 @@
+# Relevance judgments for Query 5: Information on migraines
+# List relevant document IDs (one per line)
+# TODO: Replace with actual disease IDs from your Solr collection
+migraine
+tension_headache
+cluster_headache

@@ -1,0 +1,10 @@
+{
+  "query": "aase syndrome",
+  "params": {
+    "defType": "edismax",
+    "qf": "name^5 symptoms^3 treatments^1",
+    "q.op": "AND"
+  },
+  "fields": "*,score",
+  "limit": 100
+}

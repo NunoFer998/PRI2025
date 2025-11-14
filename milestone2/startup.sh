@@ -24,15 +24,19 @@ until curl -s -o /dev/null -w "%{http_code}" http://localhost:8983/solr/diseases
   echo -n "."
   sleep 2
 done
-echo "Core is ready."# --- STEP 2.5: CRITICAL FIX: Copy synonyms file to Solr BEFORE schema update ---
+# --- STEP 2.5: CRITICAL FIX: Copy synonyms file to Solr BEFORE schema update ---
 if [ -f "data/synonyms_diseases.txt" ]; then
-  echo "Copying synonyms file to Solr..."
-  # This command places the file in the core's conf directory
-  docker cp data/synonyms_diseases.txt meic_solr:/var/solr/data/diseases/conf/synonyms_diseases.txt
-  echo "Successfully copied synonyms file."
+    # Check if synonyms file already exists in container
+    if docker exec meic_solr test -f /var/solr/data/diseases/conf/synonyms_diseases.txt; then
+        echo "Synonyms file already exists in container, skipping copy."
+    else
+        echo "Copying synonyms file to Solr..."
+        docker cp data/synonyms_diseases.txt meic_solr:/var/solr/data/diseases/conf/synonyms_diseases.txt
+        echo "Successfully copied synonyms file."
+    fi
 else
-  # This warning indicates a file is missing. The next step (schema update) will fail.
-  echo "Warning: synonyms_diseases.txt not found in data/ directory. Schema update will likely fail."
+    # This warning indicates a file is missing. The next step (schema update) will fail.
+    echo "Warning: synonyms_diseases.txt not found in data/ directory. Schema update will likely fail."
 fi
 
 # --- STEP 3: Schema Update (Must succeed now that the dependency file is present) ---
@@ -54,20 +58,25 @@ echo "Core is stable."
 
 # --- STEP 4.5: Copy synonyms file to Solr ---
 if [ -f "data/synonyms_diseases.txt" ]; then
-    echo "Copying synonyms file to Solr..."
-    docker cp data/synonyms_diseases.txt meic_solr:/var/solr/data/diseases/conf/synonyms_diseases.txt
-    
-    # Reload the core to pick up the synonyms file
-    echo "Reloading core to apply synonyms..."
-    curl -s "http://localhost:8983/solr/admin/cores?action=RELOAD&core=diseases" >/dev/null
-    
-    # Wait for reload to complete
-    echo "Waiting for core reload..."
-    until curl -s -o /dev/null -w "%{http_code}" http://localhost:8983/solr/diseases/select | grep -q "200"; do
-      echo -n "."
-      sleep 1
-    done
-    echo "Synonyms applied successfully."
+    # Check if synonyms file already exists in container
+    if docker exec meic_solr test -f /var/solr/data/diseases/conf/synonyms_diseases.txt; then
+        echo "Synonyms file already exists in container, skipping copy and reload."
+    else
+        echo "Copying synonyms file to Solr..."
+        docker cp data/synonyms_diseases.txt meic_solr:/var/solr/data/diseases/conf/synonyms_diseases.txt
+        
+        # Reload the core to pick up the synonyms file
+        echo "Reloading core to apply synonyms..."
+        curl -s "http://localhost:8983/solr/admin/cores?action=RELOAD&core=diseases" >/dev/null
+        
+        # Wait for reload to complete
+        echo "Waiting for core reload..."
+        until curl -s -o /dev/null -w "%{http_code}" http://localhost:8983/solr/diseases/select | grep -q "200"; do
+          echo -n "."
+          sleep 1
+        done
+        echo "Synonyms applied successfully."
+    fi
 else
     echo "Warning: synonyms_diseases.txt not found in data/ directory. Skipping synonyms setup."
 fi

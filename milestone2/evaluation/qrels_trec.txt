@@ -1,0 +1,29 @@
+0 0 # Relevance judgments for Query 1: What are the symptoms of aase syndrome? 1
+0 0 # List relevant document IDs (one per line) 1
+0 0 # TODO: Replace with actual disease IDs from your Solr collection 1
+0 0 aase_syndrome 1
+0 0 # Relevance judgments for Query 2: What diseases can cause headache and fatigue? 1
+0 0 # List relevant document IDs (one per line) 1
+0 0 # TODO: Replace with actual disease IDs from your Solr collection that have headache AND fatigue as symptoms 1
+0 0 migraine 1
+0 0 chronic_fatigue_syndrome 1
+0 0 influenza 1
+0 0 tension_headache 1
+0 0 # Relevance judgments for Query 3: What are the common treatments for Multiple Sclerosis? 1
+0 0 # List relevant document IDs (one per line) 1
+0 0 # TODO: Replace with actual disease IDs from your Solr collection 1
+0 0 multiple_sclerosis 1
+0 0 # Relevance judgments for Query 4: Find all chronic diseases 1
+0 0 # List relevant document IDs (one per line) 1
+0 0 # TODO: Replace with actual disease IDs from your Solr collection that are chronic 1
+0 0 diabetes 1
+0 0 arthritis 1
+0 0 multiple_sclerosis 1
+0 0 chronic_kidney_disease 1
+0 0 hypertension 1
+0 0 # Relevance judgments for Query 5: Information on migraines 1
+0 0 # List relevant document IDs (one per line) 1
+0 0 # TODO: Replace with actual disease IDs from your Solr collection 1
+0 0 migraine 1
+0 0 tension_headache 1
+0 0 cluster_headache 1

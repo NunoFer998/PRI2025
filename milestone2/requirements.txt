@@ -1,0 +1,5 @@
+matplotlib 
+numpy 
+pandas 
+scikit-learn 
+pytrec_eval==0.5

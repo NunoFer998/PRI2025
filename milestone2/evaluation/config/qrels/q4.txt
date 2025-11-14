@@ -1,0 +1,8 @@
+# Relevance judgments for Query 4: Find all chronic diseases
+# List relevant document IDs (one per line)
+# TODO: Replace with actual disease IDs from your Solr collection that are chronic
+diabetes
+arthritis
+multiple_sclerosis
+chronic_kidney_disease
+hypertension

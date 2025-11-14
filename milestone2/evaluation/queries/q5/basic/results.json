@@ -1,7 +1,7 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 12,
+    "QTime": 36,
     "params": {
       "q": "symptoms: migraines OR description:migraines",
       "fl": "*,score",
@@ -21,9 +21,9 @@
         ],
         "description": "I've been experiencing some debilitating migraine episodes over the last 4 to 72 hours, which usually start as a dull ache and rapidly worsen within minutes to hours. The pain is typically throbbing, pounding, or pulsating and is usually worse on one side of my head, often accompanied by pain behind my eye or in the back of my head and neck. I've also been dealing with neck pain, and sometimes I get a migraine with aura, which is characterized by temporary blind spots or colored spots, blurred vision, seeing stars, zigzag lines, or flashing lights, and even tunnel vision. Additionally, I've been feeling mentally dull, like my thinking is not clear or sharp, and I've been needing more sleep. I've also noticed that I've been experiencing increased urination, chills, and sensitivity to light or sound. Furthermore, I've been experiencing eye pain, fatigue, nausea, and vomiting, which have also been accompanied by a loss of appetite.",
         "url": "https://medlineplus.gov/ency/article/000709.htm",
-        "id": "b6bcd754-a686-4584-b315-5ebabdfba668",
-        "_version_": 1848764101761697224,
-        "_root_": "b6bcd754-a686-4584-b315-5ebabdfba668",
+        "id": "a28e93aa-72f0-428d-b32a-dd6d567aeeca",
+        "_version_": 1848781742525128942,
+        "_root_": "a28e93aa-72f0-428d-b32a-dd6d567aeeca",
         "score": 53.11676
       },
       {
@@ -33,9 +33,9 @@
         ],
         "description": "I've been experiencing some concerning symptoms lately, including problems with walking and numbness in certain areas of my body. I've also been dealing with a strange ear noise or buzzing, which I've learned is called pulsatile tinnitus. Additionally, I've been feeling dizzy and having headaches that seem to be migrating to different parts of my head, almost like a migraine. To make matters worse, I've been experiencing confusion, vision problems, and muscle weakness in certain areas of my body and even my face.",
         "url": "https://medlineplus.gov/ency/article/000779.htm",
-        "id": "ceb8a237-37f5-4d74-ac14-32227cc1d85b",
-        "_version_": 1848764009435627520,
-        "_root_": "ceb8a237-37f5-4d74-ac14-32227cc1d85b",
+        "id": "70f7d1bd-2924-40cf-913f-026b54f1eba7",
+        "_version_": 1848781705741079088,
+        "_root_": "70f7d1bd-2924-40cf-913f-026b54f1eba7",
         "score": 47.38635
       },
       {
@@ -45,9 +45,9 @@
         ],
         "description": "I've been experiencing a range of symptoms that are affecting my daily life, including a reduced ability to exercise due to physical activity leaving me exhausted. I've also been dealing with numbness and tingling sensations in my hands and feet, as well as memory and concentration problems that make it difficult to focus. Additionally, I've been suffering from tension or migraine headaches, and I've noticed that I've developed irritable bowel syndrome (IBS) or gastroesophageal reflux (GERD). The pain I'm experiencing is a deep ache, sometimes stabbing or burning, and it's unclear whether it's coming from my joints or not. All of these symptoms seem to be exacerbated by anxiety and stress, and I've noticed that they worsen in cold or damp weather.",
         "url": "https://medlineplus.gov/ency/article/000427.htm",
-        "id": "c6349432-5267-42e6-95f7-75d08145a286",
-        "_version_": 1848764059706458771,
-        "_root_": "c6349432-5267-42e6-95f7-75d08145a286",
+        "id": "033ae05e-a7e7-45d8-a75e-a87d1b89cf4d",
+        "_version_": 1848781721489648931,
+        "_root_": "033ae05e-a7e7-45d8-a75e-a87d1b89cf4d",
         "score": 44.903973
       },
       {
@@ -56,9 +56,9 @@
           "chill, nausea, sick, headache, hurting"
         ],
         "description": "I've been experiencing severe body itchiness, along with chills and nausea. I've been perspiring a lot and have an extremely high fever. I feel sick to my stomach and have a headache. My muscles are hurting a lot.",
-        "id": "49c74cc5-0a30-4aa1-9bb4-bfca38511648",
-        "_version_": 1848764096534550481,
-        "_root_": "49c74cc5-0a30-4aa1-9bb4-bfca38511648",
+        "id": "684f4373-3e69-4f26-9b76-65fcbe0bad0b",
+        "_version_": 1848781742525126689,
+        "_root_": "684f4373-3e69-4f26-9b76-65fcbe0bad0b",
         "score": 40.57318
       },
       {
@@ -71,9 +71,9 @@
         ],
         "contagious": false,
         "chronic": true,
-        "id": "27a10d15-1f6a-4311-81f1-077d7a8b01bb",
-        "_version_": 1848764017594599266,
-        "_root_": "27a10d15-1f6a-4311-81f1-077d7a8b01bb",
+        "id": "ec2e6feb-1d8d-41db-8256-70318b3c20f4",
+        "_version_": 1848781710989198278,
+        "_root_": "ec2e6feb-1d8d-41db-8256-70318b3c20f4",
         "score": 38.777634
       },
       {
@@ -82,9 +82,9 @@
           "headache, mig, difficulties, shaking, shivering, lighthead"
         ],
         "description": "I have headaches and migraines, and I have been having difficulties sleeping. I've been shaking and shivering all over. Sometimes I become lightheaded.",
-        "id": "3ea2feae-d70a-4e8f-83c7-b5ec83c782a5",
-        "_version_": 1848764049192390859,
-        "_root_": "3ea2feae-d70a-4e8f-83c7-b5ec83c782a5",
+        "id": "cd0ae81e-ae5e-4243-be98-be2a4fba4331",
+        "_version_": 1848781721489639494,
+        "_root_": "cd0ae81e-ae5e-4243-be98-be2a4fba4331",
         "score": 20.334513
       },
       {
@@ -93,9 +93,9 @@
           "headache, mig, difficulties, shaking, lighthead"
         ],
         "description": "I have headaches and migraines, and I have been having difficulties sleeping. My entire body has been shaking and twitching. Sometimes I become lightheaded.",
-        "id": "85fe9050-46b7-46c4-b534-6cccd7e0e69f",
-        "_version_": 1848764049192391012,
-        "_root_": "85fe9050-46b7-46c4-b534-6cccd7e0e69f",
+        "id": "e9377548-b35f-4c78-bb3e-a42f1fd9dced",
+        "_version_": 1848781721489639647,
+        "_root_": "e9377548-b35f-4c78-bb3e-a42f1fd9dced",
         "score": 20.293884
       },
       {
@@ -104,9 +104,9 @@
           "mig, headache, falling, trembling, di"
         ],
         "description": "I suffer migraines and headaches, and I've been having trouble falling asleep. My whole body has been trembling and shivering. At times, I have dizziness.",
-        "id": "e1a60251-5b41-415a-9f04-4927a50ece6e",
-        "_version_": 1848764049192390366,
-        "_root_": "e1a60251-5b41-415a-9f04-4927a50ece6e",
+        "id": "cc82f2a1-a09a-4fd8-94c8-dc9d36f9e4d9",
+        "_version_": 1848781721489639001,
+        "_root_": "cc82f2a1-a09a-4fd8-94c8-dc9d36f9e4d9",
         "score": 20.287222
       },
       {
@@ -115,9 +115,9 @@
           "mig, headache, falling, trembling"
         ],
         "description": "I suffer migraines and headaches, and I've been having trouble falling asleep. My muscles have been trembling and twitching. I sometimes feel dizzy.",
-        "id": "3cbce93e-69e1-4c5d-8842-87b2ca691340",
-        "_version_": 1848764049192390989,
-        "_root_": "3cbce93e-69e1-4c5d-8842-87b2ca691340",
+        "id": "af52668d-09aa-4b51-87bc-ceb77c0f7348",
+        "_version_": 1848781721489639624,
+        "_root_": "af52668d-09aa-4b51-87bc-ceb77c0f7348",
         "score": 20.287222
       },
       {
@@ -126,9 +126,9 @@
           "headache, mig, muscle twitching, tremor, lightheaded"
         ],
         "description": "I have headaches and migraines, have been having difficulty sleeping. I have been having muscle twitching and tremors. Sometimes I get lightheaded",
-        "id": "665ae65e-e602-40c2-aaaa-4e0577486f01",
-        "_version_": 1848764049192390740,
-        "_root_": "665ae65e-e602-40c2-aaaa-4e0577486f01",
+        "id": "e32a90d8-8b5b-4118-a498-a564ac05b798",
+        "_version_": 1848781721489639375,
+        "_root_": "e32a90d8-8b5b-4118-a498-a564ac05b798",
         "score": 19.936007
       }
     ]

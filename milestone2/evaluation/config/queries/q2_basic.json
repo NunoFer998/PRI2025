@@ -1,0 +1,5 @@
+{
+  "query": "symptoms:(headache AND fatigue)",
+  "fields": "*,score",
+  "limit": 100
+}

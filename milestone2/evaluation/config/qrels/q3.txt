@@ -1,0 +1,4 @@
+# Relevance judgments for Query 3: What are the common treatments for Multiple Sclerosis?
+# List relevant document IDs (one per line)
+# TODO: Replace with actual disease IDs from your Solr collection
+multiple_sclerosis
