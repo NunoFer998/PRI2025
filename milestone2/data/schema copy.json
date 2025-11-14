@@ -1,0 +1,47 @@
+{
+  "add-field-type": {
+    "name": "UnderscoreTextField",
+    "class": "solr.TextField",
+    "positionIncrementGap": "100",
+    "indexAnalyzer": {
+      "charFilters": [
+        {
+          "class": "solr.PatternReplaceCharFilterFactory",
+          "pattern": "_",
+          "replacement": " "
+        }
+      ],
+      "tokenizer": {
+        "class": "solr.StandardTokenizerFactory"
+      },
+      "filters": [
+        {
+          "class": "solr.LowerCaseFilterFactory"
+        }
+      ]
+    },
+    "queryAnalyzer": {
+      "charFilters": [
+        {
+          "class": "solr.PatternReplaceCharFilterFactory",
+          "pattern": "_",
+          "replacement": " "
+        }
+      ],
+      "tokenizer": {
+        "class": "solr.StandardTokenizerFactory"
+      },
+      "filters": [
+        {
+          "class": "solr.LowerCaseFilterFactory"
+        }
+      ]
+    }
+  },
+  "add-field": {
+    "name": "name",
+    "type": "UnderscoreTextField",
+    "stored": true,
+    "indexed": true
+  }
+}

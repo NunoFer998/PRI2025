@@ -1,0 +1,119 @@
+{
+  "responseHeader": {
+    "status": 0,
+    "QTime": 26,
+    "params": {
+      "q": "name: multiple_sclerosis",
+      "fl": "*,score",
+      "wt": "json"
+    }
+  },
+  "response": {
+    "numFound": 873,
+    "start": 0,
+    "maxScore": 8.464842,
+    "numFoundExact": true,
+    "docs": [
+      {
+        "name": "multiple_sclerosis",
+        "symptoms": [
+          "abnormal involuntary movements, problems with movement, loss of sensation, focal weakness, disturbance of memory, paresthesia, leg weakness"
+        ],
+        "id": "3617711e-a1c9-416a-8f69-7a1b090e4b75",
+        "_version_": 1848764101761699042,
+        "_root_": "3617711e-a1c9-416a-8f69-7a1b090e4b75",
+        "score": 8.464842
+      },
+      {
+        "name": "multiple_sclerosis",
+        "symptoms": [
+          "dizziness, abnormal involuntary movements, weakness, loss of sensation, paresthesia, leg weakness"
+        ],
+        "id": "7f7e9fe7-1a7b-4f5b-9f2a-36584ea0736e",
+        "_version_": 1848764101761699043,
+        "_root_": "7f7e9fe7-1a7b-4f5b-9f2a-36584ea0736e",
+        "score": 8.464842
+      },
+      {
+        "name": "multiple_sclerosis",
+        "symptoms": [
+          "dizziness, abnormal involuntary movements, headache, problems with movement, focal weakness, disturbance of memory"
+        ],
+        "id": "2f3b68e4-df46-4063-b6c7-764194baac6e",
+        "_version_": 1848764101761699044,
+        "_root_": "2f3b68e4-df46-4063-b6c7-764194baac6e",
+        "score": 8.464842
+      },
+      {
+        "name": "multiple_sclerosis",
+        "symptoms": [
+          "abnormal involuntary movements, loss of sensation, focal weakness, disturbance of memory, leg weakness"
+        ],
+        "id": "9c734dad-9c90-4faf-8d9d-e29a0e543d98",
+        "_version_": 1848764101761699045,
+        "_root_": "9c734dad-9c90-4faf-8d9d-e29a0e543d98",
+        "score": 8.464842
+      },
+      {
+        "name": "multiple_sclerosis",
+        "symptoms": [
+          "dizziness, problems with movement, weakness, loss of sensation, focal weakness, disturbance of memory, paresthesia, leg weakness"
+        ],
+        "id": "c0317171-a147-487d-a5e3-bcfdb2b309be",
+        "_version_": 1848764101761699046,
+        "_root_": "c0317171-a147-487d-a5e3-bcfdb2b309be",
+        "score": 8.464842
+      },
+      {
+        "name": "multiple_sclerosis",
+        "symptoms": [
+          "abnormal involuntary movements, problems with movement, disturbance of memory, paresthesia, leg weakness"
+        ],
+        "id": "1fae9c19-5da5-46f3-a246-7bc4aef51e4c",
+        "_version_": 1848764101761699047,
+        "_root_": "1fae9c19-5da5-46f3-a246-7bc4aef51e4c",
+        "score": 8.464842
+      },
+      {
+        "name": "multiple_sclerosis",
+        "symptoms": [
+          "abnormal involuntary movements, headache, problems with movement, weakness, focal weakness, disturbance of memory, paresthesia"
+        ],
+        "id": "8b8c21d7-e94b-46b4-8458-6309081bd6ee",
+        "_version_": 1848764101761699048,
+        "_root_": "8b8c21d7-e94b-46b4-8458-6309081bd6ee",
+        "score": 8.464842
+      },
+      {
+        "name": "multiple_sclerosis",
+        "symptoms": [
+          "abnormal involuntary movements, weakness, focal weakness, paresthesia, fatigue, leg weakness"
+        ],
+        "id": "71933dbd-8757-45e2-8cea-226a10ba7309",
+        "_version_": 1848764101761699049,
+        "_root_": "71933dbd-8757-45e2-8cea-226a10ba7309",
+        "score": 8.464842
+      },
+      {
+        "name": "multiple_sclerosis",
+        "symptoms": [
+          "dizziness, abnormal involuntary movements, headache, loss of sensation, disturbance of memory, paresthesia, leg weakness"
+        ],
+        "id": "4a86ca64-0679-4193-879f-dd3ec05c9ef9",
+        "_version_": 1848764101761699050,
+        "_root_": "4a86ca64-0679-4193-879f-dd3ec05c9ef9",
+        "score": 8.464842
+      },
+      {
+        "name": "multiple_sclerosis",
+        "symptoms": [
+          "dizziness, headache, loss of sensation, focal weakness, fatigue, leg weakness"
+        ],
+        "id": "0579f0ca-750c-469d-90ba-0df4c0e63d1d",
+        "_version_": 1848764101761699051,
+        "_root_": "0579f0ca-750c-469d-90ba-0df4c0e63d1d",
+        "score": 8.464842
+      }
+    ]
+  }
+}
