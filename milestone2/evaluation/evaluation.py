@@ -15,9 +15,11 @@ def solr_to_trec(solr_response, run_id="run0"):
     try:
         docs = solr_response["response"]["docs"]
         for rank, doc in enumerate(docs, start=1):
-            trec_lines.append(f"0 Q0 {doc['id']} {rank} {doc['score']} {run_id}")
-    except KeyError:
-        print("Error: Invalid Solr response format.")
+            # Use score if available, otherwise use inverse rank
+            score = doc.get('score', 1.0 / rank)
+            trec_lines.append(f"0 Q0 {doc['id']} {rank} {score} {run_id}")
+    except KeyError as e:
+        print(f"Error: Invalid Solr response format - missing key: {e}")
     return trec_lines
 
 def qrels_to_trec(qrels_list):
@@ -81,7 +83,8 @@ information_needs = [
         # What are the symptoms of aase syndrome?
         "id": "q1",
         "basic": {
-            "q": "name:aase_ yndrome",
+            "q": "name:aase_syndrome",
+            "fl": "*,score",
             "wt": "json"
         },
         "enhanced": {
@@ -89,6 +92,7 @@ information_needs = [
             "defType": "edismax",
             "qf": "name^5 symptoms^3 treatments^1",
             "q.op": "AND",
+            "fl": "*,score",
             "wt": "json"
         }
     },
@@ -98,6 +102,7 @@ information_needs = [
         "id": "q2",
         "basic": {
             "q": "symptoms:(headache AND fatigue)",
+            "fl": "*,score",
             "wt": "json"
         },
         "enhanced": {
@@ -105,6 +110,7 @@ information_needs = [
             "defType": "edismax",
             "q.op": "AND",
             "qf": "name^5 symptoms^3 description^1 treatments^1",
+            "fl": "*,score",
             "wt": "json"
         }
     },
@@ -114,12 +120,14 @@ information_needs = [
         "id": "q3",
         "basic": {
             "q": "name: multiple_sclerosis",
+            "fl": "*,score",
             "wt": "json"
         },
         "enhanced": {
             "q": "treatments multiple sclerosis",
             "defType": "edismax",
             "qf": "name^5 treatments^4 description^1",
+            "fl": "*,score",
             "wt": "json"
         }
     },
@@ -130,11 +138,13 @@ information_needs = [
         "basic": {
             "q": "*:*",
             "fq": "chronic:1",
+            "fl": "*,score",
             "wt": "json"
         },
         "enhanced": {
             "q": "*:*",
             "fq": "chronic:1",
+            "fl": "*,score",
             "wt": "json"
         }
     },
@@ -144,12 +154,14 @@ information_needs = [
         "id": "q5",
         "basic": {
             "q": "symptoms: migraines OR description:migraines",
+            "fl": "*,score",
             "wt": "json"
         },
         "enhanced": {
             "q": "migraines",
             "defType": "edismax",
             "qf": "name^5 symptoms^3 description^1",
+            "fl": "*,score",
             "wt": "json"
         }
     },

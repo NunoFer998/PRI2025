@@ -1,11 +1,12 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 99,
+    "QTime": 7,
     "params": {
       "q": "aase syndrome",
       "defType": "edismax",
       "qf": "name^5 symptoms^3 treatments^1",
+      "fl": "*,score",
       "q.op": "AND",
       "wt": "json"
     }
@@ -13,6 +14,7 @@
   "response": {
     "numFound": 1,
     "start": 0,
+    "maxScore": 56.105423,
     "numFoundExact": true,
     "docs": [
       {
@@ -24,7 +26,8 @@
         "url": "https://medlineplus.gov/ency/article/001662.htm",
         "id": "f95bee9c-75b6-4152-a915-e98d2530d3a1",
         "_version_": 1848763919735193600,
-        "_root_": "f95bee9c-75b6-4152-a915-e98d2530d3a1"
+        "_root_": "f95bee9c-75b6-4152-a915-e98d2530d3a1",
+        "score": 56.105423
       }
     ]
   }

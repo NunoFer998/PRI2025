@@ -1,15 +1,17 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 21,
+    "QTime": 12,
     "params": {
       "q": "symptoms: migraines OR description:migraines",
+      "fl": "*,score",
       "wt": "json"
     }
   },
   "response": {
     "numFound": 226,
     "start": 0,
+    "maxScore": 53.11676,
     "numFoundExact": true,
     "docs": [
       {
@@ -21,7 +23,8 @@
         "url": "https://medlineplus.gov/ency/article/000709.htm",
         "id": "b6bcd754-a686-4584-b315-5ebabdfba668",
         "_version_": 1848764101761697224,
-        "_root_": "b6bcd754-a686-4584-b315-5ebabdfba668"
+        "_root_": "b6bcd754-a686-4584-b315-5ebabdfba668",
+        "score": 53.11676
       },
       {
         "name": "cerebral_arteriovenous_malformation",
@@ -32,7 +35,8 @@
         "url": "https://medlineplus.gov/ency/article/000779.htm",
         "id": "ceb8a237-37f5-4d74-ac14-32227cc1d85b",
         "_version_": 1848764009435627520,
-        "_root_": "ceb8a237-37f5-4d74-ac14-32227cc1d85b"
+        "_root_": "ceb8a237-37f5-4d74-ac14-32227cc1d85b",
+        "score": 47.38635
       },
       {
         "name": "fibromyalgia",
@@ -43,7 +47,8 @@
         "url": "https://medlineplus.gov/ency/article/000427.htm",
         "id": "c6349432-5267-42e6-95f7-75d08145a286",
         "_version_": 1848764059706458771,
-        "_root_": "c6349432-5267-42e6-95f7-75d08145a286"
+        "_root_": "c6349432-5267-42e6-95f7-75d08145a286",
+        "score": 44.903973
       },
       {
         "name": "malaria",
@@ -53,7 +58,8 @@
         "description": "I've been experiencing severe body itchiness, along with chills and nausea. I've been perspiring a lot and have an extremely high fever. I feel sick to my stomach and have a headache. My muscles are hurting a lot.",
         "id": "49c74cc5-0a30-4aa1-9bb4-bfca38511648",
         "_version_": 1848764096534550481,
-        "_root_": "49c74cc5-0a30-4aa1-9bb4-bfca38511648"
+        "_root_": "49c74cc5-0a30-4aa1-9bb4-bfca38511648",
+        "score": 40.57318
       },
       {
         "name": "chronic_migraine",
@@ -67,7 +73,8 @@
         "chronic": true,
         "id": "27a10d15-1f6a-4311-81f1-077d7a8b01bb",
         "_version_": 1848764017594599266,
-        "_root_": "27a10d15-1f6a-4311-81f1-077d7a8b01bb"
+        "_root_": "27a10d15-1f6a-4311-81f1-077d7a8b01bb",
+        "score": 38.777634
       },
       {
         "name": "drug_reaction",
@@ -77,7 +84,8 @@
         "description": "I have headaches and migraines, and I have been having difficulties sleeping. I've been shaking and shivering all over. Sometimes I become lightheaded.",
         "id": "3ea2feae-d70a-4e8f-83c7-b5ec83c782a5",
         "_version_": 1848764049192390859,
-        "_root_": "3ea2feae-d70a-4e8f-83c7-b5ec83c782a5"
+        "_root_": "3ea2feae-d70a-4e8f-83c7-b5ec83c782a5",
+        "score": 20.334513
       },
       {
         "name": "drug_reaction",
@@ -87,7 +95,8 @@
         "description": "I have headaches and migraines, and I have been having difficulties sleeping. My entire body has been shaking and twitching. Sometimes I become lightheaded.",
         "id": "85fe9050-46b7-46c4-b534-6cccd7e0e69f",
         "_version_": 1848764049192391012,
-        "_root_": "85fe9050-46b7-46c4-b534-6cccd7e0e69f"
+        "_root_": "85fe9050-46b7-46c4-b534-6cccd7e0e69f",
+        "score": 20.293884
       },
       {
         "name": "drug_reaction",
@@ -97,7 +106,8 @@
         "description": "I suffer migraines and headaches, and I've been having trouble falling asleep. My whole body has been trembling and shivering. At times, I have dizziness.",
         "id": "e1a60251-5b41-415a-9f04-4927a50ece6e",
         "_version_": 1848764049192390366,
-        "_root_": "e1a60251-5b41-415a-9f04-4927a50ece6e"
+        "_root_": "e1a60251-5b41-415a-9f04-4927a50ece6e",
+        "score": 20.287222
       },
       {
         "name": "drug_reaction",
@@ -107,7 +117,8 @@
         "description": "I suffer migraines and headaches, and I've been having trouble falling asleep. My muscles have been trembling and twitching. I sometimes feel dizzy.",
         "id": "3cbce93e-69e1-4c5d-8842-87b2ca691340",
         "_version_": 1848764049192390989,
-        "_root_": "3cbce93e-69e1-4c5d-8842-87b2ca691340"
+        "_root_": "3cbce93e-69e1-4c5d-8842-87b2ca691340",
+        "score": 20.287222
       },
       {
         "name": "drug_reaction",
@@ -117,7 +128,8 @@
         "description": "I have headaches and migraines, have been having difficulty sleeping. I have been having muscle twitching and tremors. Sometimes I get lightheaded",
         "id": "665ae65e-e602-40c2-aaaa-4e0577486f01",
         "_version_": 1848764049192390740,
-        "_root_": "665ae65e-e602-40c2-aaaa-4e0577486f01"
+        "_root_": "665ae65e-e602-40c2-aaaa-4e0577486f01",
+        "score": 19.936007
       }
     ]
   }

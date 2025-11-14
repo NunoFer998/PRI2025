@@ -1,1 +1,1 @@
-http://localhost:8983/solr/diseases/select?q=aase+syndrome&defType=edismax&qf=name%5E5+symptoms%5E3+treatments%5E1&q.op=AND&wt=json
+http://localhost:8983/solr/diseases/select?q=aase+syndrome&defType=edismax&qf=name%5E5+symptoms%5E3+treatments%5E1&q.op=AND&fl=%2A%2Cscore&wt=json

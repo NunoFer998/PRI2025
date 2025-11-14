@@ -1,1 +1,1 @@
-http://localhost:8983/solr/diseases/select?q=name%3Aaase_+yndrome&wt=json
+http://localhost:8983/solr/diseases/select?q=name%3Aaase_syndrome&fl=%2A%2Cscore&wt=json

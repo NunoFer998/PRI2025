@@ -1,17 +1,19 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 20,
+    "QTime": 12,
     "params": {
       "q": "migraines",
       "defType": "edismax",
       "qf": "name^5 symptoms^3 description^1",
+      "fl": "*,score",
       "wt": "json"
     }
   },
   "response": {
     "numFound": 477,
     "start": 0,
+    "maxScore": 147.21158,
     "numFoundExact": true,
     "docs": [
       {
@@ -21,7 +23,8 @@
         ],
         "id": "46916f6a-7b09-4122-ae66-f3c17bc03016",
         "_version_": 1848764101761696979,
-        "_root_": "46916f6a-7b09-4122-ae66-f3c17bc03016"
+        "_root_": "46916f6a-7b09-4122-ae66-f3c17bc03016",
+        "score": 147.21158
       },
       {
         "name": "migraine",
@@ -30,7 +33,8 @@
         ],
         "id": "c0e5205d-eda1-4a5f-967e-07506671ae66",
         "_version_": 1848764101761696980,
-        "_root_": "c0e5205d-eda1-4a5f-967e-07506671ae66"
+        "_root_": "c0e5205d-eda1-4a5f-967e-07506671ae66",
+        "score": 147.21158
       },
       {
         "name": "migraine",
@@ -39,7 +43,8 @@
         ],
         "id": "7337501b-18bb-4f22-9e31-2eb7ad58958f",
         "_version_": 1848764101761696981,
-        "_root_": "7337501b-18bb-4f22-9e31-2eb7ad58958f"
+        "_root_": "7337501b-18bb-4f22-9e31-2eb7ad58958f",
+        "score": 147.21158
       },
       {
         "name": "migraine",
@@ -48,7 +53,8 @@
         ],
         "id": "cbfbe3e3-8bc7-49c9-98b3-7a2d42973a78",
         "_version_": 1848764101761696982,
-        "_root_": "cbfbe3e3-8bc7-49c9-98b3-7a2d42973a78"
+        "_root_": "cbfbe3e3-8bc7-49c9-98b3-7a2d42973a78",
+        "score": 147.21158
       },
       {
         "name": "migraine",
@@ -57,7 +63,8 @@
         ],
         "id": "55db15f0-33fb-4a2b-a1b7-caf2d75f557f",
         "_version_": 1848764101761696983,
-        "_root_": "55db15f0-33fb-4a2b-a1b7-caf2d75f557f"
+        "_root_": "55db15f0-33fb-4a2b-a1b7-caf2d75f557f",
+        "score": 147.21158
       },
       {
         "name": "migraine",
@@ -66,7 +73,8 @@
         ],
         "id": "82a0d6cb-5a14-48ae-b965-c6a7ea45b94f",
         "_version_": 1848764101761696984,
-        "_root_": "82a0d6cb-5a14-48ae-b965-c6a7ea45b94f"
+        "_root_": "82a0d6cb-5a14-48ae-b965-c6a7ea45b94f",
+        "score": 147.21158
       },
       {
         "name": "migraine",
@@ -75,7 +83,8 @@
         ],
         "id": "c7823e71-d159-42ba-b8f7-54d71d7f0a61",
         "_version_": 1848764101761696985,
-        "_root_": "c7823e71-d159-42ba-b8f7-54d71d7f0a61"
+        "_root_": "c7823e71-d159-42ba-b8f7-54d71d7f0a61",
+        "score": 147.21158
       },
       {
         "name": "migraine",
@@ -84,7 +93,8 @@
         ],
         "id": "51e248e1-9719-4e02-9e5b-65c72bb63fa8",
         "_version_": 1848764101761696986,
-        "_root_": "51e248e1-9719-4e02-9e5b-65c72bb63fa8"
+        "_root_": "51e248e1-9719-4e02-9e5b-65c72bb63fa8",
+        "score": 147.21158
       },
       {
         "name": "migraine",
@@ -93,7 +103,8 @@
         ],
         "id": "83d887c4-6c44-4edc-8839-a89861cf3b8d",
         "_version_": 1848764101761696987,
-        "_root_": "83d887c4-6c44-4edc-8839-a89861cf3b8d"
+        "_root_": "83d887c4-6c44-4edc-8839-a89861cf3b8d",
+        "score": 147.21158
       },
       {
         "name": "migraine",
@@ -102,7 +113,8 @@
         ],
         "id": "87c810b1-57f7-4c33-821e-92d76a2ab5da",
         "_version_": 1848764101761696988,
-        "_root_": "87c810b1-57f7-4c33-821e-92d76a2ab5da"
+        "_root_": "87c810b1-57f7-4c33-821e-92d76a2ab5da",
+        "score": 147.21158
       }
     ]
   }

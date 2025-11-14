@@ -1,11 +1,12 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 780,
+    "QTime": 205,
     "params": {
       "q": "headache fatigue",
       "defType": "edismax",
       "qf": "name^5 symptoms^3 description^1 treatments^1",
+      "fl": "*,score",
       "q.op": "AND",
       "wt": "json"
     }
@@ -13,6 +14,7 @@
   "response": {
     "numFound": 11929,
     "start": 0,
+    "maxScore": 517.33685,
     "numFoundExact": true,
     "docs": [
       {
@@ -27,7 +29,8 @@
         "chronic": true,
         "id": "0e838d45-7e40-421a-bf06-bdd24593b52f",
         "_version_": 1848764017594598569,
-        "_root_": "0e838d45-7e40-421a-bf06-bdd24593b52f"
+        "_root_": "0e838d45-7e40-421a-bf06-bdd24593b52f",
+        "score": 517.33685
       },
       {
         "name": "myalgic_encephalomyelitis/chronic_fatigue_syndrome_(me/cfs)",
@@ -38,7 +41,8 @@
         "url": "https://medlineplus.gov/ency/article/001244.htm",
         "id": "7f4a354f-f412-4fd8-9dcb-efd80214b695",
         "_version_": 1848764101761700419,
-        "_root_": "7f4a354f-f412-4fd8-9dcb-efd80214b695"
+        "_root_": "7f4a354f-f412-4fd8-9dcb-efd80214b695",
+        "score": 491.11993
       },
       {
         "name": "nerve_damage_from_diabetes_-_self-care",
@@ -49,7 +53,8 @@
         "url": "https://medlineplus.gov/ency/patientinstructions/000326.htm",
         "id": "354051c4-a62a-4ffb-b52a-8ad4d993086a",
         "_version_": 1848764101761701113,
-        "_root_": "354051c4-a62a-4ffb-b52a-8ad4d993086a"
+        "_root_": "354051c4-a62a-4ffb-b52a-8ad4d993086a",
+        "score": 179.23785
       },
       {
         "name": "restless_leg_syndrome",
@@ -58,7 +63,8 @@
         ],
         "id": "a8dd32c7-24cb-4502-b3a8-326b7e9ef3b6",
         "_version_": 1848764122824454184,
-        "_root_": "a8dd32c7-24cb-4502-b3a8-326b7e9ef3b6"
+        "_root_": "a8dd32c7-24cb-4502-b3a8-326b7e9ef3b6",
+        "score": 177.48636
       },
       {
         "name": "restless_leg_syndrome",
@@ -67,7 +73,8 @@
         ],
         "id": "cd2aa5d5-af84-4954-bf65-a82ed55f9068",
         "_version_": 1848764122824454105,
-        "_root_": "cd2aa5d5-af84-4954-bf65-a82ed55f9068"
+        "_root_": "cd2aa5d5-af84-4954-bf65-a82ed55f9068",
+        "score": 176.99135
       },
       {
         "name": "narcolepsy",
@@ -76,7 +83,8 @@
         ],
         "id": "f4807210-611f-4c93-b94d-301a16238328",
         "_version_": 1848764101761700853,
-        "_root_": "f4807210-611f-4c93-b94d-301a16238328"
+        "_root_": "f4807210-611f-4c93-b94d-301a16238328",
+        "score": 176.49925
       },
       {
         "name": "narcolepsy",
@@ -85,7 +93,8 @@
         ],
         "id": "9f058720-d578-46fa-b689-ef1058718648",
         "_version_": 1848764101761700869,
-        "_root_": "9f058720-d578-46fa-b689-ef1058718648"
+        "_root_": "9f058720-d578-46fa-b689-ef1058718648",
+        "score": 176.49925
       },
       {
         "name": "narcolepsy",
@@ -94,7 +103,8 @@
         ],
         "id": "beb4b1ec-0d3f-4ae6-b122-205d483d45d2",
         "_version_": 1848764101761700885,
-        "_root_": "beb4b1ec-0d3f-4ae6-b122-205d483d45d2"
+        "_root_": "beb4b1ec-0d3f-4ae6-b122-205d483d45d2",
+        "score": 176.49925
       },
       {
         "name": "restless_leg_syndrome",
@@ -103,7 +113,8 @@
         ],
         "id": "f459044e-a7e4-4d28-9bb0-b4763cd23a45",
         "_version_": 1848764122824454100,
-        "_root_": "f459044e-a7e4-4d28-9bb0-b4763cd23a45"
+        "_root_": "f459044e-a7e4-4d28-9bb0-b4763cd23a45",
+        "score": 176.49925
       },
       {
         "name": "restless_leg_syndrome",
@@ -112,7 +123,8 @@
         ],
         "id": "9d773e66-3027-46bb-89bd-f0c57c4820a6",
         "_version_": 1848764122824454104,
-        "_root_": "9d773e66-3027-46bb-89bd-f0c57c4820a6"
+        "_root_": "9d773e66-3027-46bb-89bd-f0c57c4820a6",
+        "score": 176.49925
       }
     ]
   }
