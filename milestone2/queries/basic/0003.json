@@ -1,4 +1,14 @@
 {
-  "query": "name:psoriasis",
-  "fields": "id, score"
+  "query": "Cancer treatment",
+  "fields": "id, score",
+  "params":{
+    "df":"name",
+    "indent":"true",
+    "fl":"id,name,symptoms,description,treatments,score",
+    "start":0,
+    "q.op":"OR",
+    "sort":"query({!v='treatments:[* TO *]'}) desc, score desc",
+    "rows":20,
+    "wt":"json"
+  }
 }

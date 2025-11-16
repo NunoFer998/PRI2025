@@ -78,8 +78,40 @@ else
 fi
 echo ""
 
+echo "Step 4: Generating PR curve plots..."
+mkdir -p evaluation_plots
+# Empty the folder
+rm -rf evaluation_plots/*
+
+# Generate PR curves for each individual query
+echo "Generating individual query curves..."
+for query_id in {1..3}; do
+    # BASIC - filter by query ID
+    "${TREC_EVAL_BIN}" -q -m all_trec "${QRELS_FILE}" "${RESULTS_BASIC}" | \
+        awk -v qid="$query_id" '$2 == qid {print}' | \
+        ./scripts/plot_pr.py --output "evaluation_plots/query_${query_id}_basic_pr.png" 2>/dev/null || true
+    
+    # ENHANCED - filter by query ID
+    "${TREC_EVAL_BIN}" -q -m all_trec "${QRELS_FILE}" "${RESULTS_ENHANCED}" | \
+        awk -v qid="$query_id" '$2 == qid {print}' | \
+        ./scripts/plot_pr.py --output "evaluation_plots/query_${query_id}_enhanced_pr.png" 2>/dev/null || true
+done
+
+echo "✓ Generated individual query curves (1-10)"
+
+# Generate OVERALL average curves (both systems)
+echo "Generating overall average curves..."
+"${TREC_EVAL_BIN}" -q -m all_trec "${QRELS_FILE}" "${RESULTS_BASIC}" | \
+    awk '$2 == "all" {print}' | \
+    ./scripts/plot_pr.py --output "evaluation_plots/average_basic_pr.png" 2>/dev/null || true
+
+"${TREC_EVAL_BIN}" -q -m all_trec "${QRELS_FILE}" "${RESULTS_ENHANCED}" | \
+    awk '$2 == "all" {print}' | \
+    ./scripts/plot_pr.py --output "evaluation_plots/average_enhanced_pr.png" 2>/dev/null || true
+
+echo "✓ Generated average curves for both systems"
 
 # Cleanup
-# echo "Step 4: Cleaning up temporary files..."
+# echo "Step 5: Cleaning up temporary files..."
 #  -f "${QRELS_FILE}" "${RESULTS_BASIC}" "${RESULTS_ENHANCED}"
-echo "✓ Done. Final reports are in ${EVAL_BASIC} and ${EVAL_ENHANCED}"
+echo "✓ Done. Reports available in evaluation_plots/"

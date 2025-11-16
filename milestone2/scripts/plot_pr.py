@@ -1,106 +1,87 @@
 #!/usr/bin/env python3
-
-import argparse
 import sys
+import argparse
 
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend for headless environments
 import matplotlib.pyplot as plt
 import numpy as np
 
 
-def main(qrels_file: str, output_file: str):
-    """
-    Read predicted document IDs from stdin in TREC format and qrels (ground truth IDs) from a file,
-    Plot precision-recall curve and save it to a .PNG file.
+def main(trec_eval_stdout: str, output_file: str = None):
 
-    Arguments:
-        qrels_file -- Path to the qrels file containing ground truth document IDs in TREC format.
-        output_file -- Name of the output PNG file where the precision-recall curve will be saved.
-    """
+    # preprocessing - obtain results for each query
+    results = {x: {} for x in set([x.split()[1] for x in trec_eval_stdout])}
 
-    # Read qrels (ground truth) from the specified file in TREC format
-    with open(qrels_file, "r") as f:
-        y_true = {
-            line.strip().split()[2] for line in f
-        }  # Use a set for fast lookup of relevant document IDs
+    for metric in trec_eval_stdout:
+        (name, query_id, value) = metric.split()
+        results[query_id][name] = value
 
-    # Read predicted document IDs from stdin (TREC format: assume the third column contains the doc_id)
-    y_pred = [
-        line.strip().split()[2] for line in sys.stdin
-    ]  # Extract document IDs from TREC format
+    # Discard aggregated results if it exists
+    if "all" in results:
+        del results["all"]
 
-    # Edge case: Handle empty inputs
-    if not y_pred or not y_true:
-        print("Error: No predictions or qrels found. Please provide valid input.")
-        sys.exit(1)
+    for query_id, metrics in results.items():
 
-    # Calculate precision, recall, and keep track of relevant ranks for MAP calculation
-    precision = []
-    recall = []
-    relevant_ranks = []  # To hold precision values at ranks where relevant documents are retrieved
-    relevant_count = 0
+        # Obtain interpolated precision and recall
+        recall = np.arange(0, 1.1, 0.1)
 
-    for i in range(1, len(y_pred) + 1):
-        # Check how many predicted documents so far are relevant
-        if y_pred[i - 1] in y_true:
-            relevant_count += 1
-            relevant_ranks.append(relevant_count / i)  # Precision at this rank (relevant document)
+        pr_keys = [f"iprec_at_recall_{k:.2f}" for k in recall]
+        iprecision = np.array([float(metrics[k]) for k in pr_keys])
 
-        # Precision: relevant docs so far / total docs retrieved so far
-        precision.append(relevant_count / i)
+        # Obtain Average Precision (AP)
+        ap_score = float(metrics["map"])
+        p_10 = float(metrics["P_10"])
 
-        # Recall: relevant docs so far / total relevant docs in qrels
-        recall.append(relevant_count / len(y_true))
+        # Obtain the Area Under Curve (AUC) estimate
+        auc_score = float(metrics["11pt_avg"])
 
-    # Compute Mean Average Precision (MAP) as the mean of precision values for relevant documents
-    map_score = np.sum(relevant_ranks) / len(y_true) if relevant_ranks else 0
+        line_kwargs = {
+            "drawstyle": "steps-post",
+            "label": f"Q{query_id}: AP={ap_score:.3f}, AUC={auc_score:.3f}, P@10={p_10:.3f}",
+            "linewidth": 2,
+            "markersize": 10,
+        }
 
-    # Compute the 11-point interpolated precision-recall curve
-    recall_levels = np.linspace(0.0, 1.0, 11)
-    interpolated_precision = [
-        max([p for p, r in zip(precision, recall) if r >= r_level], default=0)
-        for r_level in recall_levels
-    ]
-
-    # Compute the Area Under Curve (AUC) for the precision-recall curve
-    auc_score = np.trapz(interpolated_precision, recall_levels)
-
-    # Plot the 11-point interpolated precision-recall curve
-    plt.plot(
-        recall_levels,
-        interpolated_precision,
-        drawstyle="steps-post",
-        label=f"MAP: {map_score:.4f}, AUC: {auc_score:.4f}",
-        linewidth=1,
-    )
-
-    # Customize plot appearance
-    plt.xlabel("Recall")
-    plt.ylabel("Precision")
-    plt.xlim(0, 1)
-    plt.ylim(0, 1)
-    plt.legend(loc="lower left", prop={"size": 10})
+        # Plot the 11-point interpolated precision-recall curve
+        plt.plot(recall, iprecision, **line_kwargs)
 
     # Keep the title as "Precision-Recall Curve"
     plt.title("Precision-Recall Curve")
 
-    # Save the plot to the specified output PNG file
-    plt.savefig(output_file, format="png", dpi=300)
-    print(f"Precision-Recall plot saved to {output_file}")
+    # Customize plot appearance
+    axis_kwargs = {
+        "fontsize": 9,
+        "verticalalignment": "baseline",
+        "style": "italic",
+    }
+
+    plt.xlabel("Recall", fontdict=axis_kwargs)
+    plt.ylabel("Precision", fontdict=axis_kwargs)
+    plt.xlim(-0.005, 1.005)
+    plt.ylim(-0.005, 1.005)
+    plt.legend(loc="lower left", prop={"size": 10}, )
+    plt.grid(True)
+    plt.grid(linestyle='--', linewidth=0.5)
+    plt.tight_layout()
+
+    # Save or show the plot
+    if output_file:
+        plt.savefig(output_file, dpi=100, bbox_inches='tight')
+        print(f"✓ Plot saved to: {output_file}")
+    else:
+        # Show the PR curve
+        plt.show()
 
 
 if __name__ == "__main__":
-    # Argument parser to handle the qrels file and output file as command-line arguments
-    parser = argparse.ArgumentParser(
-        description="Generate a Precision-Recall curve from Solr results (in TREC format) and qrels."
-    )
-    parser.add_argument(
-        "--qrels",
-        type=str,
-        required=True,
-        help="Path to the qrels file (ground truth document IDs in TREC format)",
-    )
-    parser.add_argument("--output", type=str, required=True, help="Path to the output PNG file")
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(description='Plot precision-recall curves from trec_eval output')
+    parser.add_argument('--output', type=str, help='Output file path for saving the plot')
+    parser.add_argument('--qrels', type=str, help='Path to qrels file (for compatibility)')
     args = parser.parse_args()
+    
+    # Run the main function with trec_eval's output
+    trec_eval_stdout = sys.stdin.readlines()
 
-    # Run the main function with the provided qrels file and output file
-    main(args.qrels, args.output)
+    main(trec_eval_stdout, output_file=args.output)

@@ -1,9 +1,18 @@
 {
-  "query": "treatments psoriasis",
+  "query": "Cancer treatment",
   "fields": "id, score",
   "params": {
     "defType": "edismax",
-    "qf": "name^5 treatments^4 description^1",
-    "q.op": "AND"
+    "boost": "termfreq(treatments,'treatment')",
+    "pf": "name^30 treatments^15 description^5",
+    "ps": 3,
+    "indent": "true",
+    "sort": "query({!v='treatments:[* TO *]'}) desc, score desc",
+    "q.op": "OR",
+    "start": 0,
+    "rows": 20,
+    "fl": "id,name,symptoms,description,treatments,score",
+    "df": "name",
+    "wt":"json"
   }
 }

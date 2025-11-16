@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+docker stop  meic_solr 
+docker rm meic_solr 
+
 echo "Starting Solr setup..."
 
 CONTAINER_NAME="meic_solr"
