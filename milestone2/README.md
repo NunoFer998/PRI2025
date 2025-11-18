@@ -35,17 +35,12 @@ The provided script will:
 5. Post the CSV dataset (``merged_disease_symptom_list.csv``) to ``Solr``
 5. Commit the changes so the data becomes searchable
 
-Make the script executable (Linux / WSL / Mac):
-```bash
-chmod +x startup.sh
-```
-
 Run it:
 ```bash
-./startup.sh
+make startup
 ```
 
-### Step 4: Access Solr
+### Step 3: Access Solr
 
 Use the Solr Admin UI to explore the ``diseases`` collection.
 
@@ -55,27 +50,10 @@ Open a browser and go to:
 http://localhost:8983
 ```
 
-### Step 5: Running the Scripts
+### Step 4: Running the Scripts
 
-**Important:** All commands must be run from the ```milestone2``` root folder.
+To run the evaluation scripts:
 
-1. Run **all** scripts:
-```bash
-make all # or 'make'
-```
-
-2. To run **just** the ```evaluation``` script:
 ```bash
 make evaluation
 ```
-
-3. Perform the manual evaluation and create the ```qrels.txt``` files with the results.
-
-4. To run **just** the ```metrics``` script:
-
-*Note: This won't work if the ```evaluation``` script is not runned before and the ```qrels.txt``` files are not created.*
-```bash
-make metrics
-```
-
-    
