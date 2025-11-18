@@ -5,7 +5,7 @@ set -euxo pipefail
 # --- CONFIGURAÇÕES E VARIÁVEIS ---
 QUERIES_DIR="queries"
 SYSTEMS_DIR="queries/systems"
-QRELS_DIR="my_qrels"
+QRELS_DIR="queries/my_qrels"
 COLLECTION="diseases"
 TREC_EVAL_BIN="trec_eval/trec_eval" 
 
