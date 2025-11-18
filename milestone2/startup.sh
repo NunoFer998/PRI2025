@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-docker stop  meic_solr 
-docker rm meic_solr 
+docker stop meic_solr 2>/dev/null || true
+docker rm meic_solr 2>/dev/null || true 
 
 echo "Starting Solr setup..."
 
