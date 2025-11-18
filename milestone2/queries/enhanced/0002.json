@@ -1,15 +1,18 @@
 {
-  "query": "I've had a dry cough for a week and I feel extremely tired",
+  "query": "Headache and Fatigue",
   "fields": "id, score",
   "params": {
     "defType": "edismax",
-    "qf": "name^10 symptoms^30 treatments^10 description^5",
+    "boost": "sum(termfreq(symptoms,'headache'), termfreq(symptoms,'fatigue'))",
+    "pf": "symptoms^30 description^5",
+    "ps": 3,
     "indent": "true",
-    "sort": "query({!v='treatments:[* TO *]'}) desc, score desc",
-    "q.op": "OR",
+    "sort": "score desc",
+    "q.op": "AND",
     "start": 0,
     "rows": 20,
     "fl": "id,name,symptoms,description,treatments,score",
-    "wt":"json"
+    "df": "symptoms",
+    "wt": "json"
   }
 }

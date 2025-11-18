@@ -1,15 +1,14 @@
 {
-  "query": "cancer treatment",
+  "query": "headache fatigue",
   "fields": "id, score",
   "params": {
-    "defType": "edismax",
-    "df":"description",
+    "df": "symptoms",
     "indent": "true",
-    "sort": "query({!v='treatments:[* TO *]'}) desc, score desc",
-    "q.op": "OR",
-    "start": 0,
-    "rows": 20,
     "fl": "id,name,symptoms,description,treatments,score",
-    "wt":"json"
+    "start": 0,
+    "q.op": "AND",
+    "sort": "score desc",
+    "rows": 20,
+    "wt": "json"
   }
 }
