@@ -1,4 +1,14 @@
 {
-  "query": "symptoms:(headache AND fatigue)",
-  "fields": "id, score"
+  "query": "headache fatigue",
+  "fields": "id, score",
+  "params": {
+    "df": "symptoms",
+    "indent": "true",
+    "fl": "id,name,symptoms,description,treatments,score",
+    "start": 0,
+    "q.op": "AND",
+    "sort": "score desc",
+    "rows": 20,
+    "wt": "json"
+  }
 }
