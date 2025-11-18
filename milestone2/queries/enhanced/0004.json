@@ -1,7 +1,0 @@
-{
-  "query": "*:*",
-  "fields": "id, score",
-  "params": {
-    "fq": "chronic:1"
-  }
-}

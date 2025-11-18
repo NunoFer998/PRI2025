@@ -1,4 +1,4 @@
-num_ret               	1	1
+num_ret               	1	20
 num_rel               	1	1
 num_rel_ret           	1	0
 map                   	1	0.0000
@@ -25,7 +25,7 @@ P_100                 	1	0.0000
 P_200                 	1	0.0000
 P_500                 	1	0.0000
 P_1000                	1	0.0000
-relstring             	1	'-'
+relstring             	1	'----------'
 recall_5              	1	0.0000
 recall_10             	1	0.0000
 recall_15             	1	0.0000
@@ -46,7 +46,7 @@ Rprec_mult_1.40       	1	0.0000
 Rprec_mult_1.60       	1	0.0000
 Rprec_mult_1.80       	1	0.0000
 Rprec_mult_2.00       	1	0.0000
-utility               	1	-1.0000
+utility               	1	-20.0000
 11pt_avg              	1	0.0000
 binG                  	1	0.0000
 G                     	1	0.0000
@@ -91,10 +91,10 @@ set_F                 	1	0.0000
 num_nonrel_judged_ret 	1	0
 rbp                   	1	0.0000
 rbp_resid             	1	1.0000
-unj_5                 	1	0.2000
-unj_10                	1	0.1000
-unj_20                	1	0.0500
-num_ret               	2	1
+unj_5                 	1	1.0000
+unj_10                	1	1.0000
+unj_20                	1	1.0000
+num_ret               	2	20
 num_rel               	2	10
 num_rel_ret           	2	0
 map                   	2	0.0000
@@ -121,7 +121,7 @@ P_100                 	2	0.0000
 P_200                 	2	0.0000
 P_500                 	2	0.0000
 P_1000                	2	0.0000
-relstring             	2	'-'
+relstring             	2	'----------'
 recall_5              	2	0.0000
 recall_10             	2	0.0000
 recall_15             	2	0.0000
@@ -142,7 +142,7 @@ Rprec_mult_1.40       	2	0.0000
 Rprec_mult_1.60       	2	0.0000
 Rprec_mult_1.80       	2	0.0000
 Rprec_mult_2.00       	2	0.0000
-utility               	2	-1.0000
+utility               	2	-20.0000
 11pt_avg              	2	0.0000
 binG                  	2	0.0000
 G                     	2	0.0000
@@ -187,9 +187,9 @@ set_F                 	2	0.0000
 num_nonrel_judged_ret 	2	0
 rbp                   	2	0.0000
 rbp_resid             	2	1.0000
-unj_5                 	2	0.2000
-unj_10                	2	0.1000
-unj_20                	2	0.0500
+unj_5                 	2	1.0000
+unj_10                	2	1.0000
+unj_20                	2	1.0000
 num_ret               	3	20
 num_rel               	3	9
 num_rel_ret           	3	0
@@ -286,9 +286,9 @@ rbp_resid             	3	1.0000
 unj_5                 	3	1.0000
 unj_10                	3	1.0000
 unj_20                	3	1.0000
-runid                 	all	enhanced
+runid                 	all	treatment_sorting
 num_q                 	all	3
-num_ret               	all	22
+num_ret               	all	60
 num_rel               	all	20
 num_rel_ret           	all	0
 map                   	all	0.0000
@@ -337,7 +337,7 @@ Rprec_mult_1.40       	all	0.0000
 Rprec_mult_1.60       	all	0.0000
 Rprec_mult_1.80       	all	0.0000
 Rprec_mult_2.00       	all	0.0000
-utility               	all	-7.3333
+utility               	all	-20.0000
 11pt_avg              	all	0.0000
 binG                  	all	0.0000
 G                     	all	0.0000
@@ -382,6 +382,6 @@ set_F                 	all	0.0000
 num_nonrel_judged_ret 	all	0
 rbp                   	all	0.0000
 rbp_resid             	all	1.0000
-unj_5                 	all	0.4667
-unj_10                	all	0.4000
-unj_20                	all	0.3667
+unj_5                 	all	1.0000
+unj_10                	all	1.0000
+unj_20                	all	1.0000

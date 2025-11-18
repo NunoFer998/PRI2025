@@ -1,4 +1,0 @@
-{
-  "query": "name:migraines OR symptoms:migraines OR description:migraines",
-  "fields": "id, score"
-}

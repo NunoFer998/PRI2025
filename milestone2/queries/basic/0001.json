@@ -1,4 +1,15 @@
 {
-  "query": "name:aase_syndrome",
-  "fields": "id, score"
+  "query": "I've had a dry cough for a week and I feel extremely tired",
+  "fields": "id, score",
+  "params": {
+    "defType": "edismax",
+    "df":"symptoms",
+    "indent": "true",
+    "sort": "query({!v='treatments:[* TO *]'}) desc, score desc",
+    "q.op": "OR",
+    "start": 0,
+    "rows": 20,
+    "fl": "id,name,symptoms,description,treatments,score",
+    "wt":"json"
+  }
 }

@@ -1,18 +1,15 @@
 {
-  "query": "Cancer treatment",
+  "query": "cancer treatment",
   "fields": "id, score",
   "params": {
     "defType": "edismax",
-    "boost": "termfreq(treatments,'treatment')",
-    "pf": "name^30 treatments^15 description^5",
-    "ps": 3,
+    "qf": "name^10 symptoms^30 treatments^10 description^5",
     "indent": "true",
     "sort": "query({!v='treatments:[* TO *]'}) desc, score desc",
     "q.op": "OR",
     "start": 0,
     "rows": 20,
     "fl": "id,name,symptoms,description,treatments,score",
-    "df": "name",
     "wt":"json"
   }
 }

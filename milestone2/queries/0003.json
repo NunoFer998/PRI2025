@@ -1,0 +1,4 @@
+{
+  "query": "cancer treatment",
+  "fields": "id, score"
+}

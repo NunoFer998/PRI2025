@@ -1,14 +1,15 @@
 {
-  "query": "Cancer treatment",
+  "query": "cancer treatment",
   "fields": "id, score",
-  "params":{
+  "params": {
+    "defType": "edismax",
     "df":"name",
-    "indent":"true",
-    "fl":"id,name,symptoms,description,treatments,score",
-    "start":0,
-    "q.op":"OR",
-    "sort":"query({!v='treatments:[* TO *]'}) desc, score desc",
-    "rows":20,
+    "indent": "true",
+    "sort": "query({!v='treatments:[* TO *]'}) desc, score desc",
+    "q.op": "OR",
+    "start": 0,
+    "rows": 20,
+    "fl": "id,name,symptoms,description,treatments,score",
     "wt":"json"
   }
 }
