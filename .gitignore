@@ -43,6 +43,4 @@ milestone1/data/final/
 # Evaluation outputs (generated results, plots, trec files)
 /milestone2/trec_eval/
 
-# Generated synonym files
-/milestone2/data/synonyms_diseases.txt
 

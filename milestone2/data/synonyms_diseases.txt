@@ -1,0 +1,4 @@
+cancer
+headache, migraine, cephalalgia, throbbing, hemicrania, neuralgia
+fatigue, tiredness, exhaustion, weariness, lassitude, drowsiness, sleepiness, enervation
+treatment, surgery, therapy

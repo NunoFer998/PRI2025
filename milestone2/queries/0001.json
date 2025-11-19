@@ -1,4 +1,4 @@
 {
-    "query": "I've had a dry cough for a week and I feel extremely tired",
+    "query": "dry cough and extremely tired",
     "fields": "id, score"
 }
