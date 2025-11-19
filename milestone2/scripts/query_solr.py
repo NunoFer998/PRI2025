@@ -44,7 +44,7 @@ def fetch_solr_results(query_file, system_file, solr_uri, collection):
             "params": {
                 **system_params,
                 "start": 0,
-                "rows": 20,
+                "rows": 75,
                 "fl": query_params["fields"], 
             }
         }

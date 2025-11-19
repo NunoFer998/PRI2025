@@ -132,20 +132,30 @@ for ((i=0; i<${#SYSTEMS[@]}; i+=4)); do
 
         if [ -s "${RESULTS_FILE}" ]; then
             "${TREC_EVAL_BIN}" -q -m all_trec "${QRELS_FILE}" "${RESULTS_FILE}" | \
-                # Filtra apenas a query atual (try both padded and unpadded ids)
-                    awk -v qid="$QID_PADDED" '$2 == qid {print}' | \
-                   awk -v q1="$QID_PADDED" -v q2="$QID_UNPADDED" '($2 == q1) || ($2 == q2) {print}' | \
-                ./scripts/plot_pr.py --output "evaluation_plots/query_${QID_PADDED}_${RUN_ID}_pr.png" 2>/dev/null || true
+                awk -v q1="$QID_PADDED" -v q2="$QID_UNPADDED" '($2 == q1) || ($2 == q2) {print}' | \
+                ./scripts/plot_pr.py --output "evaluation_plots/query_${QID_PADDED}_${RUN_ID}_pr.png"
         fi
     done
     
-    # 2. Geração da Curva Média (OVERALL average)
-    echo "  Generating average curve for ${RUN_ID}..."
-    if [ -s "${RESULTS_FILE}" ]; then
+done
+
+
+echo ""
+
+# --- ETAPA 4B: GERAR CURVAS GERAIS PARA CADA SISTEMA ---
+echo "Generating general system curves..."
+
+for ((i=0; i<${#SYSTEMS[@]}; i+=4)); do
+    RUN_ID="${SYSTEMS[i]}"
+    RESULTS_FILE="${SYSTEMS[i+2]}"
+    EVAL_FILE="${SYSTEMS[i+3]}"
+    
+    echo "  Generating general curve for ${RUN_ID} system..."
+    if [ -s "${EVAL_FILE}" ]; then
+        # Gera curva geral usando o ficheiro de avaliação completo
         "${TREC_EVAL_BIN}" -q -m all_trec "${QRELS_FILE}" "${RESULTS_FILE}" | \
-            # Filtra a linha de resultados "all"
-            awk '$2 == "all" {print}' | \
-            ./scripts/plot_pr.py --output "evaluation_plots/average_${RUN_ID}_pr.png" 2>/dev/null || true
+            ./scripts/plot_pr.py --output "evaluation_plots/${RUN_ID}_general_pr.png"
+        echo "  ✓ General curve for ${RUN_ID}: evaluation_plots/${RUN_ID}_general_pr.png"
     fi
 done
 
