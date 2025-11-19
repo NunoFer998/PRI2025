@@ -1,6 +1,6 @@
 {
     "defType": "edismax",
-    "qf": "name^10 symptoms^30 treatments^10 description^5",
+    "qf": "name^10 symptoms^5 treatments^20 description^30",
     "indent": "true",
     "sort":"score desc",
     "q.op": "AND",
