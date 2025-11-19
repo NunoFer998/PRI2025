@@ -4,55 +4,40 @@
       "name": "text_symptom_boosted",
       "class": "solr.TextField",
       "positionIncrementGap": "100",
-      
       "indexAnalyzer": {
         "tokenizer": {
           "class": "solr.PatternTokenizerFactory",
-          "pattern": "[\\W_]+" 
+          "pattern": "[\\W_]+"
         },
         "filters": [
-          {
-            "class": "solr.LowerCaseFilterFactory"
-          },
-          {
-            "class": "solr.ASCIIFoldingFilterFactory"
-          },
+          { "class": "solr.LowerCaseFilterFactory" },
+          { "class": "solr.ASCIIFoldingFilterFactory" },
           {
             "class": "solr.SynonymGraphFilterFactory",
             "synonyms": "synonyms_diseases.txt",
             "ignoreCase": "true"
           },
-          {
-            "class": "solr.EnglishMinimalStemFilterFactory"
-          }
+          { "class": "solr.EnglishMinimalStemFilterFactory" }
         ]
       },
-      
       "queryAnalyzer": {
         "tokenizer": {
           "class": "solr.PatternTokenizerFactory",
-          "pattern": "[\\W_]+" 
+          "pattern": "[\\W_]+"
         },
         "filters": [
-          {
-            "class": "solr.LowerCaseFilterFactory"
-          },
-          {
-            "class": "solr.ASCIIFoldingFilterFactory"
-          },
+          { "class": "solr.LowerCaseFilterFactory" },
+          { "class": "solr.ASCIIFoldingFilterFactory" },
           {
             "class": "solr.SynonymGraphFilterFactory",
             "synonyms": "synonyms_diseases.txt",
             "ignoreCase": "true"
           },
-          {
-            "class": "solr.EnglishMinimalStemFilterFactory"
-          }
+          { "class": "solr.EnglishMinimalStemFilterFactory" }
         ]
       }
     }
   ],
-
   "add-field": [
     {
       "name": "name",

@@ -100,6 +100,6 @@ curl -s -X POST -H 'Content-type:application/json' \
     --data-binary '{"delete": {"query":"*:*"}}' \
     http://localhost:8983/solr/diseases/update?commit=true
 
-docker exec meic_solr bin/solr post -c diseases /data/merged_disease_symptom_list.csv -params "overwrite=true"
+docker exec meic_solr bin/solr post -c diseases /data/dataset_static_ids.csv -params "overwrite=true"
 
 echo "Setup completed"
