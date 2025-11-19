@@ -1,4 +1,4 @@
 {
-  "query": "headache and fatigue",
+  "query": "chest head",
   "fields": "id, score"
 }

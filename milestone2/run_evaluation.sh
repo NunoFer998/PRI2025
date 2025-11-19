@@ -127,11 +127,14 @@ for ((i=0; i<${#SYSTEMS[@]}; i+=4)); do
     for query_id in $(seq 1 $MAX_QUERY_ID); do
         # O QID é preenchido com zeros, ex: 0001
         QID_PADDED=$(printf "%04d" "$query_id")
+         # Also compute unpadded numeric QID (matches qrels2trec.py output)
+        QID_UNPADDED=$(printf "%d" "$query_id")
 
         if [ -s "${RESULTS_FILE}" ]; then
             "${TREC_EVAL_BIN}" -q -m all_trec "${QRELS_FILE}" "${RESULTS_FILE}" | \
-                # Filtra apenas a query atual (QID)
-                awk -v qid="$QID_PADDED" '$2 == qid {print}' | \
+                # Filtra apenas a query atual (try both padded and unpadded ids)
+                    awk -v qid="$QID_PADDED" '$2 == qid {print}' | \
+                   awk -v q1="$QID_PADDED" -v q2="$QID_UNPADDED" '($2 == q1) || ($2 == q2) {print}' | \
                 ./scripts/plot_pr.py --output "evaluation_plots/query_${QID_PADDED}_${RUN_ID}_pr.png" 2>/dev/null || true
         fi
     done
