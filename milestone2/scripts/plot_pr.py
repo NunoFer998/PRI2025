@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import sys
 import argparse
+import os
 
 import matplotlib
 matplotlib.use('Agg')  # Use non-interactive backend for headless environments
@@ -11,11 +12,13 @@ import numpy as np
 def main(trec_eval_stdout: str, output_file: str = None):
 
     # preprocessing - obtain results for each query
-    results = {x: {} for x in set([x.split()[1] for x in trec_eval_stdout])}
+    results = {x: {} for x in set([x.split()[1] for x in trec_eval_stdout if len(x.split()) >= 2])}
 
     for metric in trec_eval_stdout:
-        (name, query_id, value) = metric.split()
-        results[query_id][name] = value
+        parts = metric.split()
+        if len(parts) >= 3:
+            name, query_id, value = parts[0], parts[1], parts[2]
+            results[query_id][name] = value
 
     # Discard aggregated results if it exists
     if "all" in results:
@@ -79,9 +82,14 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Plot precision-recall curves from trec_eval output')
     parser.add_argument('--output', type=str, help='Output file path for saving the plot')
     parser.add_argument('--qrels', type=str, help='Path to qrels file (for compatibility)')
+    parser.add_argument('--input', type=str, help='Input file path (if not using stdin)')
     args = parser.parse_args()
     
-    # Run the main function with trec_eval's output
-    trec_eval_stdout = sys.stdin.readlines()
+    # Read input from file or stdin
+    if args.input and os.path.exists(args.input):
+        with open(args.input, 'r') as f:
+            trec_eval_stdout = f.readlines()
+    else:
+        trec_eval_stdout = sys.stdin.readlines()
 
     main(trec_eval_stdout, output_file=args.output)

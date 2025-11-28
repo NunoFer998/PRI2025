@@ -72,24 +72,35 @@ def top_20_symptoms_plot(var, path):
     print(f"Saved: {path}")
 
 
-# creates a plot showing the count of unique symptoms per disease
-def unique_symptoms_per_disease(var, path):
-    plt.figure(figsize=(12, 6))
-    # Sort by unique symptom counts 
-    sorted_counts = var.sort_values().reset_index(drop=True)
-    plt.plot(sorted_counts, marker='o', linestyle='-', color='blue', markersize=4)
-    plt.title("Unique Symptom Counts per Disease")
-    plt.xlabel("Disease Index (sorted by unique symptom count)")
-    plt.ylabel("Number of UNIQUE symptoms")
-    plt.grid(True, linestyle='--', alpha=0.5)
+def unique_symptoms_per_disease_histogram(var, path):
+    plt.figure(figsize=(10, 6))
+    plt.hist(var, 
+             bins=max(1, int(var.max() - var.min() + 1)), 
+             edgecolor='black', 
+             alpha=0.7, 
+             color='teal',
+             align='left') 
+    
+    plt.title("Distribution of Unique Symptom Counts per Disease (Histogram)")
+    plt.xlabel("Number of Unique Symptoms (Count)")
+    plt.ylabel("Number of Diseases (Frequency)")
+    try:
+        mean_val = var.mean()
+        median_val = var.median()
+        plt.axvline(mean_val, color='red', linestyle='dashed', linewidth=1, label=f'Mean ({mean_val:.2f})')
+        plt.axvline(median_val, color='orange', linestyle='dashed', linewidth=1, label=f'Median ({median_val:.2f})')
+        plt.legend()
+    except AttributeError:
+        # Ignora se 'var' não for uma estrutura de dados com métodos .mean() e .median()
+        pass
+    plt.grid(axis='y', linestyle='--', alpha=0.5)
     plt.tight_layout()
-    path = os.path.join(plots_dir, "unique_symptoms_per_disease_line.png")
+    path = os.path.join(plots_dir, "unique_symptoms_per_disease_histogram.png")
+    
     plt.savefig(path)
     plt.close()
     print(f"Saved: {path}")
 
-
-# creates a plot showing the total symptoms per disease
 def symptom_mentions_per_disease(var, path):
     plt.figure(figsize=(10, 6))
     total_mention_counts.plot(kind='hist', bins=20, edgecolor='black')
@@ -115,5 +126,5 @@ if __name__ == "__main__":
     create_symptoms_wordcloud(df, plots_dir)
     top_10_diseases_plot(summary_data, plots_dir)
     top_20_symptoms_plot(symptom_counts_total, plots_dir)
-    unique_symptoms_per_disease(unique_symptom_counts, plots_dir)
+    unique_symptoms_per_disease_histogram(unique_symptom_counts, plots_dir)
     symptom_mentions_per_disease(total_mention_counts, plots_dir)

@@ -159,4 +159,47 @@ for ((i=0; i<${#SYSTEMS[@]}; i+=4)); do
     fi
 done
 
+# --- ETAPA 4C: GERAR CURVAS COMPARATIVAS DOS SISTEMAS ---
+echo "Generating comparative system curves..."
+
+# 1. Crie um ficheiro temporário para armazenar todas as curvas
+COMPARATIVE_RESULTS_FILE="temp_comparative_pr_data.txt"
+> "${COMPARATIVE_RESULTS_FILE}" # Limpa o ficheiro se já existir
+
+# 2. Percorra todos os sistemas e anexe os dados ao ficheiro temporário
+for ((i=0; i<${#SYSTEMS[@]}; i+=4)); do
+    RUN_ID="${SYSTEMS[i]}"
+    RESULTS_FILE="${SYSTEMS[i+2]}"
+    EVAL_FILE="${SYSTEMS[i+3]}"
+    
+    echo "  Collecting data for ${RUN_ID} system..."
+
+    if [ -s "${EVAL_FILE}" ]; then
+        # Gera a curva de Precisão-Recuperação e anexa os dados ao ficheiro temporário.
+        # Usa o nome do sistema (RUN_ID) como prefixo/label.
+        "${TREC_EVAL_BIN}" -q -m all_trec "${QRELS_FILE}" "${RESULTS_FILE}" | \
+            awk -v run_id="${RUN_ID}" '{print run_id, $0}' >> "${COMPARATIVE_RESULTS_FILE}"
+        echo "  ✓ Data collected for ${RUN_ID}."
+    else
+        echo "  ⚠ Skipping ${RUN_ID}: ${EVAL_FILE} is empty."
+    fi
+done
+
+# 3. Gere o gráfico comparativo usando o ficheiro temporário
+if [ -s "${COMPARATIVE_RESULTS_FILE}" ]; then
+    echo "  Generating comparative plot..."
+    
+    # O script plot_pr.py deve ser capaz de ler o ficheiro multi-sistema.
+    # Pode ser necessário adaptar o seu script plot_pr.py para ler este novo formato.
+    cat "${COMPARATIVE_RESULTS_FILE}" | \
+        ./scripts/plot_pr.py --output "evaluation_plots/comparative_all_systems_pr.png"
+
+    echo "  ✨ Comparative plot generated: evaluation_plots/comparative_all_systems_pr.png"
+else
+    echo "  ❌ No data collected. Cannot generate comparative plot."
+fi
+
+# 4. Limpe o ficheiro temporário (opcional)
+rm -f "${COMPARATIVE_RESULTS_FILE}"
+
 echo "✓ Done. Reports available in evaluation_plots/"
