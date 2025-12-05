@@ -10,12 +10,19 @@ def get_embedding(text):
     return model.encode(text, convert_to_tensor=False).tolist()
 
 if __name__ == "__main__":
+    MAX_DOCUMENTS = 1000
     # Read JSON from STDIN
     data = json.load(sys.stdin)
     counter = 0
+    processed_documents = []
+
+    total_docs = len(data)
 
     # Update each document in the JSON data
     for document in data:
+        if counter >= MAX_DOCUMENTS:
+            print(f"Reached processing limit of {MAX_DOCUMENTS} documents. Stopping iteration.", file=sys.stderr)
+            break
         counter += 1
         print(f"Processing document {counter}", file=sys.stderr)
         # Extract fields if they exist, otherwise default to empty strings
@@ -26,6 +33,7 @@ if __name__ == "__main__":
 
         combined_text = name + " " + symptoms + " " + description + " " + treatments
         document["vector"] = get_embedding(combined_text)
+        processed_documents.append(document)
 
     # Output updated JSON to STDOUT
-    json.dump(data, sys.stdout, indent=4, ensure_ascii=False)
+    json.dump(processed_documents, sys.stdout, indent=4, ensure_ascii=False)
