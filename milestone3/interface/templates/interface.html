@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solr Medical Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        #search-container {
+            margin-bottom: 30px;
+        }
+        #search-input {
+            padding: 10px;
+            width: 70%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        #search-button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        #results-container {
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        .result-item {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+        }
+        .result-title {
+            color: #007bff;
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+        .result-field {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        .error-message {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🔍 Symptom & Medical Search</h1>
+
+    <div id="search-container">
+        <input type="text" id="search-input" placeholder="Enter symptoms, diseases, or keywords..." />
+        <button id="search-button">Search Solr</button>
+    </div>
+
+    <div id="results-container">
+        <p id="initial-message">Enter a search term and click 'Search Solr' to see results.</p>
+    </div>
+
+    <script>
+        document.getElementById('search-button').addEventListener('click', performSearch);
+        document.getElementById('search-input').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        async function performSearch() {
+            const resultsContainer = document.getElementById('results-container');
+            const keyword = document.getElementById('search-input').value.trim();
+            
+            // Clear previous results and message
+            resultsContainer.innerHTML = '<h2>Searching...</h2>';
+
+            if (keyword === '') {
+                resultsContainer.innerHTML = '<p class="error-message">Please enter a search term.</p>';
+                return;
+            }
+
+            // --- Solr Query Parameters ---
+            // The Solr endpoint is constructed here.
+            // q=${keyword}           -> The user's query keyword
+            // df=text_general        -> Specifies the default field to search (CHANGE THIS to your main search field, e.g., 'name', 'symptoms', or a copy field like 'text_all')
+            // wt=json                -> Response format is JSON
+            // fl=id,name,symptoms    -> Fields to retrieve and display (CHANGE THIS to your core's field names)
+            // rows=10                -> Number of results to return
+            const solrUrl = `http://127.0.0.1:5000/api/search?q=${encodeURIComponent(keyword)}`;
+            
+            try {
+                const response = await fetch(solrUrl);
+                const data = await response.json();
+                
+                if (data.error) {
+                    throw new Error(data.error.msg || JSON.stringify(data.error));
+                }
+                
+                if (!data.response || !data.response.docs) {
+                    throw new Error("Invalid response from Solr. Check console for details.");
+                }
+                
+                displayResults(data.response);
+
+            } catch (error) {
+                console.error('Error fetching data from Solr:', error);
+                resultsContainer.innerHTML = `<p class="error-message">Error connecting to Solr: ${error.message}. Check if your Solr container is running and accessible on port 8983.</p>`;
+            }
+        }
+
+        function displayResults(response) {
+            const resultsContainer = document.getElementById('results-container');
+            resultsContainer.innerHTML = ''; // Clear 'Searching...'
+
+            const docs = response.docs;
+            const numFound = response.numFound;
+
+            if (numFound === 0) {
+                resultsContainer.innerHTML = '<h2>No Results Found</h2><p>Try a different symptom or disease.</p>';
+                return;
+            }
+
+            resultsContainer.innerHTML = `<h2>Found ${numFound} Result(s)</h2>`;
+
+            docs.forEach(doc => {
+                const item = document.createElement('div');
+                item.className = 'result-item';
+
+                // Displaying the fields retrieved from Solr
+                const title = document.createElement('h3');
+                // Use the 'name' field from your schema as the title
+                title.className = 'result-title';
+                title.textContent = doc.name || 'Untitled Disease'; 
+                item.appendChild(title);
+
+                const id = document.createElement('p');
+                id.className = 'result-field';
+                id.innerHTML = `<strong>ID:</strong> ${doc.id || 'N/A'}`;
+                item.appendChild(id);
+
+                const symptoms = document.createElement('p');
+                symptoms.className = 'result-field';
+                // Assuming 'symptoms' is a field in your Solr core
+                symptoms.innerHTML = `<strong>Symptoms:</strong> ${Array.isArray(doc.symptoms) ? doc.symptoms.join(', ') : (doc.symptoms || 'None listed')}`; 
+                item.appendChild(symptoms);
+
+                const description = document.createElement('p');
+                // Assuming 'description' is a field in your Solr core
+                description.textContent = doc.description ? doc.description.substring(0, 200) + '...' : 'No description available.';
+                item.appendChild(description);
+
+                resultsContainer.appendChild(item);
+            });
+        }
+    </script>
+
+</body>
+</html>

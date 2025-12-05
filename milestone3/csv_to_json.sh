@@ -1,0 +1,1 @@
+cat data/dataset_static_ids.csv | python3 data/csv_to_json.py > data/dataset.json

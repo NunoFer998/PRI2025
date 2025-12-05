@@ -1,0 +1,1 @@
+cat data/dataset.json | python3 scripts/get_embeddings.py > data/semantic_dataset.json
