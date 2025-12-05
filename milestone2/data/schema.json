@@ -36,7 +36,15 @@
           { "class": "solr.EnglishMinimalStemFilterFactory" }
         ]
       }
+    },
+    {
+      "name": "courseVector",
+      "class": "solr.DenseVectorField",
+      "vectorDimension": 384,
+      "similarityFunction": "cosine",
+      "knnAlgorithm": "hnsw"
     }
+
   ],
   "add-field": [
     {
@@ -82,6 +90,12 @@
       "type": "string",
       "stored": true,
       "indexed": false
+    },
+    {
+      "name": "vector",
+      "type": "courseVector",
+      "indexed": true,
+      "stored": true
     }
   ]
 }
