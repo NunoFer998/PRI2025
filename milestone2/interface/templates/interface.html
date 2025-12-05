@@ -97,16 +97,19 @@
             // wt=json                -> Response format is JSON
             // fl=id,name,symptoms    -> Fields to retrieve and display (CHANGE THIS to your core's field names)
             // rows=10                -> Number of results to return
-            const solrUrl = `http://localhost:8983/solr/diseases/select?q=${encodeURIComponent(keyword)}&df=text_general&wt=json&fl=id,name,symptoms,description&rows=10`;
-
+            const solrUrl = `http://127.0.0.1:5000/api/search?q=${encodeURIComponent(keyword)}`;
+            
             try {
                 const response = await fetch(solrUrl);
-                
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-
                 const data = await response.json();
+                
+                if (data.error) {
+                    throw new Error(data.error.msg || JSON.stringify(data.error));
+                }
+                
+                if (!data.response || !data.response.docs) {
+                    throw new Error("Invalid response from Solr. Check console for details.");
+                }
                 
                 displayResults(data.response);
 
