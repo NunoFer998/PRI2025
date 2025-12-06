@@ -1,75 +1,138 @@
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    max-width: 800px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 40px;
+    max-width: 900px;
     margin: 0 auto;
-    background-color: #f9f9f9; 
 }
 
-header {
+h1 {
     text-align: center;
-    margin-bottom: 20px;
+    color: #2c3e50;
+    margin-bottom: 40px;
 }
 
+/* Search Box Styling */
 #search-container {
-    margin-bottom: 30px;
     display: flex;
-    justify-content: center;
+    gap: 10px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
 }
 
 #search-input {
-    padding: 10px;
-    width: 70%;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
     font-size: 16px;
+    outline: none;
+}
+
+#search-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+}
+
+#system-selector {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    cursor: pointer;
 }
 
 #search-button {
-    padding: 10px 15px;
+    padding: 10px 25px;
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
+    font-weight: 600;
     cursor: pointer;
-    font-size: 16px;
-    margin-left: 10px;
-    transition: background-color 0.3s;
+    transition: background-color 0.2s;
 }
 
 #search-button:hover {
-    background-color: #0056b3; 
+    background-color: #0056b3;
 }
 
+/* Results Styling */
 #results-container {
-    border-top: 1px solid #eee;
-    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .result-item {
-    background-color: white;
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid #007bff; /* Visual accent */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.result-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
 .result-title {
+    margin: 0 0 10px 0;
+    font-size: 1.25rem;
     color: #007bff;
-    font-size: 20px;
-    margin-top: 0;
-    margin-bottom: 5px;
+    cursor: pointer;
+    text-decoration: none;
 }
 
-.result-field {
-    margin-bottom: 5px;
-    font-size: 14px;
-    color: #333;
+.result-title:hover {
+    text-decoration: underline;
+}
+
+.result-description {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Badge Styling for Symptoms */
+.badges-container {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.badge {
+    background-color: #e3f2fd;
+    color: #0d47a1;
+    padding: 4px 10px;
+    border-radius: 16px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.badge-label {
+    font-size: 0.85rem;
+    color: #777;
+    margin-right: 5px;
+    font-weight: bold;
 }
 
 .error-message {
     color: #dc3545;
     font-weight: bold;
     text-align: center;
+    padding: 20px;
+}
+
+.loading {
+    text-align: center;
+    color: #666;
+    font-style: italic;
 }

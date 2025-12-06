@@ -55,11 +55,16 @@ function displayResults(response) {
     const numFound = response.numFound;
 
     if (numFound === 0) {
-        resultsContainer.innerHTML = '<h2>No Results Found</h2><p>Try a different symptom or disease.</p>';
+        resultsContainer.innerHTML = `
+            <div style="text-align:center; color: #666;">
+                <h2>No Results Found</h2>
+                <p>We couldn't find any matches. Try simpler keywords or check your spelling.</p>
+            </div>`;
         return;
     }
 
-    resultsContainer.innerHTML = `<h2>Found ${numFound} Result(s)</h2>`;
+    // Header
+    resultsContainer.innerHTML = `<h3 style="color:#666; font-size: 1rem; margin-bottom: 10px;">Found ${numFound} result(s)</h3>`;
 
     docs.forEach(doc => {
         const item = document.createElement('div');
@@ -68,26 +73,36 @@ function displayResults(response) {
         // Title
         const title = document.createElement('h3');
         title.className = 'result-title';
-        title.textContent = doc.name || 'Untitled Disease'; 
+        title.innerText = doc.name || 'Unknown Condition';
         item.appendChild(title);
-
-        // ID
-        const id = document.createElement('p');
-        id.className = 'result-field';
-        id.innerHTML = `<strong>ID:</strong> ${doc.id || 'N/A'}`;
-        item.appendChild(id);
-
-        // Symptoms
-        const symptoms = document.createElement('p');
-        symptoms.className = 'result-field';
-        const symptomsText = Array.isArray(doc.symptoms) ? doc.symptoms.join(', ') : (doc.symptoms || 'None listed');
-        symptoms.innerHTML = `<strong>Symptoms:</strong> ${symptomsText}`; 
-        item.appendChild(symptoms);
 
         // Description
         const description = document.createElement('p');
-        description.textContent = doc.description ? doc.description.substring(0, 200) + '...' : 'No description available.';
+        description.className = 'result-description';
+        const rawDesc = doc.description || 'No description available.';
+        description.innerText = rawDesc.length > 250 ? rawDesc.substring(0, 250) + '...' : rawDesc;
         item.appendChild(description);
+
+        if (doc.symptoms) {
+            const badgeContainer = document.createElement('div');
+            badgeContainer.className = 'badges-container';
+            
+            const label = document.createElement('span');
+            label.className = 'badge-label';
+            label.innerText = 'Symptoms:';
+            badgeContainer.appendChild(label);
+
+            let symptomList = Array.isArray(doc.symptoms) ? doc.symptoms : [doc.symptoms];
+            
+            symptomList.forEach(sym => {
+                const badge = document.createElement('span');
+                badge.className = 'badge';
+                badge.innerText = sym;
+                badgeContainer.appendChild(badge);
+            });
+            
+            item.appendChild(badgeContainer);
+        }
 
         resultsContainer.appendChild(item);
     });
