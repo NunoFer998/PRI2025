@@ -1,0 +1,10 @@
+{
+    "defType": "edismax",
+    "qf": "name^10 symptoms^5 treatments^20 description^30",
+    "indent": "true",
+    "fl": "id,name,symptoms,description,treatments,score",
+    "q.op": "AND",
+    "boost": "termfreq(treatments, treatment)",
+    "sort": "score desc",
+    "wt": "json"
+}

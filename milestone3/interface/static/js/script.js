@@ -12,6 +12,9 @@ async function performSearch() {
     const resultsContainer = document.getElementById('results-container');
     const keyword = document.getElementById('search-input').value.trim();
     
+    // Get system
+    const mode = document.getElementById('system-selector').value;
+
     // UI: Show searching state
     resultsContainer.innerHTML = '<h2>Searching...</h2>';
 
@@ -20,12 +23,14 @@ async function performSearch() {
         return;
     }
 
-    const apiUrl = `/api/search?q=${encodeURIComponent(keyword)}`;
+    const apiUrl = `http://127.0.0.1:5000/api/search?q=${encodeURIComponent(keyword)}&mode=${encodeURIComponent(mode)}`;    
     
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
         
+        console.log("Results fetched using system: ", data.debug_mode_used);
+
         if (data.error) {
             throw new Error(data.error.msg || JSON.stringify(data.error));
         }
