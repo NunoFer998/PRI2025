@@ -1,4 +1,6 @@
 # Variables
+SYSTEM_PYTHON := python3.11
+
 VENV := .venv
 PYTHON := $(VENV)/bin/python
 PIP := $(VENV)/bin/pip
@@ -15,9 +17,8 @@ solr:
 	@echo "Starting Solr..."
 	cd $(SOLR_DIR) && $(SOLR_SCRIPT)
 
-
 $(VENV)/bin/activate:
-	python3 -m venv $(VENV)
+	$(SYSTEM_PYTHON) -m venv $(VENV)
 
 .PHONY: install
 install: $(VENV)/bin/activate requirements.txt
