@@ -2,7 +2,7 @@
 
 ## Prerequisites
 - WSL / Linux
-- Python installed
+- Python 3.11+ installed
 - Docker Desktop (running and connected to WSL for the Solr database)
 
 ## Commands
