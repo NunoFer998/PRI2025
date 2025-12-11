@@ -1,10 +1,13 @@
 import requests
 from sentence_transformers import SentenceTransformer
 
+model = SentenceTransformer('all-MiniLM-L6-v2')
+
 def text_to_embedding(text):
     model = SentenceTransformer('all-MiniLM-L6-v2')
-    embedding = model.encode(text, convert_to_tensor=False).tolist()
     
+    embedding = model.encode(text, convert_to_tensor=False).tolist() 
+       
     # Convert the embedding to the expected format
     embedding_str = "[" + ",".join(map(str, embedding)) + "]"
     return embedding_str

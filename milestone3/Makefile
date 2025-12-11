@@ -27,7 +27,7 @@ install: $(VENV)/bin/activate requirements.txt
 
 .PHONY: run
 run: install
-	$(PYTHON) interface/interface.py
+	$(PYTHON) -m interface.interface
 
 .PHONY: clean
 clean:
