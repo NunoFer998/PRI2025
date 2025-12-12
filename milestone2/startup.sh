@@ -111,7 +111,7 @@ curl -s -X POST -H 'Content-type:application/json' \
     --data-binary '{"delete": {"query":"*:*"}}' \
     http://localhost:8983/solr/diseases/update?commit=true
 
-docker cp data/semantic_dataset.json meic_solr:/opt/solr-9.10.0/
+docker cp ../milestone3/data/semantic_dataset.json meic_solr:/opt/solr-9.10.0/
 
 docker exec -w /opt/solr-9.10.0 meic_solr \
   bin/solr post -c ${SOLR_CORE} semantic_dataset.json
