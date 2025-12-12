@@ -1,0 +1,4 @@
+{
+  "query": "chest head",
+  "fields": "id, score"
+}

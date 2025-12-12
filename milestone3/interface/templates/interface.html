@@ -48,6 +48,15 @@
       </section>
     </main>
 
+    <!-- Modal for full card details -->
+    <div id="detail-modal" class="modal-overlay">
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <h2 id="modal-title" class="modal-title"></h2>
+        <div id="modal-body" class="modal-body"></div>
+      </div>
+    </div>
+
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   </body>
 </html>

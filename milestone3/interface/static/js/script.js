@@ -6,7 +6,84 @@ document.addEventListener('DOMContentLoaded', () => {
             performSearch();
         }
     });
+
+    // Modal close handlers
+    const modal = document.getElementById('detail-modal');
+    const closeBtn = modal.querySelector('.modal-close');
+    
+    closeBtn.addEventListener('click', closeModal);
+    
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+    
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
 });
+
+function openModal(doc) {
+    const modal = document.getElementById('detail-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalBody = document.getElementById('modal-body');
+    
+    modalTitle.innerText = doc.name || 'Unknown Condition';
+    
+    let bodyHTML = '';
+    
+    // Full description
+    bodyHTML += '<div class="modal-section">';
+    bodyHTML += '<h4>Description</h4>';
+    bodyHTML += `<p>${doc.description || 'No description available.'}</p>`;
+    bodyHTML += '</div>';
+    
+    // Symptoms
+    if (doc.symptoms) {
+        bodyHTML += '<div class="modal-section">';
+        bodyHTML += '<h4>Symptoms</h4>';
+        bodyHTML += '<div class="badges-container">';
+        let symptomList = Array.isArray(doc.symptoms) ? doc.symptoms : [doc.symptoms];
+        symptomList.forEach(sym => {
+            bodyHTML += `<span class="badge">${sym}</span>`;
+        });
+        bodyHTML += '</div></div>';
+    }
+    
+    // Treatments
+    if (doc.treatments) {
+        bodyHTML += '<div class="modal-section">';
+        bodyHTML += '<h4>Treatments</h4>';
+        bodyHTML += '<div class="badges-container treatment-badges">';
+        let treatmentList = Array.isArray(doc.treatments) ? doc.treatments : [doc.treatments];
+        treatmentList.forEach(treat => {
+            bodyHTML += `<span class="badge treatment-badge">${treat}</span>`;
+        });
+        bodyHTML += '</div></div>';
+    }
+    
+    // Additional fields if present
+    if (doc.medical_specialty) {
+        bodyHTML += '<div class="modal-section">';
+        bodyHTML += '<h4>Medical Specialty</h4>';
+        let specialtyList = Array.isArray(doc.medical_specialty) ? doc.medical_specialty : [doc.medical_specialty];
+        bodyHTML += `<p>${specialtyList.join(', ')}</p>`;
+        bodyHTML += '</div>';
+    }
+    
+    modalBody.innerHTML = bodyHTML;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    const modal = document.getElementById('detail-modal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
 
 async function performSearch() {
     const resultsContainer = document.getElementById('results-container');
@@ -68,7 +145,17 @@ function displayResults(response) {
 
     docs.forEach(doc => {
         const item = document.createElement('div');
-        item.className = 'result-item';
+        item.className = 'result-item clickable';
+        item.setAttribute('role', 'button');
+        item.setAttribute('tabindex', '0');
+        
+        // Click handler to open modal
+        item.addEventListener('click', () => openModal(doc));
+        item.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                openModal(doc);
+            }
+        });
 
         // Title
         const title = document.createElement('h3');
@@ -102,6 +189,15 @@ function displayResults(response) {
             });
             
             item.appendChild(badgeContainer);
+        }
+
+        // Show treatment count hint
+        if (doc.treatments) {
+            const treatmentHint = document.createElement('p');
+            treatmentHint.className = 'treatment-hint';
+            let treatmentList = Array.isArray(doc.treatments) ? doc.treatments : [doc.treatments];
+            treatmentHint.innerText = `💊 ${treatmentList.length} treatment${treatmentList.length !== 1 ? 's' : ''} available - Click to view`;
+            item.appendChild(treatmentHint);
         }
 
         resultsContainer.appendChild(item);

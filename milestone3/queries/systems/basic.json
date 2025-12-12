@@ -1,0 +1,9 @@
+{
+    "defType": "edismax",
+    "qf": "name symptoms description treatments",
+    "indent": "true",
+    "sort": "score desc",
+    "q.op": "AND",
+    "fl": "id,name,symptoms,description,treatments,score",
+    "wt": "json"
+}
