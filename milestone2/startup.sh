@@ -59,6 +59,23 @@ curl -s -X POST -H 'Content-type:application/json' \
   --data-binary "@data/schema.json" \
   http://localhost:8983/solr/diseases/schema
 
+  echo "Configuring Vector Search Schema..."
+curl -s -X POST -H 'Content-type:application/json' \
+  --data-binary '{
+  "add-field-type":{
+     "name":"knn_vector",
+     "class":"solr.DenseVectorField",
+     "vectorDimension":384,
+     "similarityFunction":"cosine"
+  },
+  "add-field":{
+     "name":"vector",
+     "type":"knn_vector",
+     "stored":true,
+     "indexed":true
+  }
+}' http://localhost:8983/solr/diseases/schema
+
 echo "Waiting for core to stabilize after schema update..."
 until curl -s -o /dev/null -w "%{http_code}" http://localhost:8983/solr/diseases/select | grep -q "200"; do
   echo -n "."
