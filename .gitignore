@@ -44,3 +44,6 @@ milestone1/data/final/
 /milestone2/trec_eval/
 
 milestone3/.venv
+milestone2/data/semantic_dataset.json
+milestone3/data/semantic_dataset.json
+
