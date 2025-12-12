@@ -1,5 +1,5 @@
 # Variables
-SYSTEM_PYTHON := python3.11
+SYSTEM_PYTHON := python3
 
 VENV := .venv
 PYTHON := $(VENV)/bin/python

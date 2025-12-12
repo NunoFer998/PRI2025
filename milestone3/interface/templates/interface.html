@@ -1,36 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solr Medical Search</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
     <header>
-        <h1>🔍 Symptom & Medical Search</h1>
+      <h1>🔍 Symptom & Medical Search</h1>
     </header>
 
     <main>
-        <div id="search-container">
-            <input type="text" id="search-input" placeholder="Enter symptoms, diseases, or keywords..." />
-            
-            <select id="system-selector" style="padding: 10px; font-size: 16px; border-radius: 4px; border: 1px solid #ccc;">
-                <option value="basic">Basic System</option>
-                <option value="enhanced">Enhanced System</option>
-                <option value="treatment">Treatment Sort</option>
-                <option value="semantic"> Semantic Search</option>
-            </select>
+      <div id="search-container">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Enter symptoms, diseases, or keywords..."
+        />
 
-            <button id="search-button">Search Solr</button>
-        </div>
+        <select
+          id="system-selector"
+          style="
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+          "
+        >
+          <option value="basic">Basic System</option>
+          <option value="enhanced">Enhanced System</option>
+          <option value="treatment">Treatment Sort</option>
+          <option value="semantic">Semantic Search</option>
+          <option value="hybrid">Hybrid Search</option>
+        </select>
 
-        <section id="results-container" aria-live="polite">
-            <p id="initial-message">Enter a search term and click 'Search Solr' to see results.</p>
-        </section>
+        <button id="search-button">Search Solr</button>
+      </div>
+
+      <section id="results-container" aria-live="polite">
+        <p id="initial-message">
+          Enter a search term and click 'Search Solr' to see results.
+        </p>
+      </section>
     </main>
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-</body>
+  </body>
 </html>
