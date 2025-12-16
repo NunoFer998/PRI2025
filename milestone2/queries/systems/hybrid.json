@@ -1,0 +1,14 @@
+{
+    "name": "hybrid",
+    "description": "Hybrid search combining lexical (BM25) and semantic (vector) scores using Solr boolean query parser",
+    "q": "{!bool filter=$Retrieval must=$Ranking}",
+    "Retrieval": "{!bool should=$LexicalQ should=$SemanticQ}",
+    "Ranking": "{!func}product(query($normLexical), query($normSemantic))",
+    "normLexical": "{!func}scale(query($LexicalQ), 0, 1)",
+    "normSemantic": "{!func}scale(query($SemanticQ), 0, 1)",
+    "LexicalQ": "{!edismax qf='name^10 symptoms^5 treatments^20 description^30' q.op=OR}$QUERY",
+    "SemanticQ": "{!knn f=vector topK=$TOP_K}$VECTOR",
+    "fl": "id,name,symptoms,description,treatments,score",
+    "rows": "$TOP_K",
+    "wt": "json"
+}

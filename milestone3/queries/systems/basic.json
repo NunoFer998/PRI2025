@@ -5,6 +5,5 @@
     "sort": "score desc",
     "q.op": "AND",
     "fl": "id,name,symptoms,description,treatments,score",
-    "mm": "50%",
     "wt": "json"
 }

@@ -6,5 +6,6 @@
     "q.op": "AND",
     "boost": "termfreq(treatments, treatment)",
     "sort": "score desc",
+    "mm": "50%",
     "wt": "json"
 }

@@ -2,9 +2,9 @@
     "defType": "edismax",
     "qf": "name^10 symptoms^5 treatments^20 description^30",
     "indent": "true",
-    "sort":"score desc",
-    "q.op": "AND",
     "fl": "id,name,symptoms,description,treatments,score",
-    "mm": "50%",
-    "wt":"json"
+    "q.op": "AND",
+    "boost": "termfreq(treatments, treatment)",
+    "sort": "score desc",
+    "wt": "json"
 }
