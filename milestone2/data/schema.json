@@ -12,11 +12,6 @@
         "filters": [
           { "class": "solr.LowerCaseFilterFactory" },
           { "class": "solr.ASCIIFoldingFilterFactory" },
-          {
-            "class": "solr.SynonymGraphFilterFactory",
-            "synonyms": "synonyms_diseases.txt",
-            "ignoreCase": "true"
-          },
           { "class": "solr.EnglishMinimalStemFilterFactory" }
         ]
       },
