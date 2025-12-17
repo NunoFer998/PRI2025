@@ -1,89 +1,58 @@
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('search-button').addEventListener('click', performSearch);
+// Helper function to clean text
+function cleanText(text) {
+    if (!text) 
+        return 'Unknown';
+    let clean = text.replace(/_/g, ' ');
+    return clean.replace(/\b\w/g, char => char.toUpperCase());
+}
+
+// Helper function to push state to browser history without reloading
+function updateURL() {
+    const query = document.getElementById('search-input').value;
+    const mode = document.getElementById('system-selector').value;
     
-    document.getElementById('search-input').addEventListener('keypress', function(event) {
+    if (query) {
+        const newUrl = `${window.location.pathname}?q=${encodeURIComponent(query)}&mode=${encodeURIComponent(mode)}`;
+        window.history.pushState({ path: newUrl }, '', newUrl);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('search-input');
+    const systemSelector = document.getElementById('system-selector');
+
+    const params = new URLSearchParams(window.location.search);
+    const urlQuery = params.get('q');
+    const urlMode = params.get('mode');
+
+    if (urlQuery) {
+        searchInput.value = urlQuery;
+        if (urlMode) {
+            systemSelector.value = urlMode;
+        }
+        performSearch();
+    }
+
+    document.getElementById('search-button').addEventListener('click', () => {
+        updateURL();
+        performSearch();
+    });
+    
+    searchInput.addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
+            updateURL();
             performSearch();
         }
     });
-
-    // Modal close handlers
-    const modal = document.getElementById('detail-modal');
-    const closeBtn = modal.querySelector('.modal-close');
     
-    closeBtn.addEventListener('click', closeModal);
-    
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-    
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-            closeModal();
+    systemSelector.addEventListener('change', () => {
+        if (searchInput.value.trim() !== "") {
+            updateURL();
+            performSearch();
         }
     });
 });
 
-function openModal(doc) {
-    const modal = document.getElementById('detail-modal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalBody = document.getElementById('modal-body');
-    
-    modalTitle.innerText = doc.name || 'Unknown Condition';
-    
-    let bodyHTML = '';
-    
-    // Full description
-    bodyHTML += '<div class="modal-section">';
-    bodyHTML += '<h4>Description</h4>';
-    bodyHTML += `<p>${doc.description || 'No description available.'}</p>`;
-    bodyHTML += '</div>';
-    
-    // Symptoms
-    if (doc.symptoms) {
-        bodyHTML += '<div class="modal-section">';
-        bodyHTML += '<h4>Symptoms</h4>';
-        bodyHTML += '<div class="badges-container">';
-        let symptomList = Array.isArray(doc.symptoms) ? doc.symptoms : [doc.symptoms];
-        symptomList.forEach(sym => {
-            bodyHTML += `<span class="badge">${sym}</span>`;
-        });
-        bodyHTML += '</div></div>';
-    }
-    
-    // Treatments
-    if (doc.treatments) {
-        bodyHTML += '<div class="modal-section">';
-        bodyHTML += '<h4>Treatments</h4>';
-        bodyHTML += '<div class="badges-container treatment-badges">';
-        let treatmentList = Array.isArray(doc.treatments) ? doc.treatments : [doc.treatments];
-        treatmentList.forEach(treat => {
-            bodyHTML += `<span class="badge treatment-badge">${treat}</span>`;
-        });
-        bodyHTML += '</div></div>';
-    }
-    
-    // Additional fields if present
-    if (doc.medical_specialty) {
-        bodyHTML += '<div class="modal-section">';
-        bodyHTML += '<h4>Medical Specialty</h4>';
-        let specialtyList = Array.isArray(doc.medical_specialty) ? doc.medical_specialty : [doc.medical_specialty];
-        bodyHTML += `<p>${specialtyList.join(', ')}</p>`;
-        bodyHTML += '</div>';
-    }
-    
-    modalBody.innerHTML = bodyHTML;
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-    const modal = document.getElementById('detail-modal');
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-}
 
 async function performSearch() {
     const resultsContainer = document.getElementById('results-container');
@@ -149,30 +118,38 @@ function displayResults(response) {
         item.setAttribute('role', 'button');
         item.setAttribute('tabindex', '0');
         
-        // Click handler to open modal
-        item.addEventListener('click', () => openModal(doc));
+        const seeDetails = () => {
+            window.location.href = `/details/${encodeURIComponent(doc.id)}`;
+        }
+
+        item.addEventListener('click', seeDetails);
         item.addEventListener('keypress', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
-                openModal(doc);
+                seeDetails();
             }
-        });
+        })
 
         // Title
         const title = document.createElement('h3');
         title.className = 'result-title';
-        title.innerText = doc.name || 'Unknown Condition';
+        title.innerText = cleanText(doc.name);
         item.appendChild(title);
 
         // Description
         const description = document.createElement('p');
         description.className = 'result-description';
         const rawDesc = doc.description || 'No description available.';
-        description.innerText = rawDesc.length > 250 ? rawDesc.substring(0, 250) + '...' : rawDesc;
+        const descText = Array.isArray(rawDesc) ? rawDesc[0] : rawDesc;
+        description.innerText = descText.length > 250 ? descText.substring(0, 250) + '...' : descText;
         item.appendChild(description);
 
         if (doc.symptoms) {
             const badgeContainer = document.createElement('div');
             badgeContainer.className = 'badges-container';
+
+            badgeContainer.style.display = 'flex';
+            badgeContainer.style.alignItems = 'center';
+            badgeContainer.style.flexWrap = 'wrap';
             
             const label = document.createElement('span');
             label.className = 'badge-label';
@@ -196,7 +173,7 @@ function displayResults(response) {
             const treatmentHint = document.createElement('p');
             treatmentHint.className = 'treatment-hint';
             let treatmentList = Array.isArray(doc.treatments) ? doc.treatments : [doc.treatments];
-            treatmentHint.innerText = `💊 ${treatmentList.length} treatment${treatmentList.length !== 1 ? 's' : ''} available - Click to view`;
+            treatmentHint.innerText = `💊 ${treatmentList.length} Treatment${treatmentList.length !== 1 ? 's' : ''} available.`;
             item.appendChild(treatmentHint);
         }
 

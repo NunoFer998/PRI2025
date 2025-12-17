@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ doc['name'] | clean_text }} - Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/details.css') }}"
+    />
+</head>
+<body>
+    <header>
+        <h1>🏥 Medical Database</h1>
+    </header>
+
+    <main>
+        <a href="javascript:history.back()" class="back-btn"><i class="fa-solid fa-arrow-left-long"></i> Back to Search</a>
+
+        <div class="details-container">
+            <h2 style="color: #007bff; font-size: 2rem; margin-top: 0;">
+                {{ doc['name'] | clean_text }}
+            </h2>
+
+            <div class="modal-section">
+                <h4>Description</h4>
+                <p>
+                    {% if doc['description'] is defined and doc['description'] %}
+                        {% if doc['description'] is iterable and doc['description'] is not string %}
+                            {{ doc['description'][0] }}
+                        {% else %}
+                            {{ doc['description'] }}
+                        {% endif %}
+                    {% else %}
+                        No description available.
+                    {% endif %}
+                </p>
+            </div>
+
+            {% if doc['symptoms'] %}
+            <div class="modal-section">
+                <h4>Symptoms</h4>
+                <div class="badges-container">
+                    {% for sym in doc['symptoms'] %}
+                        <span class="badge">{{ sym }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if doc['treatments'] %}
+            <div class="modal-section">
+                <h4>Treatments</h4>
+                <div class="badges-container">
+                    {% for treat in doc['treatments'] %}
+                        <span class="badge treatment-badge">{{ treat }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+            
+            {% if doc['url'] %}
+            <div class="modal-section">
+                <h4>More Info</h4>
+                <a href="{{ doc['url'] }}" target="_blank" style="color:#007bff;">View Source</a>
+            </div>
+            {% endif %}
+        </div>
+    </main>
+</body>
+</html>
