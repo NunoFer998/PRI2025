@@ -1,25 +1,38 @@
 import json
 import os
+import sys
+from pathlib import Path
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
-import requests
+
+# Add parent directory to path for imports
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from scripts.query_solr import query_solr
 from scripts import query_embedding
 
 app = Flask(__name__)
 CORS(app)
 
+# Base path for system configuration files
+SYSTEMS_DIR = Path(__file__).parent.parent / "queries" / "systems"
 
-def load_systems(filename):
-    with open(filename, "r") as f:
-        return json.load(f)
-
-
-search_systems = {
-    "basic": load_systems("./systems/basic.json"),
-    "enhanced": load_systems("./systems/enhanced.json"),
-    "treatment": load_systems("./systems/treatmentSort.json"),
-    "hybrid": load_systems("./systems/hybrid.json"),
+# Available search systems
+AVAILABLE_SYSTEMS = {
+    "basic": SYSTEMS_DIR / "basic.json",
+    "enhanced": SYSTEMS_DIR / "enhanced.json",
+    "treatment": SYSTEMS_DIR / "treatmentSort.json",
+    "hybrid": SYSTEMS_DIR / "hybrid.json",
 }
+
+
+def load_system_config(system_name):
+    """Load a system configuration file."""
+    if system_name not in AVAILABLE_SYSTEMS:
+        return None
+    system_file = AVAILABLE_SYSTEMS[system_name]
+    if system_file.exists():
+        return json.loads(system_file.read_text())
+    return None
 
 
 @app.route("/")
@@ -35,13 +48,15 @@ def search_solr():
     if not keyword:
         return jsonify({"error": 'Query parameter "q" is required'}), 400
 
-    params = {}
-    top_k = 10
+    top_k = 20
 
     if mode == "hybrid":
         try:
             vector_str = query_embedding.text_to_embedding(keyword)
-            hybrid_config = search_systems["hybrid"]
+            hybrid_config = load_system_config("hybrid")
+            
+            if not hybrid_config:
+                return jsonify({"error": "Hybrid system configuration not found"}), 500
 
             # Build hybrid search params with substituted values
             params = {
@@ -72,48 +87,71 @@ def search_solr():
                 "rows": top_k,
                 "wt": "json",
             }
+            
+            # Send request directly for hybrid mode (needs special handling)
+            import requests
+            solr_url = "http://localhost:8983/solr/diseases/select"
+            response = requests.post(solr_url, data=params)
+            if response.status_code != 200:
+                return (
+                    jsonify({"error": "Solr Error", "solr_message": response.text}),
+                    response.status_code,
+                )
+            result = response.json()
+            result["debug_mode_used"] = mode
+            return jsonify(result)
+            
         except Exception as e:
             return jsonify({"error": f"Hybrid search failed: {str(e)}"}), 500
 
     elif mode == "semantic":
         try:
             vector_str = query_embedding.text_to_embedding(keyword)
-
-            params["q"] = f"{{!knn f=vector topK=10}}{vector_str}"
-            params["fl"] = "id,name,symptoms,description,treatments,score"
-            params["rows"] = 10
-            params["wt"] = "json"
+            
+            import requests
+            solr_url = "http://localhost:8983/solr/diseases/select"
+            params = {
+                "q": f"{{!knn f=vector topK50}}{vector_str}",
+                "fl": "id,name,symptoms,description,treatments,score",
+                "rows": 50,
+                "wt": "json",
+            }
+            response = requests.post(solr_url, data=params)
+            if response.status_code != 200:
+                return (
+                    jsonify({"error": "Solr Error", "solr_message": response.text}),
+                    response.status_code,
+                )
+            result = response.json()
+            result["debug_mode_used"] = mode
+            return jsonify(result)
 
         except Exception as e:
             return jsonify({"error": f"Embedding failed: {str(e)}"}), 500
 
-    elif mode in search_systems:
-        params = search_systems[mode].copy()
-        params["q"] = keyword
-        if "rows" not in params:
-            params["rows"] = 10
     else:
-        params = search_systems["basic"].copy()
-        params["q"] = keyword
-        params["rows"] = 10
-
-    solr_url = "http://localhost:8983/solr/diseases/select"
-
-    try:
-        response = requests.post(solr_url, data=params)
-        if response.status_code != 200:
-            return (
-                jsonify({"error": "Solr Error", "solr_message": response.text}),
-                response.status_code,
+        # Use query_solr for standard modes (basic, enhanced, treatment)
+        system_name = mode if mode in AVAILABLE_SYSTEMS else "basic"
+        system_file = AVAILABLE_SYSTEMS[system_name]
+        
+        try:
+            result = query_solr(
+                query_text=keyword,
+                system_file=system_file,
+                solr_uri="http://localhost:8983/solr",
+                collection="diseases",
+                rows=top_k
             )
-
-        result = response.json()
-        result["debug_mode_used"] = mode
-        return jsonify(result)
-
-    except Exception as e:
-        print(f"CRITICAL ERROR: {e}")
-        return (jsonify({"error": str(e)}),)
+            result["debug_mode_used"] = mode
+            return jsonify(result)
+            
+        except FileNotFoundError as e:
+            return jsonify({"error": f"System configuration not found: {str(e)}"}), 500
+        except ConnectionError as e:
+            return jsonify({"error": f"Solr connection error: {str(e)}"}), 500
+        except Exception as e:
+            print(f"CRITICAL ERROR: {e}")
+            return jsonify({"error": str(e)}), 500
 
 
 if __name__ == "__main__":

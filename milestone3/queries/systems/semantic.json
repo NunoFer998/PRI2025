@@ -1,0 +1,7 @@
+{
+    "name": "semantic",
+    "q": "{!knn f=vector topK=$TOP_K}$VECTOR",
+    "fl": "id,name,symptoms,description,treatments,score",
+    "rows": "$TOP_K",
+    "wt": "json"
+}
