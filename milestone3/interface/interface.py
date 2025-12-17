@@ -15,6 +15,14 @@ CORS(app)
 
 # Base path for system configuration files
 SYSTEMS_DIR = Path(__file__).parent.parent / "queries" / "systems"
+def clean_text(text):
+    if not text:
+        return "Unknown"
+    if isinstance(text, list): 
+        text = text[0] 
+    return str(text).replace("_", " ").title()
+
+app.jinja_env.filters['clean_text'] = clean_text
 
 # Available search systems
 AVAILABLE_SYSTEMS = {
@@ -37,7 +45,30 @@ def load_system_config(system_name):
 
 @app.route("/")
 def home():
-    return render_template("interface.html")
+    return render_template("homepage.html")
+
+@app.route("/details/<path:id>")
+def details(id):
+    solr_url = "http://localhost:8983/solr/diseases/select"
+
+    params = {
+        "q": f'id:"{id}"', 
+        "wt": "json",
+        "rows": 1
+    }
+
+    try:
+        response = requests.get(solr_url, params=params)
+        data = response.json()
+        docs = data.get("response", {}).get("docs", [])
+        
+        if not docs:
+            return "Document not found", 404
+            
+        return render_template("details.html", doc=docs[0])
+        
+    except Exception as e:
+        return f"Error: {str(e)}", 500
 
 
 @app.route("/api/search", methods=["GET"])
