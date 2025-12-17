@@ -1,4 +1,4 @@
 {
-    "query": "cough tired throat",
+    "query": "nausea nose",
     "fields": "id, score"
 }
