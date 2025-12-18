@@ -1,67 +1,90 @@
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
-  background-color: #f8f9fa;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   color: #333;
-  padding: 40px;
-  max-width: 900px;
-  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
   text-align: center;
   color: #2c3e50;
   margin-bottom: 40px;
+  font-size: 2.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Search Box Styling */
+main {
+  width: 100%;
+  max-width: 900px;
+}
+
+/* --- Search Box Styling (Modern) --- */
 #search-container {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  margin-bottom: 30px;
+  padding: 25px;
+  border-radius: 50px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#search-container:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 #search-input {
   flex-grow: 1;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 16px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
   outline: none;
-}
-
-#search-input:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  background: transparent;
 }
 
 #system-selector {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  background-color: #fff;
+  padding: 10px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  background-color: #f8f9fa;
   cursor: pointer;
+  font-size: 1rem;
+  color: #555;
+  outline: none;
+}
+
+#system-selector:hover {
+  border-color: #b0b0b0;
 }
 
 #search-button {
-  padding: 10px 25px;
-  background-color: #007bff;
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 30px;
   font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.2s;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 #search-button:hover {
-  background-color: #0056b3;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
 }
 
-/* Results Styling */
+/* --- Results Styling (Restored) --- */
 #results-container {
   display: flex;
   flex-direction: column;
@@ -70,28 +93,28 @@ h1 {
 
 .result-item {
   background: white;
-  padding: 20px;
-  border-radius: 8px;
-  border-left: 5px solid #007bff; /* Visual accent */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 6px solid #007bff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
+/* This class is CRITICAL for the click interaction */
+.result-item.clickable {
+  cursor: pointer;
+}
+
 .result-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .result-title {
   margin: 0 0 10px 0;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   color: #007bff;
-  cursor: pointer;
   text-decoration: none;
-}
-
-.result-title:hover {
-  text-decoration: underline;
 }
 
 .result-description {
@@ -100,7 +123,7 @@ h1 {
   margin-bottom: 15px;
 }
 
-/* Badge Styling for Symptoms */
+/* --- Badge Styling --- */
 .badges-container {
   margin-top: 10px;
   display: flex;
@@ -111,45 +134,35 @@ h1 {
 .badge {
   background-color: #e3f2fd;
   color: #0d47a1;
-  padding: 4px 10px;
-  border-radius: 16px;
+  padding: 5px 12px;
+  border-radius: 20px;
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .badge-label {
-  font-size: 0.85rem;
-  color: #777;
+  font-size: 0.9rem;
+  color: #666;
   margin-right: 5px;
   font-weight: bold;
 }
 
 .error-message {
   color: #dc3545;
+  font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
   padding: 20px;
-}
-
-.loading {
-  text-align: center;
-  color: #666;
-  font-style: italic;
-}
-
-/* Clickable card styles */
-.result-item.clickable {
-  cursor: pointer;
+  border-radius: 8px;
 }
 
 .treatment-hint {
-  margin-top: 12px;
+  margin-top: 15px;
   font-size: 0.9rem;
   color: #28a745;
-  font-weight: 500;
+  font-weight: 600;
 }
 
-/* Modal Overlay */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -171,7 +184,6 @@ h1 {
   visibility: visible;
 }
 
-/* Modal Content */
 .modal-content {
   background: white;
   border-radius: 12px;
@@ -199,50 +211,8 @@ h1 {
   font-size: 2rem;
   cursor: pointer;
   color: #666;
-  transition: color 0.2s;
 }
 
-.modal-close:hover {
-  color: #333;
-}
-
-.modal-title {
-  margin: 0 0 20px 0;
-  font-size: 1.5rem;
-  color: #007bff;
-  padding-right: 40px;
-}
-
-.modal-body {
-  color: #333;
-}
-
-.modal-section {
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #eee;
-}
-
-.modal-section:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.modal-section h4 {
-  margin: 0 0 10px 0;
-  font-size: 1rem;
-  color: #555;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.modal-section p {
-  line-height: 1.7;
-  margin: 0;
-}
-
-/* Treatment badges */
 .treatment-badge {
   background-color: #e8f5e9 !important;
   color: #2e7d32 !important;

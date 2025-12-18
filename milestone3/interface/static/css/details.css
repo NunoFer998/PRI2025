@@ -6,6 +6,12 @@
     margin-top: 20px;
 }
 
+.details-container h2 {
+    color:#007bff;
+    font-size: 2rem;
+    margin-top: 0;
+}
+
 .back-btn {
     display: inline-block;
     margin-bottom: 20px;
@@ -16,4 +22,9 @@
 
 .back-btn:hover { 
     text-decoration: underline; 
+}
+
+.details-container ul {
+    font-size: 1.1rem;
+    line-height: 1.6;
 }

@@ -4,7 +4,8 @@
     "indent": "true",
     "fl": "id,name,symptoms,description,treatments,score",
     "q.op": "AND",
-    "bf": "query({!edismax qf=treatments v=$q})",
+    "boost": "termfreq(treatments, treatment)",
     "sort": "score desc",
+    "mm": "50%",
     "wt": "json"
 }

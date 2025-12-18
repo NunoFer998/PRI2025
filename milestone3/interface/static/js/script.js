@@ -161,7 +161,9 @@ function displayResults(response) {
             symptomList.forEach(sym => {
                 const badge = document.createElement('span');
                 badge.className = 'badge';
-                badge.innerText = sym;
+
+                const maxLength = 90;
+                badge.innerText = sym.length > maxLength ? sym.substring(0, maxLength) + '...' : sym;
                 badgeContainer.appendChild(badge);
             });
             
