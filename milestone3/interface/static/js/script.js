@@ -1,3 +1,6 @@
+// Debug toggle: Set to true to show document IDs on cards
+const DEBUG_SHOW_ID = true;
+
 // Helper function to clean text
 function cleanText(text) {
     if (!text) 
@@ -134,6 +137,17 @@ function displayResults(response) {
         title.className = 'result-title';
         title.innerText = cleanText(doc.name);
         item.appendChild(title);
+
+        // Debug: Show ID if enabled
+        if (DEBUG_SHOW_ID) {
+            const idLabel = document.createElement('p');
+            idLabel.className = 'result-id';
+            idLabel.style.fontSize = '0.75rem';
+            idLabel.style.color = '#888';
+            idLabel.style.margin = '0 0 8px 0';
+            idLabel.innerText = `ID: ${doc.id}`;
+            item.appendChild(idLabel);
+        }
 
         // Description
         const description = document.createElement('p');
